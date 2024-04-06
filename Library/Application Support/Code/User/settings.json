@@ -1,0 +1,98 @@
+{
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+
+  "workbench.fontAliasing": "antialiased",
+  "workbench.activityBar.location": "hidden",
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 12,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.stickyScrollMaxItemCount": 1,
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorCustomizations": {
+    "editor.background": "#121212",
+    "editorGutter.background": "#121212",
+    "sideBar.background": "#121212",
+    "tree.indentGuidesStroke": "#686868",
+    "activityBar.background": "#121212",
+    "statusBar.background": "#121212",
+    "titleBar.activeBackground": "#121212",
+    "editorGroupHeader.tabsBackground": "#121212",
+    "tab.inactiveBackground": "#121212",
+    "tab.activeBackground": "#121212"
+  },
+
+  "editor.formatOnSave": false,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "Monaco for Powerline",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.lineHeight": 1.55,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": false,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.wordWrapColumn": 100,
+  "editor.codeLens": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword.control"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "class": {
+        "italic": true
+      },
+      "struct": {
+        "italic": true
+      },
+      "interface": {
+        "italic": true
+      }
+    }
+  },
+  "editor.rulers": [100, 125],
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.inlayHints.enabled": "off",
+
+  "terminal.integrated.fontFamily": "Monaco for Powerline",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.lineHeight": 1.2,
+
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "breadcrumbs.enabled": false,
+  "git.openRepositoryInParentFolders": "always",
+  "security.promptForLocalFileProtocolHandling": false,
+
+  "go.formatTool": "gofmt",
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "solidity.telemetry": false,
+  "svelte.enable-ts-plugin": true,
+  "json.schemaDownload.enable": true,
+  "redhat.telemetry.enabled": true
+}
