@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Archisman Mridha
+	email = archismanmridha12345@gmail.com
+	signingkey = 2B1FEBABE7FAFB3C
+[commit]
+	gpgsign = true
