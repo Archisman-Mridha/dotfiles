@@ -8,8 +8,8 @@ ZSH_THEME="robbyrussell"
 # Standard plugins can be found in $ZSH/plugins/. Custom plugins may be added to $ZSH_CUSTOM/plugins/.
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git argocd bun colored-man-pages copyfile copypath docker docker-compose gitignore helm jsontools
-	kubectl kube-ps1 redis-cli rust sudo terraform tmux
+	git argocd bun colored-man-pages copyfile copypath docker docker-compose gitignore helm kubectl
+	kube-ps1 redis-cli rust sudo terraform tmux
 )
 
 precmd() { echo; }
@@ -32,7 +32,7 @@ alias work="timer 120m && terminal-notifier -message 'Pomodoro'\
 alias rest="timer 20m && terminal-notifier -message 'Pomodoro'\
 							-title 'Break is over! Get back to work 💪'"
 
-export PATH=$PATH:"/Users/archismanmridha/go/bin"
+export PATH=$PATH:"/Users/archismanmridha/go/bin":"/Users/archismanmridha/.cargo/bin"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/tk tk
