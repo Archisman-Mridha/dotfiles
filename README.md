@@ -11,8 +11,5 @@
 + VSCode
 ![VSCode](./previews/vscode.png)
 
-+ Zsh Shell
-![Zsh Shell](./previews/zsh-terminal-prompt.png)
-
-+ Tmux
-![Tmux](./previews/tmux.png)
++ Zsh Shell + Tmux
+![Zsh Shell + Tmux](./previews/tmux.png)
