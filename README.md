@@ -1,3 +1,8 @@
+## Cheatsheets
+
++ [Neovim](https://gist.github.com/Archisman-Mridha/41923c35fec46d46497a06bdca56cb6f)
++ [Tmux](https://gist.github.com/Archisman-Mridha/d0157da78bac7e1675aa15cfdfa2eb97)
+
 ## Previews
 
 + Neovim
@@ -6,8 +11,8 @@
 + VSCode
 ![VSCode](./previews/vscode.png)
 
-+ Zsh Terminal Prompt
-![Zsh Terminal Prompt](./previews/zsh-terminal-prompt.png)
++ Zsh Shell
+![Zsh Shell](./previews/zsh-terminal-prompt.png)
 
 + Tmux
 ![Tmux](./previews/tmux.png)
