@@ -5,3 +5,5 @@
 	signingkey = 2B1FEBABE7FAFB3C
 [commit]
 	gpgsign = true
+[gpg]
+	program = /Users/archismanmridha/.nix-profile/bin/gpg

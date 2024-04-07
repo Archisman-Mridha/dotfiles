@@ -1,0 +1,34 @@
+{ pkgs, ... }:
+
+{
+  nixpkgs.config.allowUnfree = true;
+
+  home.packages= with pkgs; [
+    bun
+    rustup llvm
+    go richgo golangci-lint
+    terraform terraform-landscape terragrunt packer
+
+    # Kubernetes tools.
+    k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka cilium-cli
+    kubeseal
+
+    # Supplychain security.
+    trivy cosign
+
+    # Terminal utilities.
+    neovim tmux bat gotop zoxide stern neofetch wget jq buf tree wget xh fzf ripgrep eza
+    terminal-notifier stow gnupg pinentry_mac
+  ];
+
+  programs = {
+    eza = {
+      enable = true;
+      icons = true;
+      git = true;
+      extraOptions = [ "--group-directories-first" ];
+    };
+
+    home-manager.enable = true;
+  };
+}

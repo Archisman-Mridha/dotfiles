@@ -24,6 +24,8 @@ export EDITOR="nvim"
 
 alias k="kubectl"
 alias z="zoxide"
+alias ls="eza"
+alias cat="bat"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 
 # Pomodoro TUI (Requires https://github.com/caarlos0/timer to be installed).
@@ -33,6 +35,3 @@ alias rest="timer 20m && terminal-notifier -message 'Pomodoro'\
 							-title 'Break is over! Get back to work 💪'"
 
 export PATH=$PATH:"/Users/archismanmridha/go/bin":"/Users/archismanmridha/.cargo/bin"
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/tk tk
