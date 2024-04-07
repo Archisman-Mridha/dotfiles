@@ -13,3 +13,6 @@
 
 + Zsh Shell + Tmux
 ![Zsh Shell + Tmux](./previews/tmux.png)
+
++ Desktop
+![Desktop](./previews/desktop.png)
