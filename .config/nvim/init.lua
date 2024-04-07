@@ -11,5 +11,7 @@ vim.bo.softtabstop = 2
 vim.g.autoformat = false
 vim.g.rust_recommended_style = false
 
+require("config.auto-session")
+
 -- Configure lualine to evil mode.
 require("config.lualine")
