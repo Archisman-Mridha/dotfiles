@@ -9,7 +9,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git argocd bun colored-man-pages copyfile copypath docker docker-compose gitignore helm kubectl
-	kube-ps1 redis-cli rust sudo terraform tmux
+	kube-ps1 redis-cli rust sudo terraform tmux zsh-autosuggestions zsh-syntax-highlighting
 )
 
 precmd() { echo; }
