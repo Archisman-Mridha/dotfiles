@@ -4,27 +4,12 @@ return {
   opts = function(_, opts)
     opts.ensure_installed = opts.ensure_installed or {}
     vim.list_extend(opts.ensure_installed, {
-
-      -- Rust
       "codelldb",
-
-      -- GoLang
-      "goimports",
-      "gofumpt",
-      "delve",
-
-      -- Typescript
+      "goimports", "gofumpt", "delve",
       "js-debug-adapter",
-
-      -- Dockerfile
       "hadolint",
-
-      -- Markdown
-      "markdownlint",
-      "marksman",
-
-      -- Helm
+      "markdownlint", "marksman",
       "helm-ls"
     })
-  end,
+  end
 }

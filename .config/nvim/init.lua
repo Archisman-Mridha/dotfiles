@@ -12,7 +12,7 @@ vim.g.autoformat = false
 vim.g.rust_recommended_style = false
 
 require("config.auto-session")
-require("neogit").setup { }
+require("neogit").setup {}
 
 -- Configure lualine to evil mode.
 require("config.lualine")

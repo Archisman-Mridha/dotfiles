@@ -2,13 +2,8 @@ return {
   {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
-    opts = {
-      src = {
-        cmp = { enabled = true },
-      },
-    },
+    opts = { src = { cmp = { enabled = true } } }
   },
-
   {
     "simrat39/rust-tools.nvim",
     lazy = true,
@@ -28,12 +23,11 @@ return {
         else
           liblldb_path = extension_path .. "lldb/lib/liblldb.so"
         end
-        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path)
+        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path,
+          liblldb_path)
       end
       return {
-        dap = {
-          adapter = adapter,
-        },
+        dap = { adapter = adapter },
         tools = {
           on_initialized = function()
             vim.cmd([[
@@ -43,10 +37,10 @@ return {
                     autocmd BufEnter,CursorHold,InsertLeave *.rs silent! lua vim.lsp.codelens.refresh()
                   augroup END
                 ]])
-          end,
-        },
+          end
+        }
       }
     end,
-    config = function() end,
+    config = function() end
   }
 }

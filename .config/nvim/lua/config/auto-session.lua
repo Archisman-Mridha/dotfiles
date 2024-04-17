@@ -8,12 +8,11 @@ require("auto-session").setup({
     buftypes_to_ignore = {}, -- list of buffer types what should not be deleted from current session
     load_on_setup = true,
     theme_conf = { border = true },
-    previewer = false,
+    previewer = false
   }
 })
 
 -- Set mapping for searching a session.
 -- ⚠️ This will only work if Telescope.nvim is installed
-vim.keymap.set("n", "<Leader>ls", require("auto-session.session-lens").search_session, {
-  noremap = true,
-})
+vim.keymap.set("n", "<Leader>ls",
+  require("auto-session.session-lens").search_session, { noremap = true })

@@ -5,13 +5,9 @@ return {
   { "folke/twilight.nvim" },
   {
     "Pocco81/true-zen.nvim",
-    config= function( )
+    config = function()
       require("true-zen").setup {
-        integrations = {
-          tmux = true,
-          twilight = true,
-          lualine = true
-        }
+        integrations = { tmux = true, twilight = true, lualine = true }
       }
     end
   }

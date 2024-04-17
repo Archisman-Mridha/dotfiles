@@ -11,15 +11,14 @@ return {
     end
 
     local starter = require("mini.starter")
-    --stylua: ignore
     local config = {
       evaluate_single = true,
       header = logo,
       items = {},
       content_hooks = {
         starter.gen_hook.adding_bullet(pad .. "│ ", false),
-        starter.gen_hook.aligning("center", "center"),
-      },
+        starter.gen_hook.aligning("center", "center")
+      }
     }
     return config
   end,
@@ -29,9 +28,7 @@ return {
       vim.cmd.close()
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniStarterOpened",
-        callback = function()
-          require("lazy").show()
-        end,
+        callback = function() require("lazy").show() end
       })
     end
 
@@ -44,9 +41,10 @@ return {
         local stats = require("lazy").stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
         local pad_footer = string.rep(" ", 8)
-        starter.config.footer = pad_footer .. "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+        starter.config.footer = pad_footer .. "⚡ Neovim loaded " ..
+                                  stats.count .. " plugins in " .. ms .. "ms"
         pcall(starter.refresh)
-      end,
+      end
     })
-  end,
+  end
 }

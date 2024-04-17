@@ -2,20 +2,16 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
+    build = function() vim.fn["mkdp#util#install"]() end,
     keys = {
       {
         "<leader>cp",
         ft = "markdown",
         "<cmd>MarkdownPreviewToggle<cr>",
-        desc = "Markdown Preview",
-      },
+        desc = "Markdown Preview"
+      }
     },
-    config = function()
-      vim.cmd([[do FileType]])
-    end,
+    config = function() vim.cmd([[do FileType]]) end
   },
 
   -- Adds horizontal highlights for text filetypes (like markdown, orgmode, and neorg).
@@ -24,9 +20,7 @@ return {
     opts = function()
       local opts = {}
       for _, ft in ipairs({ "markdown", "norg", "rmd", "org" }) do
-        opts[ft] = {
-          headline_highlights = {},
-        }
+        opts[ft] = { headline_highlights = {} }
         for i = 1, 6 do
           local hl = "Headline" .. i
           vim.api.nvim_set_hl(0, hl, { link = "Headline", default = true })
@@ -42,6 +36,6 @@ return {
         require("headlines").setup(opts)
         require("headlines").refresh()
       end)
-    end,
+    end
   }
 }

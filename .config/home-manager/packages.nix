@@ -7,7 +7,9 @@
     bun
     rustup llvm
     go richgo golangci-lint
+    luaformatter luajit
     terraform terraform-landscape terragrunt packer
+    protobuf
 
     # Kubernetes tools.
     k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka cilium-cli
@@ -18,7 +20,7 @@
 
     # Terminal utilities.
     neovim tmux bat gotop zoxide stern neofetch wget jq buf tree wget xh fzf ripgrep eza
-    terminal-notifier stow gnupg pinentry_mac
+    terminal-notifier stow gnupg pinentry_mac gh
   ];
 
   programs = {

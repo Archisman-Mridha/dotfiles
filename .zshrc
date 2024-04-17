@@ -34,4 +34,4 @@ alias work="timer 120m && terminal-notifier -message 'Pomodoro'\
 alias rest="timer 20m && terminal-notifier -message 'Pomodoro'\
 							-title 'Break is over! Get back to work 💪'"
 
-export PATH=$PATH:"/Users/archismanmridha/go/bin":"/Users/archismanmridha/.cargo/bin"
+export PATH=$PATH:"$HOME/go/bin":"$HOME/.cargo/bin"
