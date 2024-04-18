@@ -91,5 +91,6 @@
   "svelte.enable-ts-plugin": true,
   "solidity.telemetry": false,
   "json.schemaDownload.enable": true,
-  "redhat.telemetry.enabled": true
+  "redhat.telemetry.enabled": true,
+  "editor.wordWrap": "on"
 }

@@ -30,6 +30,8 @@ alias ls="eza"
 alias cat="bat"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias vi="nvim"
+alias curl="xh"
+alias htop="btop"
 
 # Pomodoro TUI (Requires https://github.com/caarlos0/timer to be installed).
 alias work="timer 120m && terminal-notifier -message 'Pomodoro'\

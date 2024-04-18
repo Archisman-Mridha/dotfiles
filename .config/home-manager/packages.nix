@@ -19,8 +19,8 @@
     trivy cosign
 
     # Terminal utilities.
-    neovim tmux bat gotop stern neofetch wget jq buf tree wget xh fd ripgrep eza
-    terminal-notifier stow gnupg pinentry_mac gh
+    neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza
+    terminal-notifier stow gnupg pinentry_mac gh yazi
   ];
 
   programs = {
