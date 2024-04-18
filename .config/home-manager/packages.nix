@@ -19,7 +19,7 @@
     trivy cosign
 
     # Terminal utilities.
-    neovim tmux bat gotop zoxide stern neofetch wget jq buf tree wget xh fzf ripgrep eza
+    neovim tmux bat gotop stern neofetch wget jq buf tree wget xh fd ripgrep eza
     terminal-notifier stow gnupg pinentry_mac gh
   ];
 
@@ -29,6 +29,10 @@
       icons = true;
       git = true;
       extraOptions = [ "--group-directories-first" ];
+    };
+
+    zoxide = {
+      enable = true;
     };
 
     home-manager.enable = true;
