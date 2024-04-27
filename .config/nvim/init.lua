@@ -16,3 +16,9 @@ require("neogit").setup {}
 
 -- Configure lualine to evil mode.
 require("config.lualine")
+
+vim.cmd[[
+  highlight NeoTreeGitConflict gui=bold
+  highlight NeoTreeGitUntracked gui=none
+  highlight NeoTreeRootName gui=bold
+]]

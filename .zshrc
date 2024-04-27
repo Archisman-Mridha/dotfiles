@@ -32,6 +32,7 @@ alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias vi="nvim"
 alias curl="xh"
 alias htop="btop"
+alias compose="docker-compose"
 
 # Pomodoro TUI (Requires https://github.com/caarlos0/timer to be installed).
 alias work="timer 120m && terminal-notifier -message 'Pomodoro'\
@@ -44,3 +45,13 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
 export PATH=$PATH:"$HOME/go/bin":"$HOME/.cargo/bin"
+export PATH="/opt/homebrew/opt/cyrus-sasl/sbin:$PATH"
+export PATH="/opt/homebrew/opt/cyrus-sasl/sbin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/archismanmridha/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

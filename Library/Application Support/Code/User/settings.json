@@ -2,7 +2,6 @@
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
   "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
   "workbench.tree.enableStickyScroll": false,
@@ -42,7 +41,10 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": ["comment"],
+        "scope": [
+          "comment",
+          // "keyword.control"
+        ],
         "settings": {
           "fontStyle": "italic"
         }
@@ -52,6 +54,12 @@
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
+      // "class": {
+      //   "italic": true
+      // },
+      // "struct": {
+      //   "italic": true
+      // },
       "*.mutable": {
         "underline": false
       }
@@ -82,7 +90,8 @@
   "go.formatTool": "gofmt",
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "editor.semanticHighlighting.enabled": true
   },
   "gopls": {
     "ui.semanticTokens": true
@@ -92,5 +101,20 @@
   "solidity.telemetry": false,
   "json.schemaDownload.enable": true,
   "redhat.telemetry.enabled": true,
-  "editor.wordWrap": "on"
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "material-icon-theme.hidesExplorerArrows": true
 }
