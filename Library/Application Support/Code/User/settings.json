@@ -8,17 +8,19 @@
   "workbench.tree.stickyScrollMaxItemCount": 1,
   "workbench.layoutControl.enabled": false,
   "workbench.colorCustomizations": {
-    "editor.background": "#151515",
-    "editorGutter.background": "#151515",
-    "editorGroupHeader.tabsBackground": "#151515",
-    "editorGroup.emptyBackground": "#151515",
-    "sideBar.background": "#151515",
-    "tree.indentGuidesStroke": "#686868",
-    "activityBar.background": "#151515",
-    "statusBar.background": "#151515",
-    "titleBar.activeBackground": "#151515",
-    "tab.inactiveBackground": "#151515",
-    "tab.activeBackground": "#151515",
+    "editor.background": "#000000",
+    "editorGutter.background": "#000000",
+    "editorGroupHeader.tabsBackground": "#000000",
+    "editorGroup.emptyBackground": "#000000",
+    "sideBar.background": "#000000",
+    "tree.indentGuidesStroke": "#838383",
+    "editorIndentGuide.activeBackground1": "#585858",
+    "editorIndentGuide.background1": "#353535",
+    "activityBar.background": "#000000",
+    "statusBar.background": "#000000",
+    "titleBar.activeBackground": "#000000",
+    "tab.inactiveBackground": "#000000",
+    "tab.activeBackground": "#000000",
     "sideBar.border": "#303030"
   },
 
@@ -43,7 +45,7 @@
       {
         "scope": [
           "comment",
-          // "keyword.control"
+          "keyword.control"
         ],
         "settings": {
           "fontStyle": "italic"
@@ -113,8 +115,11 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "workbench.iconTheme": "catppuccin-frappe",
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "vscode-great-icons",
   "catppuccin-icons.hidesExplorerArrows": true,
-  "material-icon-theme.hidesExplorerArrows": true
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.activityBar.location": "hidden",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
 }

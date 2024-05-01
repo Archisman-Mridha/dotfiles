@@ -6,10 +6,13 @@ return {
     vim.list_extend(opts.ensure_installed, {
       "codelldb",
       "goimports", "gofumpt", "delve",
-      "js-debug-adapter",
+      "typescript-language-server",
       "hadolint",
       "markdownlint", "marksman",
-      "helm-ls"
+      "helm-ls",
+      "stylua", "luacheck",
+      "shellcheck", "shfmt",
+      "tailwindcss-language-server", "css-lsp"
     })
   end
 }
