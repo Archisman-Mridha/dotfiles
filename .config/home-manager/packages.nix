@@ -7,10 +7,12 @@
     bun nodejs_21
     rustup llvm
     go richgo golangci-lint
-    ocaml opam ocamlPackages.ocaml-lsp ocamlPackages.ocamlformat_0_26_0
+    zig
     luaformatter luajit
     terraform terraform-landscape terragrunt packer
     protobuf
+    yamllint
+    qemu nasm
 
     # Kubernetes tools.
     k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka cilium-cli
@@ -21,9 +23,7 @@
 
     # Terminal utilities.
     neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza
-    terminal-notifier stow gnupg pinentry_mac gh yazi
-
-    qemu nasm
+    terminal-notifier stow gnupg pinentry_mac gh yazi delta
   ];
 
   programs = {

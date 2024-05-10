@@ -31,7 +31,7 @@
   "editor.fontFamily": "Monaco for Powerline, Liga Liberation Mono",
   "editor.fontWeight": "400",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 18.75,
   "editor.lineHeight": 1.5,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
@@ -118,8 +118,8 @@
   "workbench.iconTheme": "vscode-great-icons",
   "catppuccin-icons.hidesExplorerArrows": true,
   "material-icon-theme.hidesExplorerArrows": true,
-  "workbench.activityBar.location": "hidden",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
-  }
+  },
+  "workbench.activityBar.location": "hidden"
 }

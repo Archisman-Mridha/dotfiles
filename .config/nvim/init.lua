@@ -22,3 +22,5 @@ vim.cmd[[
   highlight NeoTreeGitUntracked gui=none
   highlight NeoTreeRootName gui=bold
 ]]
+
+vim.keymap.set('n', '<leader>fr', ':Neotree reveal<CR>', {})

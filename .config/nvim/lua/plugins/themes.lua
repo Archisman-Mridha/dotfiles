@@ -7,7 +7,15 @@ return {
       ---@param colors ColorScheme
       on_colors = function(colors) colors.bg = "#000000" end,
 
-      styles = { sidebars = "transparent", floats = "transparent" }
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+
+        comments = {
+          italic = false
+        }
+      }
     }
   }
 }
