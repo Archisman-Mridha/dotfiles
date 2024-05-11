@@ -44,7 +44,7 @@
     "textMateRules": [
       {
         "scope": [
-          "comment",
+          // "comment",
           "keyword.control"
         ],
         "settings": {
@@ -121,5 +121,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "GitHub Dark"
 }
