@@ -7,6 +7,9 @@
 [commit]
 	gpgsign = true
 
+[push]
+  autoSetupRemote = true
+
 [gpg]
 	program = /Users/archismanmridha/.nix-profile/bin/gpg
 

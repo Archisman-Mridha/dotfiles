@@ -21,7 +21,9 @@
     "titleBar.activeBackground": "#000000",
     "tab.inactiveBackground": "#000000",
     "tab.activeBackground": "#000000",
-    "sideBar.border": "#303030"
+    "sideBar.border": "#303030",
+    "terminal.background": "#000000",
+    "panel.background": "#000000"
   },
 
   "editor.formatOnSave": false,
@@ -44,8 +46,8 @@
     "textMateRules": [
       {
         "scope": [
-          // "comment",
-          "keyword.control"
+          "comment",
+          // "keyword.control"
         ],
         "settings": {
           "fontStyle": "italic"
@@ -89,7 +91,8 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "go.formatTool": "gofmt",
+  // "go.formatTool": "gofmt",
+  "go.formatTool": null,
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
     "editor.defaultFormatter": "golang.go",

@@ -12,7 +12,10 @@ return {
       "helm-ls",
       "stylua", "luacheck",
       "shellcheck", "shfmt",
-      "tailwindcss-language-server", "css-lsp"
+      "tailwindcss-language-server", "css-lsp",
+      "graphql-language-service-cli",
+      "zls",
+      "clangd"
     })
   end
 }

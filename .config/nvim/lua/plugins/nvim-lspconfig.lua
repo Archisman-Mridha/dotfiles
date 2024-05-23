@@ -183,7 +183,7 @@ return {
       helm_ls = {},
 
       -- Markdown
-      marksman = {}
+      marksman = {},
     },
     setup = {
 

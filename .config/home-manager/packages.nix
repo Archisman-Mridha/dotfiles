@@ -7,7 +7,7 @@
     bun nodejs_21
     rustup llvm
     go richgo golangci-lint
-    zig
+    zig zls
     luaformatter luajit
     terraform terraform-landscape terragrunt packer
     protobuf
