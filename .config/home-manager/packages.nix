@@ -1,43 +1,38 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfree = true;
 
-  home.packages= with pkgs; [
-    bun nodejs_21
-    rustup llvm
-    go richgo golangci-lint
-    zig zls
-    luaformatter luajit
-    terraform terraform-landscape terragrunt packer
-    protobuf
-    yamllint
-    qemu nasm
+	home.packages= with pkgs; [
+		bun
+		rustup llvm
+		go richgo golangci-lint
+		zig zls
+		luaformatter luajit
+		terraform terraform-landscape terragrunt packer
+		protobuf
+		qemu nasm
 
-    # Kubernetes tools.
-    k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka cilium-cli
-    kubeseal argocd
+		docker k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka
+		cilium-cli kubeseal argocd trivy cosign
 
-    # Supplychain security.
-    trivy cosign
+		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazydocker
+		lazygit terminal-notifier gnupg gh yazi delta tldr thefuck stow
+		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
-    # Terminal utilities.
-    neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza
-    terminal-notifier stow gnupg pinentry_mac gh yazi delta
-  ];
+		vscode slack wezterm
+	];
 
-  programs = {
-    eza = {
-      enable = true;
-      icons = true;
-      git = true;
-      extraOptions = [ "--group-directories-first" ];
-    };
+	programs = {
+		eza = {
+			enable = true;
+			icons = true;
+			git = true;
+			extraOptions = [ "--group-directories-first" ];
+		};
 
-    zoxide = {
-      enable = true;
-    };
+		zoxide.enable = true;
 
-    home-manager.enable = true;
-  };
+		home-manager.enable = true;
+	};
 }

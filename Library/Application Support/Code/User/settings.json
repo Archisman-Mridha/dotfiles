@@ -30,11 +30,11 @@
   "editor.semanticHighlighting.enabled": true,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Monaco for Powerline, Liga Liberation Mono",
+  "editor.fontFamily": "MonacoLigaturized, Monaco",
   "editor.fontWeight": "400",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18.75,
-  "editor.lineHeight": 1.5,
+  "editor.fontSize": 17,
+  "editor.lineHeight": 1.45,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
   "editor.stickyScroll.enabled": false,
@@ -47,7 +47,7 @@
       {
         "scope": [
           "comment",
-          // "keyword.control"
+          "keyword.control"
         ],
         "settings": {
           "fontStyle": "italic"
@@ -75,7 +75,7 @@
   "editor.tabSize": 2,
   "editor.inlayHints.enabled": "off",
 
-  "terminal.integrated.fontFamily": "Monaco for Powerline",
+  "terminal.integrated.fontFamily": "MonacoLigaturized, Monaco",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.lineHeight": 1.2,
@@ -91,8 +91,7 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  // "go.formatTool": "gofmt",
-  "go.formatTool": null,
+  "go.formatTool": "gofmt",
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
     "editor.defaultFormatter": "golang.go",
@@ -106,15 +105,6 @@
   "solidity.telemetry": false,
   "json.schemaDownload.enable": true,
   "redhat.telemetry.enabled": true,
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
@@ -124,6 +114,8 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "supermaven.enable": {
+    "*": false
+  }
 }
