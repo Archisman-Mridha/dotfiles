@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+	## The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
+	## It allows you to set package configuration options.
 	nixpkgs.config.allowUnfree = true;
 
 	home.packages= with pkgs; [
@@ -11,6 +13,7 @@
 		luaformatter luajit
 		terraform terraform-landscape terragrunt packer
 		protobuf
+		wabt
 		qemu nasm
 
 		docker k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka
@@ -18,6 +21,7 @@
 
 		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazydocker
 		lazygit terminal-notifier gnupg gh yazi delta tldr thefuck stow
+		bc coreutils gawk gh glab jq nowplaying-cli
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm

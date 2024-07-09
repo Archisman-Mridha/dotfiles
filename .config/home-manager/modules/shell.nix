@@ -2,7 +2,6 @@
 
 {
 	home = {
-		# Environment variables.
 		sessionVariables = {
 			EDITOR = "nvim";
 		};
