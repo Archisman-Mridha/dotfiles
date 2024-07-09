@@ -1,6 +1,43 @@
-{ pkgs, ... }:
+{ pkgs, stdenv, ... }:
 
-{
+let
+	protonvpn = pkgs.stdenv.mkDerivation rec {
+		pname = "protonvpn";
+		version = "4.3.0";
+
+		src = pkgs.fetchurl {
+			url = "https://protonvpn.com/download/ProtonVPN_mac_v4.3.0.dmg";
+			sha256 = "sha256-ZXSSDiJX8xmOcus+uINZo13RJunR0ud2FUvg6/tKfdA=";
+		};
+
+		nativeBuildInputs = [ pkgs.undmg ];
+
+		sourceRoot = ".";
+
+		installPhase = ''
+			mkdir -p $out/Applications
+			cp -r ProtonVPN.app $out/Applications/
+		'';
+	};
+	better-display = pkgs.stdenv.mkDerivation rec {
+		pname = "better-display";
+		version = "v2.3.9";
+
+		src = pkgs.fetchurl {
+			url = "https://github.com/waydabber/BetterDisplay/releases/download/v2.3.9/BetterDisplay-v2.3.9.dmg";
+			sha256 = "sha256-PuBD/ViTqzVO+8TJqSKVohs2XlWvNMxkYSJVh4t0ZyI=";
+		};
+
+		nativeBuildInputs = [ pkgs.undmg ];
+
+		sourceRoot = ".";
+
+		installPhase = ''
+			mkdir -p $out/Applications
+			cp -r BetterDisplay.app $out/Applications/
+		'';
+	};
+in {
 	## The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
 	## It allows you to set package configuration options.
 	nixpkgs.config.allowUnfree = true;
@@ -24,7 +61,7 @@
 		bc coreutils gawk gh glab jq nowplaying-cli
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
-		vscode slack wezterm
+		vscode slack wezterm protonvpn better-display
 	];
 
 	programs = {
