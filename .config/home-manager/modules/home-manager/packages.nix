@@ -41,11 +41,11 @@ in {
 		wabt
 		qemu nasm
 
-		docker k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet jsonnet-bundler tanka
-		cilium-cli kubeseal argocd trivy cosign clusterctl clusterawsadm
+		podman podman-compose podman-tui k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet
+		jsonnet-bundler tanka cilium-cli kubeseal argocd trivy cosign clusterctl clusterawsadm
 
-		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazydocker
-		lazygit gnupg gh yazi delta tldr thefuck stow
+		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazygit gnupg
+		gh yazi delta tldr thefuck stow
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm
@@ -83,11 +83,7 @@ in {
 						cp -r BetterDisplay.app $out/Applications/
 					'';
 				};
-			in [
-				colima
-				terminal-notifier
-				better-display protonvpn
-			]
+			in [ terminal-notifier better-display protonvpn ]
 		else [ protonvpn-cli ]
 	);
 

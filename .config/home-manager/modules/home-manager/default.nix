@@ -18,10 +18,10 @@
 	};
 
 	imports = [
-		./modules/shell.nix
-		./modules/packages.nix
-		./modules/tmux.nix
-		./modules/editorconfig.nix
-		./modules/git.nix
+		./editorconfig.nix
+		./git.nix
+		./packages.nix
+		./shell.nix
+		./tmux.nix
 	];
 }

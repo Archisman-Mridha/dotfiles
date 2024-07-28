@@ -18,7 +18,7 @@
   outputs = { self, nixpkgs, home-manager, nix-darwin, ... }:
     let
 			config = import ./config.nix;
-			inherit (config) user git system;
+			inherit (config) system user device git;
 
 			pkgs = import nixpkgs {
 				inherit system;
@@ -38,13 +38,13 @@
 				};
 
 				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
-				modules = [ ./home.nix ];
+				modules = [ ./modules/home-manager ];
 			};
 
-			darwinConfigurations."${user}" = nix-darwin.lib.darwinSystem {
+			darwinConfigurations."${device}" = nix-darwin.lib.darwinSystem {
 				inherit pkgs system;
 
-				modules = [ ];
+				modules = [ ./modules/nix-darwin ];
 			};
 		};
 }

@@ -2,5 +2,4 @@ git/
 thefuck/
 tmux/
 k3d/
-
-home-manager/config.nix
+containers/

@@ -1,7 +1,6 @@
 # GUIDE
 
 <p>
-	<img alt="NixOS" src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff&style=for-the-badge" />
 	<img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
 	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
 	<img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=for-the-badge" />
@@ -33,25 +32,15 @@ git clone https://github.com/Archisman-Mridha/dotfiles ~/
 cd ~/dotfiles
 ```
 
-Create the .config/home-manager/config.nix file :
+You can customize [.config/home-manager/config.nix](.config/home-manager/config.nix) based on your
+underlying system. Then execute the following commands :
 
 ```sh
-cat <<EOT >> .config/home-manager/config.nix
-{
-	system = "aarch64-darwin";
+stow --no-folding .
 
-	user = "archismanmridha";
-	git = {
-		userName = "Archisman-Mridha";
-		userEmail = "archismanmridha12345@gmail.com";
-
-		signingKey = "~/.ssh/github";
-	};
-}
-EOT
+home-manager switch
+nix run nix-darwin -- switch --flake $(pwd)/dotfiles/.config/home-manager
 ```
-
-Then create symlinks using `stow --no-folding .` and finally execute `home-manager switch`.
 
 You can install the `Monaco Nerd Font` and `Monaco For Powerline` fonts :
 
