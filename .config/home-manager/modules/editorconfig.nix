@@ -3,8 +3,8 @@
 		enable = true;
 
 		/*
-			Configuration written to ~/.editorconfig. root = true is automatically added to the file, it
-			must not be added here. See https://editorconfig.org for documentation.
+			Configuration written to ~/.editorconfig. root = true is automatically added to the file, it must
+			not be added here. See https://editorconfig.org for documentation.
 		*/
 		settings = {
 			"*" = {

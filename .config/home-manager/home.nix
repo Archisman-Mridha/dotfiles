@@ -2,7 +2,11 @@
 {
 	home = {
 		username = user;
-		homeDirectory = "/Users/${user}";
+		homeDirectory =
+			if pkgs.system == "aarch64-darwin" then
+				"/Users/${user}"
+			else
+				"/home/${user}";
 
 		/*
 			This value determines the home-manager release that your configuration is compatible with.

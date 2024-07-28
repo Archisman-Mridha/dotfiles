@@ -15,7 +15,7 @@
 			htop = "btop";
 			compose = "docker-compose";
 		} // (
-			if pkgs.system == "aarch64-darwin" then {
+			if pkgs.stdenv.isDarwin then {
 				code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";
 			}
 			else {}

@@ -32,15 +32,19 @@
 			homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
 
-				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
-				modules = [
-					./home.nix
-				];
-
 				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
 				extraSpecialArgs = {
 					inherit user git;
 				};
+
+				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
+				modules = [ ./home.nix ];
+			};
+
+			darwinConfigurations."${user}" = nix-darwin.lib.darwinSystem {
+				inherit pkgs system;
+
+				modules = [ ];
 			};
 		};
 }

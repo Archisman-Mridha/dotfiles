@@ -2,6 +2,9 @@
 
 <p>
 	<img alt="NixOS" src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff&style=for-the-badge" />
+	<img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
+	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
+	<img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=for-the-badge" />
 	<img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
 	<img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
 	<img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
@@ -9,7 +12,7 @@
 	<img alt="Editorconfig" src="https://img.shields.io/badge/EditorConfig-FEFEFE?logo=editorconfig&logoColor=000&style=for-the-badge" />
 </p>
 
-I assume that you've a fresh MacOS installed.
+I assume that you've a fresh MacOS (with M series CPU architecture) installed.
 
 First install Nix :
 
@@ -106,9 +109,9 @@ nix-collect-garbage -d
 
 ## TODOS
 
-- [] Enable easy variable renaming in Neovim using https://github.com/ray-x/navigator.lua
-- [] Enable image support in Neovim
-- [] Make the Neovim Markdown plugin recognize checkboxes
-- [] Bring support for code-folding in Neovim
-- [] Install `Monaco Nerd Font` and `Monaco For Powerline` fonts using Home-Manager.
-- [] Update preview images.
+- [ ] Enable easy variable renaming in Neovim using https://github.com/ray-x/navigator.lua
+- [ ] Enable image support in Neovim
+- [ ] Make the Neovim Markdown plugin recognize checkboxes
+- [ ] Bring support for code-folding in Neovim
+- [ ] Install `Monaco Nerd Font` and `Monaco For Powerline` fonts using Home-Manager.
+- [ ] Update preview images.
