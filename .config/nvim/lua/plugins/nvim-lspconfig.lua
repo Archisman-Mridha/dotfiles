@@ -21,6 +21,32 @@ return {
               loadOutDirsFromCheck = true,
               runBuildScripts = true
             },
+						lens = {
+							enable = false
+						},
+						inlayHints = {
+							typeHints = { enable = false },
+							bindingModeHints = { enable = false },
+							chainingHints = { enable = false },
+							closingBraceHints = { enable = false },
+							closureCaptureHints = { enable = false },
+							closureReturnTypeHints = { enable = false },
+							discriminantHints = { enable = false },
+							expressionAdjustmentHints = { enable = false },
+							genericParameterHints = {
+								const = { enable = false },
+								lifetime = { enable = false },
+								type = { enable = false },
+							},
+							implicitDrops = { enable = false },
+							lifetimeElisionHints = { enable = false },
+							parameterHints = { enable = false },
+							rangeExclusiveHints = { enable = false },
+							reborrowHints = { enable = false }
+						},
+						diagnostics = {
+							enable = true
+						},
             -- Add clippy lints for Rust.
             checkOnSave = {
               allFeatures = true,
@@ -189,8 +215,8 @@ return {
 
       rust_analyzer = function(_, opts)
         local rust_tools_opts = require("lazyvim.util").opts("rust-tools.nvim")
-        require("rust-tools").setup(vim.tbl_deep_extend("force",
-          rust_tools_opts or {}, { server = opts }))
+        require("rust-tools")
+					.setup(vim.tbl_deep_extend("force", rust_tools_opts or {}, { server = opts }))
         return true
       end,
 

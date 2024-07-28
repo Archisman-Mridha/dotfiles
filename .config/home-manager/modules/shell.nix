@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
 	home = {
 		sessionVariables = {
@@ -11,12 +10,16 @@
 			cd = "z";
 			ls = "eza";
 			cat = "bat";
-			code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";
 			vi = "nvim";
 			curl = "xh";
 			htop = "btop";
 			compose = "docker-compose";
-		};
+		} // (
+			if pkgs.system == "aarch64-darwin" then {
+				code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";
+			}
+			else {}
+		);
 	};
 
 	programs = {

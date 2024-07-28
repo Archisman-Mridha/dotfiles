@@ -1,16 +1,15 @@
-{ pkgs, ... }:
-
+{ git, ... }:
 {
 	programs.git = {
 		enable = true;
 
-		userName = "Archisman Mridha";
-		userEmail = "archismanmridha12345@gmail.com";
+		userName = git.userName;
+		userEmail = git.userEmail;
 
 		extraConfig = {
-			user = { signingKey = "~/.ssh/github"; };
 			commit = { gpgsign = true; };
 			gpg = { format = "ssh"; };
+			user = { signingKey = git.signingKey; };
 
 			push = { autoSetupRemote = true; };
 		};

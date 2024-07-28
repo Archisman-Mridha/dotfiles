@@ -44,7 +44,7 @@ local config = {
 	window_decorations = "RESIZE",
 
 	keys = {
-		{ key = "T", mods = "SHIFT", action = wezterm.action.EmitEvent("toggle-tabbar") },
+		{ key = "'", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-tabbar") },
 	}
 }
 

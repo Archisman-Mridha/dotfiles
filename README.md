@@ -1,27 +1,57 @@
-## GUIDE
+# GUIDE
+
+<p>
+	<img alt="NixOS" src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff&style=for-the-badge" />
+	<img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
+	<img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
+	<img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
+	<img alt="Neovim" src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" />
+	<img alt="Editorconfig" src="https://img.shields.io/badge/EditorConfig-FEFEFE?logo=editorconfig&logoColor=000&style=for-the-badge" />
+</p>
 
 I assume that you've a fresh MacOS installed.
 
 First install Nix :
+
 ```sh
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-Then create a temporary Nix shell, where you'll have access to git, stow and home-manager.
+Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
+
 ```sh
 nix-shell -p git stow home-manager
 ```
 
-Clone this repository, create symlinks and install packages using home-manager :
+Clone this repository :
+
 ```sh
 git clone https://github.com/Archisman-Mridha/dotfiles ~/
 cd ~/dotfiles
-stow --no-folding .
-
-home-manager switch
 ```
 
-Optionally, you can install the `Monaco Nerd Font` and `Monaco For Powerline` fonts :
+Create the .config/home-manager/config.nix file :
+
+```sh
+cat <<EOT >> .config/home-manager/config.nix
+{
+	system = "aarch64-darwin";
+
+	user = "archismanmridha";
+	git = {
+		userName = "Archisman-Mridha";
+		userEmail = "archismanmridha12345@gmail.com";
+
+		signingKey = "~/.ssh/github";
+	};
+}
+EOT
+```
+
+Then create symlinks using `stow --no-folding .` and finally execute `home-manager switch`.
+
+You can install the `Monaco Nerd Font` and `Monaco For Powerline` fonts :
+
 ```sh
 cd ~/Downloads
 
@@ -30,6 +60,12 @@ mv ./monaco-nerd-font/ligaturized/* ~/Library/Fonts
 rm -rf monaco-nerd-font
 
 wget https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20for%20Powerline.otf -P ~/Library/Fonts
+```
+
+Execute these commands, if you want to cleanup Nix cache :
+
+```sh
+nix-collect-garbage -d
 ```
 
 ## CHEATSHEETS
@@ -41,19 +77,38 @@ wget https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20fo
 ## PREVIEWS
 
 - Neovim
-![Neovim](./previews/neovim.png)
+  ![Neovim](./previews/neovim.png)
 
 - VSCode
-![VSCode](./previews/vscode.png)
+  ![VSCode](./previews/vscode.png)
 
 - Zsh Shell + Tmux
-![Zsh Shell + Tmux](./previews/tmux.png)
+  ![Zsh Shell + Tmux](./previews/tmux.png)
 
 - Desktop
-![Desktop](./previews/desktop.png)
+  ![Desktop](./previews/desktop.png)
 
 ## REFERENCES
 
 - [MyNixOS](https://mynixos.com)
+
 - [Nix home-manager tutorial: Declare your entire home directory](https://youtu.be/FcC2dzecovw)
+
 - [How I Use Tmux With Neovim For An Awesome Dev Workflow On My Mac](https://www.youtube.com/watch?v=U-omALWIBos)
+
+- [Setup nix, nix-darwin and home-manager from scratch on an M1 Macbook Pro](https://gist.github.com/jmatsushita/5c50ef14b4b96cb24ae5268dab613050)
+
+- [When and how should default.nix, shell.nix and release.nix be used?](https://stackoverflow.com/questions/44088192/when-and-how-should-default-nix-shell-nix-and-release-nix-be-used)
+
+- [Master Nix inherit Keyword in 5 Minutes](https://www.ersocon.net/articles/master-nix-inherit-keyword-in-5-minutes~c464b126-0d57-4971-9a87-2515f9aa8d19)
+
+- [Nix Language basics](https://nix.dev/tutorials/nix-language.html)
+
+## TODOS
+
+- [] Enable easy variable renaming in Neovim using https://github.com/ray-x/navigator.lua
+- [] Enable image support in Neovim
+- [] Make the Neovim Markdown plugin recognize checkboxes
+- [] Bring support for code-folding in Neovim
+- [] Install `Monaco Nerd Font` and `Monaco For Powerline` fonts using Home-Manager.
+- [] Update preview images.

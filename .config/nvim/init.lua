@@ -8,7 +8,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
-vim.g.autoformat = false
+vim.g.autoformat = true
 vim.g.rust_recommended_style = false
 
 require("config.auto-session")

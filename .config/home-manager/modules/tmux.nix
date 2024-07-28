@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 let
 	tokyo-night-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tokyo-night-tmux";
@@ -10,13 +9,6 @@ let
       repo = "tokyo-night-tmux";
       rev = "d34f1487b4a644b13d8b2e9a2ee854ae62cc8d0e";
       hash = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
-    };
-    meta = with lib; {
-      homepage = "https://github.com/janoamaral/tokyo-night-tmux";
-      description = "A clean, dark Tmux theme that celebrates the lights of Downtown Tokyo at night.";
-      license = licenses.mit;
-      platforms = platforms.unix;
-      maintainers = with maintainers; [ redyf ];
     };
   };
 in {
@@ -42,7 +34,7 @@ in {
 
 			catppuccin
 			sensible
-			vim-tmux-navigator ## For easy navigation between Tmux and Neovim panes.
+			vim-tmux-navigator /* For easy navigation between Tmux and Neovim panes. */
 			yank
 			tmux-fzf
 			better-mouse-mode
@@ -50,7 +42,7 @@ in {
 			weather
 			net-speed
 
-			## For saving Tmux sessions across system restarts.
+			/* For saving Tmux sessions across system restarts. */
 			{
 				plugin = resurrect;
 				extraConfig = ''

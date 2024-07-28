@@ -1,12 +1,14 @@
 {
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
+  "workbench.iconTheme": "vscode-great-icons",
   "workbench.fontAliasing": "antialiased",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.stickyScrollMaxItemCount": 1,
   "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "editor.background": "#000000",
     "editorGutter.background": "#000000",
@@ -23,15 +25,16 @@
     "tab.activeBackground": "#000000",
     "sideBar.border": "#303030",
     "terminal.background": "#000000",
-    "panel.background": "#000000"
+    "panel.background": "#000000",
+    "editor.selectionBackground": "#303b4d"
   },
 
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.semanticHighlighting.enabled": true,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Monaco For Powerline, Monaco",
-  "editor.fontWeight": "400",
+  "editor.fontFamily": "Monaco For Powerline, MonacoLigaturized, Monaco",
+  "editor.fontWeight": "500",
   "editor.fontLigatures": true,
   "editor.fontSize": 17,
   "editor.lineHeight": 1.45,
@@ -45,10 +48,7 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": [
-          "comment",
-          "keyword.control"
-        ],
+        "scope": ["comment", "keyword.control", "keyword.other"],
         "settings": {
           "fontStyle": "italic"
         }
@@ -57,23 +57,15 @@
   },
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
-    "rules": {
-      // "class": {
-      //   "italic": true
-      // },
-      // "struct": {
-      //   "italic": true
-      // },
-      "*.mutable": {
-        "underline": false
-      }
-    }
+    "rules": {}
   },
   "editor.rulers": [100, 125],
   "editor.minimap.enabled": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
   "editor.inlayHints.enabled": "off",
+
+  "search.quickOpen.includeHistory": false,
 
   "terminal.integrated.fontFamily": "MonacoLigaturized, Monaco",
   "terminal.integrated.fontSize": 17,
@@ -91,6 +83,7 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
+  "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
   "go.formatTool": "gofmt",
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
@@ -108,14 +101,22 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "workbench.iconTheme": "vscode-great-icons",
-  "catppuccin-icons.hidesExplorerArrows": true,
-  "material-icon-theme.hidesExplorerArrows": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "workbench.colorTheme": "GitHub Dark",
   "supermaven.enable": {
     "*": false
+  },
+  "zig.path": "zig",
+  "zig.zls.path": "zls",
+  "zig.initialSetupDone": true,
+  "workbench.colorTheme": "GitHub Dark",
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
   }
 }
