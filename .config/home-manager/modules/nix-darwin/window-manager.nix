@@ -18,7 +18,10 @@
       normal_window_border_color   = "0xff505050";
       insert_window_border_color   = "0xffd75f5f";
 
-			/* You need to have the SIP (System Integrity Protection) disabled. */
+			/*
+				You need to have the SIP (System Integrity Protection) disabled.
+				REFER : https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection.
+			*/
 			window_opacity 					= "on";
       window_opacity_duration = "0.0";
 			active_window_opacity 	= "0.8";

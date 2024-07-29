@@ -93,6 +93,8 @@ nix-collect-garbage -d
 
 - [Nix Language basics](https://nix.dev/tutorials/nix-language.html)
 
+- [Disabling System Integrity Protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
 ## TODOS
 
 - [ ] Enable easy variable renaming in Neovim using https://github.com/ray-x/navigator.lua
