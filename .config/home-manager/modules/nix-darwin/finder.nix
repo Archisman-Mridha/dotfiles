@@ -1,5 +1,5 @@
 {
-	system.defaults.inder = {
+	system.defaults.finder = {
 		/* Whether to always show file extensions. */
 		AppleShowAllExtensions = true;
 

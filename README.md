@@ -39,7 +39,7 @@ underlying system. Then execute the following commands :
 stow --no-folding .
 
 home-manager switch
-nix run nix-darwin -- switch --flake $(pwd)/dotfiles/.config/home-manager
+nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
 
 You can install the `Monaco Nerd Font` and `Monaco For Powerline` fonts :
@@ -68,17 +68,14 @@ nix-collect-garbage -d
 
 ## PREVIEWS
 
-- Neovim
-  ![Neovim](./previews/neovim.png)
+- Neovim and Tmux
+  ![Neovim and Tmux](./previews/neovim-and-tmux.png)
 
 - VSCode
   ![VSCode](./previews/vscode.png)
 
-- Zsh Shell + Tmux
-  ![Zsh Shell + Tmux](./previews/tmux.png)
-
-- Desktop
-  ![Desktop](./previews/desktop.png)
+- Wallpaper
+  ![Wallpaper](./previews/wallpaper.jpg)
 
 ## REFERENCES
 
@@ -103,4 +100,3 @@ nix-collect-garbage -d
 - [ ] Make the Neovim Markdown plugin recognize checkboxes
 - [ ] Bring support for code-folding in Neovim
 - [ ] Install `Monaco Nerd Font` and `Monaco For Powerline` fonts using Home-Manager.
-- [ ] Update preview images.

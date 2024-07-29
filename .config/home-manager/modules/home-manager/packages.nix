@@ -23,6 +23,12 @@ let
       chmod +x $out/bin/clusterawsadm
     '';
 	};
+
+	fontsDir =
+		if pkgs.stdenv.isDarwin then
+    	"~/Library/Fonts"
+  	else
+    	"~/.local/share/fonts";
 in {
 	/*
 		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
@@ -31,15 +37,10 @@ in {
 	nixpkgs.config.allowUnfree = true;
 
 	home.packages= with pkgs; [
-		bun
-		rustup llvm
 		go richgo golangci-lint
-		zig zls
 		luaformatter luajit
 		terraform terraform-landscape terragrunt packer
 		protobuf
-		wabt
-		qemu nasm
 
 		podman podman-compose podman-tui k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet
 		jsonnet-bundler tanka cilium-cli kubeseal argocd trivy cosign clusterctl clusterawsadm
@@ -83,7 +84,15 @@ in {
 						cp -r BetterDisplay.app $out/Applications/
 					'';
 				};
-			in [ terminal-notifier better-display protonvpn ]
+			in [
+				bun
+				rustup llvm
+				zig zls
+				wabt
+				qemu nasm
+
+				terminal-notifier better-display protonvpn
+			]
 		else [ protonvpn-cli ]
 	);
 
