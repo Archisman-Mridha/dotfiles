@@ -16,13 +16,23 @@
 	system.activationScripts.postUserActivation.text =
 		"/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u";
 
-	/* Whether to autohide the menu bar. (No ption to set it to "never") */
-	system.defaults.NSGlobalDomain._HIHideMenuBar = false;
+	system.defaults.NSGlobalDomain = {
+		/* Whether to autohide the menu bar. (No ption to set it to "never") */
+		_HIHideMenuBar = false;
+
+		/*
+			If you press and hold certain keyboard keys when in a text area, the key’s character begins to
+			repeat. For example, the Delete key continues to remove text for as long as you hold it down.
+			This sets how fast it repeats once it starts.
+		*/
+		KeyRepeat = 5;
+	};
 
 	imports = [
 		./dock.nix
 		./finder.nix
 		./trackpad.nix
+		./window-manager.nix
 	];
 
 	/*

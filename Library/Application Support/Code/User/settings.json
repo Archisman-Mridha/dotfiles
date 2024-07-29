@@ -34,7 +34,7 @@
 	"editor.semanticHighlighting.enabled": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.fontFamily": "MonacoLigaturized, Monaco For Powerline, Monaco",
+	"editor.fontFamily": "Monaco For Powerline, MonacoLigaturized, Monaco",
 	"editor.fontWeight": "500",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 17,
@@ -49,11 +49,7 @@
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
-				"scope": [
-					// "comment",
-					"keyword.control",
-					"keyword.other"
-				],
+				"scope": ["comment", "keyword.control", "keyword.other"],
 				"settings": {
 					"fontStyle": "italic"
 				}
