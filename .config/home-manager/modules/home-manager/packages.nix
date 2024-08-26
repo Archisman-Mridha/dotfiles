@@ -110,6 +110,7 @@ in {
 						headless = true;
 						logoless = true;
 						crumbsless = true;
+						skin = "transparent";
 					};
 				};
 			};
