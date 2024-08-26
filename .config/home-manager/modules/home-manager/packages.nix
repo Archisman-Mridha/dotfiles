@@ -1,5 +1,7 @@
 { pkgs, stdenv, ... }:
 let
+
+
 	clusterawsadm = pkgs.stdenv.mkDerivation rec {
 		pname = "clusterawsadm";
     version = "v2.5.2";
@@ -37,16 +39,17 @@ in {
 	nixpkgs.config.allowUnfree = true;
 
 	home.packages= with pkgs; [
-		go richgo golangci-lint
+		go richgo golangci-lint go-mockery
 		luaformatter luajit
 		terraform terraform-landscape terragrunt packer
 		protobuf
 
-		podman podman-compose podman-tui k3d k9s kubectl kubectx kustomize kubernetes-helm jsonnet
+		/* k3d */
+		kubectl kubectx kustomize kubernetes-helm jsonnet
 		jsonnet-bundler tanka cilium-cli kubeseal argocd trivy cosign clusterctl clusterawsadm
 
 		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazygit gnupg
-		gh yazi delta tldr thefuck stow
+		gh yazi delta tldr thefuck stow unrar
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm
@@ -85,18 +88,33 @@ in {
 					'';
 				};
 			in [
-				bun
+				bun nodePackages_latest.nodejs
 				rustup llvm
 				zig zls
 				wabt
 				qemu nasm
 
 				terminal-notifier better-display protonvpn
+
+				xcbeautify
 			]
-		else [ protonvpn-cli ]
+		else [ protonvpn-cli podman podman-compose podman-tui ]
 	);
 
 	programs = {
+		k9s = {
+			enable = true;
+			settings = {
+				k9s = {
+					ui = {
+						headless = true;
+						logoless = true;
+						crumbsless = true;
+					};
+				};
+			};
+		};
+
 		eza = {
 			enable = true;
 			icons = true;

@@ -14,10 +14,12 @@ vim.g.rust_recommended_style = false
 require("config.auto-session")
 require("neogit").setup {}
 
+vim.opt.list = false
+
 -- Configure lualine to evil mode.
 require("config.lualine")
 
-vim.cmd[[
+vim.cmd [[
   highlight NeoTreeGitConflict gui=bold
   highlight NeoTreeGitUntracked gui=none
   highlight NeoTreeRootName gui=bold

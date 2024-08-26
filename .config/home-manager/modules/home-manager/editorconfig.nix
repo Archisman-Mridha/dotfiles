@@ -14,6 +14,15 @@
 				insert_final_newline = true;
 				max_line_width = 100;
 			};
+
+			"*.yaml" = {
+				indent_style = "spaces";
+			};
+
+			"*.zig" = {
+				indent_size = 4;
+				tab_width = 4;
+			};
 		};
 	};
 }

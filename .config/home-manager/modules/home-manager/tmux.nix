@@ -18,6 +18,10 @@ in {
 		prefix = "C-a";
 		keyMode = "vi";
 
+		extraConfig = ''
+			set-option -g mouse on
+		'';
+
 		plugins = with pkgs.tmuxPlugins; [
 			{
 				plugin = tokyo-night-tmux;

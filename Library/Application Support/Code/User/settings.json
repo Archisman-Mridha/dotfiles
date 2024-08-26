@@ -1,7 +1,6 @@
 {
 	"window.commandCenter": false,
 	"window.titleBarStyle": "custom",
-	"workbench.colorTheme": "GitHub Dark",
 	"workbench.iconTheme": "vscode-great-icons",
 	"workbench.fontAliasing": "antialiased",
 	"workbench.tree.renderIndentGuides": "always",
@@ -29,12 +28,13 @@
 		"panel.background": "#000000",
 		"editor.selectionBackground": "#303b4d"
 	},
+	// "window.zoomLevel": 0.3,
 
-	"editor.formatOnSave": true,
+	// "editor.formatOnSave": true,
 	"editor.semanticHighlighting.enabled": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.fontFamily": "Monaco For Powerline, MonacoLigaturized, Monaco",
+	"editor.fontFamily": "MonacoLigaturized, Monaco", // Monego Nerd Font Fix, 
 	"editor.fontWeight": "500",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 17,
@@ -49,7 +49,11 @@
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
-				"scope": ["comment", "keyword.control", "keyword.other"],
+				"scope": [
+					"comment",
+					// "keyword.control"
+					// "keyword.other"
+				],
 				"settings": {
 					"fontStyle": "italic"
 				}
@@ -58,7 +62,17 @@
 	},
 	"editor.semanticTokenColorCustomizations": {
 		"enabled": true,
-		"rules": {}
+		"rules": {
+			// "class": {
+			// 	"fontStyle": "italic"
+			// },
+			// "namespace": {
+			// 	"fontStyle": "italic"
+			// },
+			"enum": {
+				"fontStyle": "italic"
+			}
+		}
 	},
 	"editor.rulers": [100, 125],
 	"editor.minimap.enabled": false,
@@ -115,5 +129,25 @@
 		"editor.wordBasedSuggestions": "off",
 		"editor.suggest.insertMode": "replace",
 		"editor.semanticHighlighting.enabled": true
-	}
+	},
+	"[proto3]": {
+		"editor.defaultFormatter": "zxh404.vscode-proto3"
+	},
+
+	// File search.
+	"search.useIgnoreFiles": false,
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/dist": true,
+		"**/target": true,
+		"**/package-lock.json": true,
+		"**/Cargo.lock": true
+	},
+	"workbench.sideBar.location": "right",
+	"editor.folding": false,
+	"makefile.configureOnOpen": true,
+	"workbench.colorTheme": "mono-cl",
+	"workbench.statusBar.visible": false,
+	"editor.lineNumbers": "off",
+	"editor.bracketPairColorization.enabled": false
 }

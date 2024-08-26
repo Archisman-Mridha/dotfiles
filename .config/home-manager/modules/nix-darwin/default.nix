@@ -32,7 +32,7 @@
 		./dock.nix
 		./finder.nix
 		./trackpad.nix
-		./window-manager.nix
+		# ./window-manager.nix
 	];
 
 	/*

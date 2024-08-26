@@ -8,7 +8,7 @@
 
 		extraConfig = {
 			commit = { gpgsign = true; };
-			gpg = { format = "ssh"; };
+			/* gpg = { format = "ssh"; }; */
 			user = { signingKey = git.signingKey; };
 
 			push = { autoSetupRemote = true; };

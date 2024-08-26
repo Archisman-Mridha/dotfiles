@@ -101,4 +101,5 @@ nix-collect-garbage -d
 - [ ] Enable image support in Neovim
 - [ ] Make the Neovim Markdown plugin recognize checkboxes
 - [ ] Bring support for code-folding in Neovim
-- [ ] Install `Monaco Nerd Font` and `Monaco For Powerline` fonts using Home-Manager.
+- [ ] Install `Monaco Nerd Font` fonts using Home-Manager.
+- [ ] Install `xcodegen` and `xcode-build-server` using Home-Manager.

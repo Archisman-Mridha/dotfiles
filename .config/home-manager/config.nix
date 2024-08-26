@@ -5,9 +5,14 @@
 	device = "Archismans-MacBook-Air";
 
 	git = {
-		userName = "Archisman-Mridha";
-		userEmail = "archismanmridha12345@gmail.com";
+		/* Obmondo.com */
+		userName = "Archisman";
+		userEmail = "archisman@obmondo.com";
+		signingKey = "0x6F865B15ABD6B5FF";
 
-		signingKey = "~/.ssh/github";
+		/* Personal */
+		/* userName = "Archisman-Mridha";
+		userEmail = "archismanmridha12345@gmail.com";
+		signingKey = "~/.ssh/github"; */
 	};
 }
