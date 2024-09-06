@@ -8,7 +8,7 @@
 	"workbench.tree.enableStickyScroll": false,
 	"workbench.tree.stickyScrollMaxItemCount": 1,
 	"workbench.layoutControl.enabled": false,
-	"workbench.activityBar.location": "hidden",
+	// "workbench.activityBar.location": "hidden",
 	"workbench.colorCustomizations": {
 		"editor.background": "#000000",
 		"editorGutter.background": "#000000",
@@ -34,7 +34,7 @@
 	"editor.semanticHighlighting.enabled": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.fontFamily": "MonacoLigaturized, Monaco", // Monego Nerd Font Fix, 
+	"editor.fontFamily": "MonacoLigaturized, Monaco", // Monego Nerd Font Fix,
 	"editor.fontWeight": "500",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 17,
@@ -51,7 +51,7 @@
 			{
 				"scope": [
 					"comment",
-					// "keyword.control"
+					"keyword.control"
 					// "keyword.other"
 				],
 				"settings": {
@@ -143,11 +143,7 @@
 		"**/package-lock.json": true,
 		"**/Cargo.lock": true
 	},
-	"workbench.sideBar.location": "right",
-	"editor.folding": false,
 	"makefile.configureOnOpen": true,
-	"workbench.colorTheme": "mono-cl",
-	"workbench.statusBar.visible": false,
-	"editor.lineNumbers": "off",
-	"editor.bracketPairColorization.enabled": false
+	"workbench.colorTheme": "GitHub Dark",
+	"cody.autocomplete.enabled": false
 }

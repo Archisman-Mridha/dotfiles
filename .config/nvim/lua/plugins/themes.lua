@@ -15,7 +15,7 @@ return {
 				floats = "transparent",
 
 				comments = {
-					italic = true,
+					italic = false,
 				},
 			},
 		},

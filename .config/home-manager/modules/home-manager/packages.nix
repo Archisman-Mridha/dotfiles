@@ -40,9 +40,10 @@ in {
 
 	home.packages= with pkgs; [
 		go richgo golangci-lint go-mockery
-		luaformatter luajit
-		terraform terraform-landscape terragrunt packer
+		luaformatter luajit luarocks
+		terraform terraform-landscape terragrunt /* packer */
 		protobuf
+		ruff pyright
 
 		/* k3d */
 		kubectl kubectx kustomize kubernetes-helm jsonnet
@@ -52,7 +53,7 @@ in {
 		gh yazi delta tldr thefuck stow unrar
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
-		vscode slack wezterm
+		vscode slack wezterm drawio
 	] ++ (
 		if system == "aarch64-darwin" then
 			let
