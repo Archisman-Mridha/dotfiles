@@ -1,4 +1,4 @@
-{ pkgs, stdenv, ... }:
+{ pkgs, ... }:
 let
 
 
@@ -89,15 +89,14 @@ in {
 					'';
 				};
 			in [
-				bun nodePackages_latest.nodejs
+				bun
 				rustup llvm
 				zig zls
 				wabt
 				qemu nasm
+				yabai
 
 				terminal-notifier better-display protonvpn
-
-				xcbeautify
 			]
 		else [ protonvpn-cli podman podman-compose podman-tui ]
 	);

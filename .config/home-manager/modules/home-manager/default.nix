@@ -1,4 +1,4 @@
-{ user, pkgs, git, ... }:
+{ user, pkgs, ... }:
 {
 	home = {
 		username = user;

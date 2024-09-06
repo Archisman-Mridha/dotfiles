@@ -23,8 +23,8 @@ local config = {
 		right = 0,
 	},
 
-	window_background_opacity = 0.85,
-	macos_window_background_blur = 20,
+	window_background_opacity = 0.8,
+	macos_window_background_blur = 30,
 
 	underline_position = 0,
 	underline_thickness = 2,

@@ -97,9 +97,6 @@ nix-collect-garbage -d
 
 ## TODOS
 
-- [ ] Enable easy variable renaming in Neovim using https://github.com/ray-x/navigator.lua
 - [ ] Enable image support in Neovim
-- [ ] Make the Neovim Markdown plugin recognize checkboxes
 - [ ] Bring support for code-folding in Neovim
 - [ ] Install `Monaco Nerd Font` fonts using Home-Manager.
-- [ ] Install `xcodegen` and `xcode-build-server` using Home-Manager.

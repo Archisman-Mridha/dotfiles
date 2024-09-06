@@ -41,8 +41,35 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.clangd" },
-
 		{ import = "lazyvim.plugins.extras.util.dot" },
+
+		-- Cycle through yank history
+		{ import = "lazyvim.plugins.extras.coding.yanky" },
+
+		-- Better annotation generator
+		{ import = "lazyvim.plugins.extras.coding.neogen" },
+
+		-- For automatically highlighting other uses of the word under the cursor using either LSP,
+		-- Tree-sitter, or regex matching.
+		{ import = "lazyvim.plugins.extras.editor.illuminate" },
+
+		-- Incremental LSP renaming based on Neovim's command-preview feature.
+		{ import = "lazyvim.plugins.extras.editor.inc-renam" },
+
+		-- Formatting
+		{ import = "lazyvim.plugins.extras.formatting.prettier" },
+
+		-- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
+
+		-- Visualize and operate on indent scope.
+		{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+
+		-- Show code context
+		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
+
+		-- Highlight patterns in text.
+		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },

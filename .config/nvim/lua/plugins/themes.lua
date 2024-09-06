@@ -20,4 +20,8 @@ return {
 			},
 		},
 	},
+
+	-- File icon theme
+	{ "nvim-tree/nvim-web-devicons", enabled = true },
+	{ "echasnovski/mini.icons", enabled = false }
 }
