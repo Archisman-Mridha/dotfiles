@@ -32,6 +32,12 @@ git clone https://github.com/Archisman-Mridha/dotfiles ~/
 cd ~/dotfiles
 ```
 
+If you're on MacOS, install Homebrew by running :
+```sh
+unalias curl
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 You can customize [.config/home-manager/config.nix](.config/home-manager/config.nix) based on your
 underlying system. Then execute the following commands :
 

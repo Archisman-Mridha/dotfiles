@@ -13,7 +13,6 @@
 			vi = "nvim";
 			curl = "xh";
 			htop = "btop";
-			compose = "podman-compose";
 		} // (
 			if pkgs.stdenv.isDarwin then {
 				code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";

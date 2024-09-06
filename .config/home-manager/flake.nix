@@ -15,7 +15,7 @@
 		};
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-darwin }:
     let
 			config = import ./config.nix;
 			inherit (config) system user device git;

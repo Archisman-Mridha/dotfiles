@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
 	services.nix-daemon.enable = true;
 	nix = {
@@ -32,6 +33,7 @@
 		./dock.nix
 		./finder.nix
 		./trackpad.nix
+		./homebrew.nix
 		/* ./window-manager.nix */
 	];
 
