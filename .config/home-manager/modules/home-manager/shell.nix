@@ -46,6 +46,8 @@
 				eval $(thefuck --alias)
 
 				export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+        PATH=$PATH:$HOME/.docker/cli-plugins
 			'';
 		};
 	};

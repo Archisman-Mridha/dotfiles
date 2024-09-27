@@ -9,7 +9,7 @@
 		settings = {
 			"*" = {
 				indent_size = 2;
-				indent_style = "tab";
+				indent_style = "space";
 				tab_width = 2;
 				insert_final_newline = true;
 				max_line_width = 100;

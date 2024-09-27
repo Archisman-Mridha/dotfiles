@@ -14,7 +14,7 @@
 			changes. You should not change this value, even if you update home-manager. If you do want to
 			update the value, then make sure to first check the home-manager release notes.
 		*/
-		stateVersion = "23.11";
+		stateVersion = "24.05";
 	};
 
 	imports = [

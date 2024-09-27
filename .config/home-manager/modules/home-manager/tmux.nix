@@ -20,6 +20,7 @@ in {
 
 		extraConfig = ''
 			set-option -g mouse on
+      set -g default-terminal "tmux-256color"
 		'';
 
 		plugins = with pkgs.tmuxPlugins; [

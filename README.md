@@ -16,7 +16,7 @@ I assume that you've a fresh MacOS (with M series CPU architecture) installed.
 First install Nix :
 
 ```sh
-sh <(curl -L https://nixos.org/nix/install)
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
@@ -66,6 +66,14 @@ Execute these commands, if you want to cleanup Nix cache :
 nix-collect-garbage -d
 ```
 
+## Updating packages
+
+Go to [./.config/home-manager/](./.config/home-manager/) and run :
+```sh
+nix flake update
+home-manager switch
+```
+
 ## CHEATSHEETS
 
 - [Neovim](https://gist.github.com/Archisman-Mridha/41923c35fec46d46497a06bdca56cb6f)
@@ -100,9 +108,9 @@ nix-collect-garbage -d
 - [Nix Language basics](https://nix.dev/tutorials/nix-language.html)
 
 - [Disabling System Integrity Protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+- [Determinate Systems : Zero to Nix](https://zero-to-nix.com)
 
 ## TODOS
 
 - [ ] Enable image support in Neovim
-- [ ] Bring support for code-folding in Neovim
 - [ ] Install `Monaco Nerd Font` fonts using Home-Manager.

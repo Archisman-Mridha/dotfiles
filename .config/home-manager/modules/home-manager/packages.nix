@@ -1,7 +1,5 @@
 { pkgs, ... }:
 let
-
-
 	clusterawsadm = pkgs.stdenv.mkDerivation rec {
 		pname = "clusterawsadm";
     version = "v2.5.2";
@@ -39,18 +37,17 @@ in {
 	nixpkgs.config.allowUnfree = true;
 
 	home.packages= with pkgs; [
-		go richgo golangci-lint go-mockery
+		go richgo golangci-lint go-mockery sqlc
 		luaformatter luajit luarocks
 		terraform terraform-landscape terragrunt /* packer */
-		protobuf
+		buf
 		ruff pyright
 
-		/* k3d */
-		kubectl kubectx kustomize kubernetes-helm jsonnet
+		k3d kubectl kubectx kustomize kubernetes-helm jsonnet
 		jsonnet-bundler tanka cilium-cli kubeseal argocd trivy cosign clusterctl clusterawsadm
 
-		neovim tmux bat btop atuin stern neofetch wget jq buf tree wget xh fd ripgrep eza lazygit gnupg
-		gh yazi delta tldr thefuck stow unrar
+		tmux bat btop atuin stern neofetch wget jq tree wget xh fd ripgrep eza lazygit gnupg
+		gh yazi delta tldr thefuck stow unrar neovim gnupg pinentry_mac yubikey-personalization
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
@@ -92,7 +89,7 @@ in {
 				bun
 				rustup llvm
 				zig zls
-				wabt
+				wabt wasmedge
 				qemu nasm
 				yabai
 

@@ -14,9 +14,11 @@ vim.opt.list = false
 
 vim.g.autoformat = true
 
-require("neogit").setup {}
+vim.lsp.inlay_hint.enable(false)
+
+require("neogit").setup({})
 
 -- Configure lualine to evil mode.
 require("config.lualine")
 
-vim.keymap.set('n', '<leader>fr', ':Neotree reveal<CR>', {})
+vim.keymap.set("n", "<leader>fr", ":Neotree reveal<CR>", {})

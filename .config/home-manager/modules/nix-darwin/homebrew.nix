@@ -4,8 +4,8 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		masApps = { };
-		casks = [ "orbstack" ];
+		casks = [ "vlc" "discord" ]; /* "orbstack" */
 		taps = [ ];
-		brews = [ "k3d" ];
+		brews = [ ];
 	};
 }
