@@ -23,5 +23,6 @@
 		./packages.nix
 		./shell.nix
 		./tmux.nix
+		./fonts.nix
 	];
 }

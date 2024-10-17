@@ -48,18 +48,6 @@ home-manager switch
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
 
-You can install the `Monaco Nerd Font` and `Monaco For Powerline` fonts :
-
-```sh
-cd ~/Downloads
-
-git clone https://github.com/thep0y/monaco-nerd-font.git
-mv ./monaco-nerd-font/ligaturized/* ~/Library/Fonts
-rm -rf monaco-nerd-font
-
-wget https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20for%20Powerline.otf -P ~/Library/Fonts
-```
-
 Execute these commands, if you want to cleanup Nix cache :
 
 ```sh
@@ -113,4 +101,3 @@ home-manager switch
 ## TODOS
 
 - [ ] Enable image support in Neovim
-- [ ] Install `Monaco Nerd Font` fonts using Home-Manager.

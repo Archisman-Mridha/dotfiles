@@ -77,8 +77,8 @@
   "explorer.confirmDragAndDrop": false,
 
   "breadcrumbs.enabled": false,
-  "git.openRepositoryInParentFolders": "always",
-  "security.promptForLocalFileProtocolHandling": false,
+	"git.openRepositoryInParentFolders": "always",
+	"security.promptForLocalFileProtocolHandling": false,
 
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"

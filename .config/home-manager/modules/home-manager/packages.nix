@@ -23,12 +23,6 @@ let
       chmod +x $out/bin/clusterawsadm
     '';
 	};
-
-	fontsDir =
-		if pkgs.stdenv.isDarwin then
-    	"~/Library/Fonts"
-  	else
-    	"~/.local/share/fonts";
 in {
 	/*
 		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
