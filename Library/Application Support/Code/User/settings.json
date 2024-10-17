@@ -1,0 +1,139 @@
+{
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.fontAliasing": "antialiased",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 12,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.stickyScrollMaxItemCount": 1,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "editor.background": "#000000",
+    "editorGutter.background": "#000000",
+    "editorGroupHeader.tabsBackground": "#000000",
+    "editorGroup.emptyBackground": "#000000",
+    "sideBar.background": "#000000",
+    "tree.indentGuidesStroke": "#838383",
+    "editorIndentGuide.activeBackground1": "#585858",
+    "editorIndentGuide.background1": "#353535",
+    "activityBar.background": "#000000",
+    "statusBar.background": "#000000",
+    "titleBar.activeBackground": "#000000",
+    "tab.inactiveBackground": "#000000",
+    "tab.activeBackground": "#000000",
+    "sideBar.border": "#303030",
+    "terminal.background": "#000000",
+    "panel.background": "#000000",
+    "editor.selectionBackground": "#303b4d"
+  },
+  "workbench.colorTheme": "GitHub Dark",
+
+  // "editor.formatOnSave": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "MonacoLigaturized, Monaco",
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 17,
+  "editor.lineHeight": 1.4,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": false,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.wordWrapColumn": 100,
+  "editor.codeLens": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword.other"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.rulers": [100, 125],
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.inlayHints.enabled": "off",
+
+  "search.quickOpen.includeHistory": false,
+
+  "terminal.integrated.fontFamily": "MonacoLigaturized, Monaco",
+  "terminal.integrated.fontSize": 17,
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.lineHeight": 1.2,
+
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "breadcrumbs.enabled": false,
+  "git.openRepositoryInParentFolders": "always",
+  "security.promptForLocalFileProtocolHandling": false,
+
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
+  "go.formatTool": "gofmt",
+  "go.toolsManagement.autoUpdate": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "svelte.enable-ts-plugin": true,
+  "solidity.telemetry": false,
+  "json.schemaDownload.enable": true,
+  "redhat.telemetry.enabled": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "zig.path": "zig",
+  "zig.zls.path": "zls",
+  "zig.initialSetupDone": true,
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "off",
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "[proto3]": {
+    "editor.defaultFormatter": "zxh404.vscode-proto3"
+  },
+  "[postgres]": {
+    "editor.defaultFormatter": "bradymholt.pgformatter"
+  },
+  "[jsonnet]": {
+    "editor.defaultFormatter": "Grafana.vscode-jsonnet"
+  },
+  "opa.dependency_paths.opa": "/Users/archismanmridha/opa",
+  "[gleam]": {
+    "editor.defaultFormatter": "gleam.gleam"
+  },
+
+  // File search.
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/target": true,
+    "**/package-lock.json": true,
+    "**/Cargo.lock": true
+  },
+  "makefile.configureOnOpen": true
+}

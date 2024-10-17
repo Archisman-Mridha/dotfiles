@@ -9,12 +9,19 @@ return {
         colors.bg = "#000000"
       end,
 
+      transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
 
-        comments = { italic = false }
+        comments = {
+          -- italic = false,
+        },
       },
     },
   },
+
+  -- File icon theme
+  { "nvim-tree/nvim-web-devicons", enabled = true },
+  { "echasnovski/mini.icons", enabled = false },
 }

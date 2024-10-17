@@ -1,6 +1,10 @@
 -- To manage the file system and other tree like structures.
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "3rd/image.nvim"
+  },
   opts = function ()
     -- If you want icons for diagnostic errors, you'll need to define them somewhere:
     vim.fn.sign_define("DiagnosticSignError",
@@ -101,6 +105,13 @@ return {
         symlink_target = {
           enabled = false,
         },
+        buffers = {
+          follow_current_file = {
+            enabled = true, -- This will find and focus the file in the active buffer every time
+            --              -- the current file is changed while the tree is open.
+            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+          },
+        }
       },
       -- A list of functions, each representing a global custom command
       -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
@@ -170,19 +181,19 @@ return {
       nesting_rules = {},
       filesystem = {
         filtered_items = {
-          visible = false, -- when true, they will just be displayed differently than normal items
-          hide_dotfiles = true,
-          hide_gitignored = true,
+          visible = true, -- when true, they will just be displayed differently than normal items
+          hide_dotfiles = false,
+          hide_gitignored = false,
           hide_hidden = true, -- only works on Windows for hidden files/directories
           hide_by_name = {
-            --"node_modules"
+            ".git"
           },
           hide_by_pattern = { -- uses glob style patterns
             --"*.meta",
             --"*/src/*/tsconfig.json",
           },
           always_show = { -- remains visible even if other settings would normally hide it
-            --".gitignored",
+						".DS_Store"
           },
           never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
             --".DS_Store",
