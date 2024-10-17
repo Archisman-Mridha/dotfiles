@@ -37,7 +37,7 @@ in {
 		protobuf buf
 		ruff pyright
 
-		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal
+		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
     jsonnet-bundler jsonnet tanka
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck neovim tldr

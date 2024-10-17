@@ -33,9 +33,9 @@
 				enable = true;
 				theme = "robbyrussell";
 				plugins = [
-					/* "docker" "docker-compose" */
-					"git" "gitignore" "kube-ps1" "kubectl" "helm" "argocd" "terraform"
-					"bun" "colored-man-pages" "copyfile" "copypath" "redis-cli" "rust" "sudo" "tmux"
+					"docker" "docker-compose" "kube-ps1" "kubectl" "helm" "argocd" "terraform"
+					"git" "gitignore" "colored-man-pages" "copyfile" "copypath" "redis-cli" "sudo" "tmux"
+					"bun" "rust"
 				];
 			};
 
