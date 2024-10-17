@@ -47,7 +47,10 @@
 
 				export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
-        PATH=$PATH:$HOME/.docker/cli-plugins
+				# Run the GPG Agent if it isn't running already.
+				if ! pgrep -x gpg-agent > /dev/null 2>&1; then
+					gpg-agent --daemon
+				fi
 			'';
 		};
 	};
