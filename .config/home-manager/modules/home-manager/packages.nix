@@ -41,7 +41,7 @@ in {
     jsonnet-bundler jsonnet tanka
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck neovim tldr
-    stow
+    stow curl wget git
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio

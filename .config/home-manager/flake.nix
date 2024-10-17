@@ -41,10 +41,12 @@
 				modules = [ ./modules/home-manager ];
 			};
 
-			darwinConfigurations."${device}" = nix-darwin.lib.darwinSystem {
-				inherit pkgs system;
+			darwinConfigurations = if system == "x86_64-darwin" || system == "aarch64-darwin" then {
+        "${device}" = nix-darwin.lib.darwinSystem {
+          inherit pkgs system;
 
-				modules = [ ./modules/nix-darwin ];
-			};
+          modules = [ ./modules/nix-darwin ];
+        };
+      } else {};
 		};
 }
