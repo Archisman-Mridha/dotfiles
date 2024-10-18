@@ -38,7 +38,7 @@ in {
 		ruff pyright
 
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
-    jsonnet-bundler jsonnet tanka
+    jsonnet-bundler jsonnet tanka lazydocker
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck neovim tldr
     stow curl wget git
@@ -89,10 +89,12 @@ in {
 				qemu nasm
 
 				mkalias yabai terminal-notifier better-display protonvpn
+				docker-compose
 			]
 		else [
 			protonvpn-cli mattermost-desktop
 			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor
+			podman podman-compose
 		]
 	);
 
