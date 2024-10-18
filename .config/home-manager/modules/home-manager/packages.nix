@@ -92,7 +92,7 @@ in {
 				docker-compose
 			]
 		else [
-			protonvpn-cli mattermost-desktop
+			protonvpn-cli mattermost-desktop firefox
 			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor
 			podman podman-compose
 		]
