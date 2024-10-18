@@ -22,13 +22,13 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
 
 ```sh
-nix-shell -p git stow home-manager
+nix-shell -p git stow home-manager vim
 ```
 
 Clone this repository :
 
 ```sh
-git clone https://github.com/Archisman-Mridha/dotfiles ~/
+git clone https://github.com/Archisman-Mridha/dotfiles ~/dotfiles
 cd ~/dotfiles
 ```
 
@@ -97,6 +97,10 @@ home-manager switch
 
 - [Disabling System Integrity Protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 - [Determinate Systems : Zero to Nix](https://zero-to-nix.com)
+
+- [Nix darwin activation script by elliott minns](https://gist.github.com/elliottminns/211ef645ebd484eb9a5228570bb60ec3)
+
+- [Installing Arch Linux using the Arch Linux installer](https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s)
 
 ## TODOS
 

@@ -4,8 +4,14 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		masApps = { };
-		casks = [ "vlc" "discord" ];
+		casks = [ "vlc" "discord" "orbstack" ];
 		taps = [ ];
-		brews = [ "orbstack" "pinentry-mac" "gnupg" "yubikey-personalization" ];
+		brews = [ "pinentry-mac" "gnupg" "yubikey-personalization" ];
+
+		onActivation = {
+			cleanup = "zap";
+			autoUpdate = true;
+			upgrade = true;
+		};
 	};
 }

@@ -88,9 +88,12 @@ in {
 				wabt wasmedge
 				qemu nasm
 
-				yabai terminal-notifier better-display protonvpn
+				mkalias yabai terminal-notifier better-display protonvpn
 			]
-		else [ protonvpn-cli ]
+		else [
+			protonvpn-cli mattermost-desktop
+			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor
+		]
 	);
 
 	programs = {
