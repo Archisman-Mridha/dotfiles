@@ -93,7 +93,7 @@ in {
 			]
 		else [
 			protonvpn-cli mattermost-desktop firefox
-			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor
+			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor waypipe
 			podman podman-compose
 		]
 	);
