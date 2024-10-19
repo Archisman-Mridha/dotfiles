@@ -17,7 +17,7 @@
 
   outputs = { self, nixpkgs, home-manager, nix-darwin }:
     let
-			config = import ./config.nix;
+			config = import ./macos.config.nix;
 			inherit (config) system user device git;
 
 			pkgs = import nixpkgs {
@@ -34,7 +34,7 @@
 
 				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
 				extraSpecialArgs = {
-					inherit user git;
+					inherit user git system;
 				};
 
 				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */

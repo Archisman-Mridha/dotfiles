@@ -1,4 +1,4 @@
-{ git, ... }:
+{ git, system, ... }:
 {
 	programs.git = {
 		enable = true;
@@ -8,7 +8,9 @@
 
 		extraConfig = {
 			commit = { gpgsign = true; };
-			/* gpg = { format = "ssh"; }; */
+			gpg =
+				if system == "x86_64-linux" then{ format = "ssh"; }
+				else {};
 			user = { signingKey = git.signingKey; };
 
 			push = { autoSetupRemote = true; };

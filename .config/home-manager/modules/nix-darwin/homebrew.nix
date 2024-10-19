@@ -4,9 +4,9 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		masApps = { };
-		casks = [ "vlc" "discord" "orbstack" ];
+		casks = [ "vlc" "discord" ];
 		taps = [ ];
-		brews = [ "pinentry-mac" "gnupg" "yubikey-personalization" ];
+		brews = [ "pinentry-mac" "gnupg" "yubikey-personalization" "orbstack" ];
 
 		onActivation = {
 			cleanup = "zap";
