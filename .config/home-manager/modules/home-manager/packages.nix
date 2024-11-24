@@ -40,8 +40,8 @@ in {
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
     jsonnet-bundler jsonnet tanka lazydocker
 
-		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck neovim tldr
-    stow curl wget git
+		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck tldr git
+    stow curl wget neovim unzip pass tshark
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
@@ -82,7 +82,7 @@ in {
 			in [
         cmake ccache
         gleam erlang
-				bun
+				bun nodejs_22
 				rustup llvm
 				zig zls
 				wabt wasmedge

@@ -34,6 +34,8 @@ in {
 					set -g @tokyo-night-tmux_show_datetime 0
 					set -g @tokyo-night-tmux_date_format MYD
 					set -g @tokyo-night-tmux_time_format 12H
+
+					set-option -g status-position top
 				'';
 			}
 

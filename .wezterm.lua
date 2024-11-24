@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 
 local config = {
+	front_end = "WebGpu",
+
 	font = wezterm.font({
 		family = "MonacoLigaturized",
 		stretch = "Expanded",
@@ -23,8 +25,8 @@ local config = {
 		right = 0,
 	},
 
-	window_background_opacity = 0.8,
-	macos_window_background_blur = 30,
+	window_background_opacity = 1,
+	macos_window_background_blur = 0,
 
 	underline_position = 0,
 	underline_thickness = 2,

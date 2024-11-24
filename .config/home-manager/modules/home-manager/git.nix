@@ -9,7 +9,7 @@
 		extraConfig = {
 			commit = { gpgsign = true; };
 			gpg =
-				if system == "x86_64-linux" then{ format = "ssh"; }
+				if system == "aarch64-darwin" then{ format = "ssh"; }
 				else {};
 			user = { signingKey = git.signingKey; };
 
