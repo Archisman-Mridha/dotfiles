@@ -1,15 +1,15 @@
 { pkgs, ... }:
 {
 	services.yabai = {
-		enable = true;
+		enable = false;
 		package = pkgs.yabai;
 		enableScriptingAddition = true;
     config = {
-			top_padding 		= 3;
-      bottom_padding 	= 3;
-      left_padding 		= 3;
-      right_padding 	= 3;
-			window_gap 			= 3;
+			top_padding 		= 2;
+      bottom_padding 	= 2;
+      left_padding 		= 2;
+      right_padding 	= 2;
+			window_gap 			= 2;
 
 			window_border                = "on";
       window_border_placement      = "inset";
@@ -29,7 +29,7 @@
 			active_window_opacity 	= "0.8";
       normal_window_opacity	  = "0.7";
 
-      focus_follows_mouse = "autoraise";
+      focus_follows_mouse = "off";
       mouse_follows_focus = "off";
 
       window_placement 	= "second_child";

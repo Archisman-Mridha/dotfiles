@@ -5,7 +5,7 @@
 		global.brewfile = true;
 		masApps = { };
 		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" ];
-		taps = [ ];
+		taps = [  ];
 		brews = [
 			"pinentry-mac" "gnupg" "yubikey-personalization"
 			"docker" "docker-compose" "docker-credential-helper"

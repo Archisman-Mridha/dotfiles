@@ -1,7 +1,10 @@
 { ... }:
 {
 	/* Auto upgrade nix packages and the the daemon service */
-	services.nix-daemon.enable = true;
+	services.nix-daemon = {
+		enable = true;
+		enableSocketListener = true;
+	};
 	nix = {
 		gc = {
 			/* Automatically run the garbage collector at a specific time. */
@@ -71,7 +74,7 @@
 		./trackpad.nix
 		./homebrew.nix
 		./spotlight.nix
-		/* ./window-manager.nix */
+		./window-manager.nix
 	];
 
 	/*

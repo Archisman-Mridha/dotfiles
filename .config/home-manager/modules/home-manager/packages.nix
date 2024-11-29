@@ -1,29 +1,5 @@
 { pkgs, ... }:
-let
-	clusterawsadm = pkgs.stdenv.mkDerivation rec {
-		pname = "clusterawsadm";
-    version = "v2.5.2";
-
-    src = pkgs.fetchurl {
-      url =
-				"https://github.com/kubernetes-sigs/cluster-api-provider-aws/releases/download/${version}/" + (
-					if pkgs.stdenv.isDarwin then
-        		"clusterawsadm-darwin-arm64"
-					else
-						"clusterawsadm-linux-amd64"
-				);
-
-      sha256 = "sha256-FsMtnQQcv5yIrBfNMh0Kq1Lqnh7V0BuggvksSaLLZoo=";
-    };
-
-    dontUnpack = true;
-    installPhase = ''
-      mkdir -p $out/bin
-      cp $src $out/bin/clusterawsadm
-      chmod +x $out/bin/clusterawsadm
-    '';
-	};
-in {
+{
 	/*
 		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
 		It allows you to set package configuration options.
@@ -38,10 +14,11 @@ in {
 		ruff pyright
 
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
-    jsonnet-bundler jsonnet tanka lazydocker
+    jsonnet-bundler jsonnet tanka lazydocker kops awscli2
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck tldr git
-    stow curl wget neovim unzip pass tshark
+    stow neovim unzip pass
+		curl wget tshark netcat-gnu
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
@@ -88,8 +65,8 @@ in {
 				wabt wasmedge
 				qemu nasm
 
-				mkalias yabai terminal-notifier better-display protonvpn
-				docker-compose
+				mkalias terminal-notifier protonvpn
+				better-display yabai
 			]
 		else [
 			protonvpn-cli mattermost-desktop firefox

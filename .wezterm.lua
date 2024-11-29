@@ -25,11 +25,11 @@ local config = {
 		right = 0,
 	},
 
-	window_background_opacity = 1,
-	macos_window_background_blur = 0,
+	window_background_opacity = 0.75,
+	macos_window_background_blur = 20,
 
 	underline_position = 0,
-	underline_thickness = 2,
+	underline_thickness = 2.5,
 
 	window_close_confirmation = "NeverPrompt",
 

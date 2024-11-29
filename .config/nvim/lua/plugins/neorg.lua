@@ -12,6 +12,7 @@ return {
 	-- Adds horizontal highlights for text filetypes (like markdown, orgmode, and neorg).
 	{
 		"lukas-reineke/headlines.nvim",
+		enabled = false,
 		opts = function()
 			local opts = {}
 			for _, ft in ipairs({ "markdown", "norg", "rmd", "org" }) do
@@ -31,6 +32,6 @@ return {
 				require("headlines").setup(opts)
 				require("headlines").refresh()
 			end)
-		end
-	}
+		end,
+	},
 }

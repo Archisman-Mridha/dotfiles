@@ -28,7 +28,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.helm" },
-		{ import = "lazyvim.plugins.extras.lang.markdown" },
+		-- { import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.nix" },
 		{ import = "lazyvim.plugins.extras.lang.ocaml" },
 		{ import = "lazyvim.plugins.extras.lang.prisma" },
@@ -65,9 +65,6 @@ require("lazy").setup({
 
 		-- Visualize and operate on indent scope.
 		{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-
-		-- Show code context
-		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
 
 		-- Highlight patterns in text.
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
