@@ -1,4 +1,5 @@
 return {
+	-- Color scheme.
 	{
 		"folke/tokyonight.nvim",
 		opts = {
@@ -15,7 +16,7 @@ return {
 				floats = "transparent",
 
 				comments = {
-					italic = true,
+					italic = false,
 				},
 			},
 		},
@@ -23,7 +24,6 @@ return {
 	},
 
 	-- File icon theme
-	{ "echasnovski/mini.icons", enabled = false },
 	{
 		"nvim-tree/nvim-web-devicons",
 		enabled = true,

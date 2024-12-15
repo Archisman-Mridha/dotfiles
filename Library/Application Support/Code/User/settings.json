@@ -136,11 +136,12 @@
 		"**/Cargo.lock": true
 	},
 	"makefile.configureOnOpen": true,
-	"workbench.activityBar.location": "hidden",
 	"cody.autocomplete.enabled": false,
 	"cody.codeActions.enabled": false,
 	"cody.commandHints.enabled": false,
 	"[gotmpl]": {
 		"editor.defaultFormatter": "golang.go"
-	}
+	},
+	"editor.accessibilitySupport": "off",
+	"workbench.activityBar.location": "hidden"
 }

@@ -12,10 +12,10 @@ return {
 	-- Adds horizontal highlights for text filetypes (like markdown, orgmode, and neorg).
 	{
 		"lukas-reineke/headlines.nvim",
-		enabled = false,
+		enabled = true,
 		opts = function()
 			local opts = {}
-			for _, ft in ipairs({ "markdown", "norg", "rmd", "org" }) do
+			for _, ft in ipairs({ "norg", "rmd", "org" }) do
 				opts[ft] = { headline_highlights = {} }
 				for i = 1, 6 do
 					local hl = "Headline" .. i
@@ -25,7 +25,7 @@ return {
 			end
 			return opts
 		end,
-		ft = { "markdown", "norg", "rmd", "org" },
+		ft = { "norg", "rmd", "org" },
 		config = function(_, opts)
 			-- PERF: schedule to prevent headlines slowing down opening a file
 			vim.schedule(function()

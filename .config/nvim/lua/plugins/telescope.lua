@@ -23,11 +23,13 @@ return {
 			pickers = {
 				find_files = {
 					hidden = true,
+					file_ignore_patterns = { "node_modules", ".git", ".venv", "target" },
 				},
 				live_grep = {
 					additional_args = function(_)
 						return { "--hidden" }
 					end,
+					file_ignore_patterns = { "node_modules", ".git", ".venv", "target" },
 				},
 			},
 		}

@@ -4,7 +4,7 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		masApps = { };
-		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" ];
+		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" "sourcetrail" ];
 		taps = [  ];
 		brews = [
 			"pinentry-mac" "gnupg" "yubikey-personalization"

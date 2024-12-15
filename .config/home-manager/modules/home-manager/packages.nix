@@ -14,11 +14,11 @@
 		ruff pyright
 
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
-    jsonnet-bundler jsonnet tanka lazydocker kops awscli2
+    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud wireguard-tools
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck tldr git
     stow neovim unzip pass
-		curl wget tshark netcat-gnu
+		curl wget tshark netcat-gnu oha
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
