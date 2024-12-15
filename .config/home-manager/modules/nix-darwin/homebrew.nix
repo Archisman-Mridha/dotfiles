@@ -4,11 +4,10 @@
 		caskArgs.no_quarantine = true;
 		global.brewfile = true;
 		masApps = { };
-		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" "sourcetrail" ];
-		taps = [  ];
+		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" "sourcetrail" "orbstack" ];
+		taps = [ ];
 		brews = [
 			"pinentry-mac" "gnupg" "yubikey-personalization"
-			"docker" "docker-compose" "docker-credential-helper"
 			"riscv64-elf-gdb"
 		];
 

@@ -62,6 +62,7 @@
 				bun nodejs_22
 				rustup llvm
 				zig zls
+
 				wabt wasmedge
 				qemu nasm
 
