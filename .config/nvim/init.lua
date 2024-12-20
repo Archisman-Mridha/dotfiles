@@ -26,3 +26,13 @@ require("config.lualine")
 require("which-key").setup({
 	preset = "modern",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "yaml",
+	callback = function()
+		vim.opt_local.expandtab = true -- Use spaces instead of tabs
+		vim.opt_local.shiftwidth = 2 -- Set indentation width to 2 spaces
+		vim.opt_local.tabstop = 2 -- A tab is equal to 2 spaces
+		vim.opt_local.softtabstop = 2 -- Backspace removes 2 spaces
+	end,
+})

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
 	tokyo-night-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tokyo-night-tmux";

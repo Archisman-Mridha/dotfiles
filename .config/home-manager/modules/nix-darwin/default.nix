@@ -6,6 +6,10 @@
 		enableSocketListener = true;
 	};
 	nix = {
+		settings = {
+			allowed-users = [ "archismanmridha" ];
+			auto-optimise-store = true;
+		};
 		gc = {
 			/* Automatically run the garbage collector at a specific time. */
 			automatic = true;

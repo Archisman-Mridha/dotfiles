@@ -33,6 +33,7 @@ cd ~/dotfiles
 ```
 
 If you're on MacOS, install Homebrew by running :
+
 ```sh
 unalias curl
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -46,6 +47,8 @@ stow --no-folding .
 
 home-manager switch
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
+
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable\nnix-channel --update
 ```
 
 Execute these commands, if you want to cleanup Nix cache :
@@ -57,6 +60,7 @@ nix-collect-garbage -d
 ## Updating packages
 
 Go to [./.config/home-manager/](./.config/home-manager/) and run :
+
 ```sh
 nix flake update
 home-manager switch

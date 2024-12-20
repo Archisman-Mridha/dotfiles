@@ -6,6 +6,7 @@ return {
 		vim.list_extend(opts.ensure_installed, {
 			"graphql-language-service-cli",
 			"zls",
+			"hyprls",
 		})
 	end,
 }

@@ -50,8 +50,8 @@
 			{
 				"scope": [
 					"comment",
-					"keyword.control"
-					// "keyword.other"
+					"keyword.control",
+					"keyword.other"
 					// "string.quoted.double"
 				],
 				"settings": {
@@ -106,7 +106,6 @@
 	},
 	"zig.path": "zig",
 	"zig.zls.path": "zls",
-	"zig.initialSetupDone": true,
 	"[cpp]": {
 		"editor.wordBasedSuggestions": "off",
 		"editor.suggest.insertMode": "replace",

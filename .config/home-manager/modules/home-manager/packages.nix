@@ -70,7 +70,7 @@
 				better-display yabai
 			]
 		else [
-			protonvpn-cli mattermost-desktop firefox
+			protonvpn-cli mattermost-desktop
 			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor waypipe
 			podman podman-compose
 		]
@@ -100,6 +100,8 @@
 
 		zoxide.enable = true;
 
-		home-manager.enable = true;
+		home-manager = {
+			enable = true;
+		};
 	};
 }

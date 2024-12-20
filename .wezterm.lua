@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 
 local config = {
 	front_end = "WebGpu",
+	max_fps = 240,
 
 	font = wezterm.font({
 		family = "MonacoLigaturized",
