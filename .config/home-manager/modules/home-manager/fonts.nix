@@ -13,7 +13,7 @@ let
 		src = pkgs.fetchgit {
 			url = "https://github.com/thep0y/monaco-nerd-font.git";
 			rev = "HEAD";
-			sha256 = "sha256-+Z55U3dPb+wyjlSrJ447PlKkW9uyFpRFXDIB+OgORXI=";
+			sha256 = "sha256-J1kH0a7BASf3T/eTn+GY/T2Uj49Rp7XRD3H/3VGzLgk=";
 		};
 
 		installPhase = ''

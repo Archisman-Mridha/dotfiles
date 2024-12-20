@@ -12,6 +12,7 @@
 		terraform
 		protobuf buf
 		ruff pyright
+		hyprls
 
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
     jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud wireguard-tools
@@ -70,8 +71,9 @@
 				better-display yabai
 			]
 		else [
-			protonvpn-cli mattermost-desktop
 			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor waypipe
+			protonvpn-cli mattermost-desktop
+
 			podman podman-compose
 		]
 	);
