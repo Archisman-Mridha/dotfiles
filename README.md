@@ -1,4 +1,4 @@
-# GUIDE
+# Dotfiles
 
 <p>
 	<img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
@@ -11,48 +11,58 @@
 	<img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge" />
 </p>
 
-I assume that you've a fresh MacOS (with M series CPU architecture) installed.
+## Installing Arch Linux
+
+You can follow this tutorial : https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s, to install Arch Linux using the Arch Linux Installer. Just make sure you choose `Hyprland` as the desktop environment and `NetworkManager` as the network management tool.
+
+You can list available wifi networks using this command :
+```sh
+nmcli dev wifi list
+```
+
+and connect with one, using this command :
+```sh
+nmcli dev wifi connect <SSID> password <password>
+```
+
+To verify that you're successfully connected to your wifi, run this command :
+```sh
+ip addr show
+```
+the `wlan0` network interface must have an IPv4 address assigned.
+
+## Setup
 
 First install Nix :
-
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
-
 ```sh
 nix-shell -p git stow home-manager vim
 ```
 
 Clone this repository :
-
 ```sh
 git clone https://github.com/Archisman-Mridha/dotfiles ~/dotfiles
 cd ~/dotfiles
 ```
 
-If you're on MacOS, install Homebrew by running :
-
-```sh
-unalias curl
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
 You can customize [.config/home-manager/config.nix](.config/home-manager/config.nix) based on your
 underlying system. Then execute the following commands :
-
 ```sh
 stow --no-folding .
 
 home-manager switch
-nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
-
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable\nnix-channel --update
 ```
 
-Execute these commands, if you want to cleanup Nix cache :
+If you're on MacOS, then also run the following to setup nix-darwin :
+```sh
+nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
+```
 
+Execute this command, if you want to cleanup Nix cache :
 ```sh
 nix-collect-garbage -d
 ```
@@ -66,13 +76,13 @@ nix flake update
 home-manager switch
 ```
 
-## CHEATSHEETS
+## Cheatsheets
 
 - [Neovim](https://gist.github.com/Archisman-Mridha/41923c35fec46d46497a06bdca56cb6f)
 - [Tmux](https://gist.github.com/Archisman-Mridha/d0157da78bac7e1675aa15cfdfa2eb97)
 - [iTerm2](https://gist.github.com/Archisman-Mridha/b7654858acb1d7169482f1307b786a67)
 
-## PREVIEWS
+## Previews
 
 - Neovim and Tmux
   ![Neovim and Tmux](./previews/neovim-and-tmux.png)
