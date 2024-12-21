@@ -19,8 +19,14 @@
 
   outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser }:
     let
-			config = import ./macos.config.nix;
-			inherit (config) system user device git;
+			system = builtins.currentSystem;
+
+			macosConfig = import ./macos.config.nix;
+			archLinuxConfig = import ./archlinux.config.nix;
+			config =
+				if system == "aarch64-darwin" then macosConfig else archLinuxConfig;
+
+			inherit (config) user device git;
 
 			pkgs = import nixpkgs {
 				inherit system;

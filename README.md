@@ -73,14 +73,14 @@ nix-collect-garbage -d
 
 - While executing `stow --no-folding .`, in Arch Linux, if you get an error as such :
 	```log
-		* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+	* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
 	```
 	In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
 
 - If you're in Arch Linux, your default shell will be Bash. And as far as I know, we cannot change the default shell using HomeManager (since that requires root privileges). So, manually execute the following commands, to make zsh your default shell :
 	```sh
-		grep -qxF $(which zsh) /etc/shells || echo $(which zsh) | sudo tee -a /etc/shells
-		chsh -s $(which zsh)
+	grep -qxF $(which zsh) /etc/shells || echo $(which zsh) | sudo tee -a /etc/shells
+	chsh -s $(which zsh)
 	```
 
 - zsh plugin manager isn't automatically installing `kube-ps1`. So you need to do it yourself :
@@ -211,9 +211,9 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-## TODOS
+## TODOs
 
-- [ ] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
+- [x] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
 
 - [x] Setup gopass.
 

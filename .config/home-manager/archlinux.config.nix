@@ -1,6 +1,4 @@
 {
-	system = "x86_64-linux";
-
 	user = "archi";
 	device = "archlinux";
 
@@ -13,6 +11,6 @@
 		/* Personal */
 		/* userName = "Archisman-Mridha";
 		userEmail = "archismanmridha12345@gmail.com";
-		signingKey = "~/.ssh/github"; */
+		signingKey = "/home/archi/.ssh/github"; */
 	};
 }
