@@ -7,6 +7,7 @@
 		casks = [ "vlc" "discord" "aviatrix-vpn-client" "homerow" "sourcetrail" "orbstack" ];
 		taps = [ ];
 		brews = [
+			"kube-ps1"
 			"pinentry-mac" "gnupg" "yubikey-personalization"
 			"riscv64-elf-gdb"
 		];

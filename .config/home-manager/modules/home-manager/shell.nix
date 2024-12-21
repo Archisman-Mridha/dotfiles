@@ -54,7 +54,18 @@
 				precmd() { echo; }
 
 				eval $(thefuck --alias)
-			'' + (if system == "x86_64-linux" then "source '/opt/kube-ps1/kube-ps1.sh'" else "");
+
+				# Start SSH Agent, if it isn't running already.
+				if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+					eval "$(ssh-agent -s)"
+				fi
+			''
+			/* Install kube-ps1. */
+			+ (if system == "x86_64-linux" then
+					"source '/opt/kube-ps1/kube-ps1.sh'"
+				else
+					"source '/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh'"
+				);
 		};
 	};
 }

@@ -54,7 +54,7 @@ underlying system. Then execute the following commands :
 ```sh
 stow --no-folding .
 
-home-manager switch
+home-manager switch --impure
 ```
 
 On MacOS, run the following to install nix-darwin :
@@ -135,7 +135,7 @@ Go to [./.config/home-manager/](./.config/home-manager/) and run :
 
 ```sh
 nix flake update
-home-manager switch
+home-manager switch --impure
 ```
 
 ## Working in my Arch Linux machine from my Macbook
