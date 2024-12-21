@@ -95,6 +95,23 @@ nix flake update
 home-manager switch
 ```
 
+## Working in my Arch Linux machine from my Macbook
+
+Everytime, I connect to the wifi from my Arch Linux machine, I want it to get assigned with the same private IPv4 address : `192.168.29.146/24`. I can pull it off, using this command :
+```sh
+sudo nmcli connection modify "Bandwidth 5" \
+	ipv4.method manual \
+	ipv4.addresses "192.168.29.146/24" \
+	ipv4.gateway "192.168.1.1" \
+	ipv4.dns "192.168.1.1"
+
+sudo nmcli connection up "Bandwidth 5"
+```
+
+In my Macbook, I open Neovim and run `:DistantInstall`. This will install the distant binary in my Macbook. Then, I run `:DistantLaunch ssh://<username>@<ip or hostname>` to connect to the Arch Linux machine.
+
+> distant.nvim currently doesn't support NeoTree and Telescope integration. But work on them is ongoing. So, as of now, I just SSH into my Arch Linux machine and run Neovim within that SSH session.
+
 ## Cheatsheets
 
 - [Neovim](https://gist.github.com/Archisman-Mridha/41923c35fec46d46497a06bdca56cb6f)
@@ -112,13 +129,7 @@ home-manager switch
 - Wallpaper
   ![CyberPunk](./.config/wallpapers/cyberpunk.jpg)
 
-## Working in my Arch Linux machine from my Macbook
-
-In your Macbook, open Neovim and run `:DistantInstall`. This will install the distant binary in your machine. Then, run `:DistantLaunch ssh://<username>@<ip or hostname>` to connect to the Arch Linux machine.
-
-> distant.nvim currently doesn't support NeoTree and Telescope integration. But work on them is ongoing. So, as of now, I just SSH into my Arch Linux machine and run Neovim within that SSH session.
-
-## REFERENCES
+## References
 
 - [MyNixOS](https://mynixos.com)
 
