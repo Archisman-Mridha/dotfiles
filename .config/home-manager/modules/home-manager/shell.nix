@@ -15,7 +15,7 @@
 			htop = "btop";
 		} // (
 			if system == "aarch64-darwin" then {
-				code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";
+				code = "~/Applications/Home\\ Manager\\ Apps/Visual\\ Studio\\ Code.app/Contents/MacOS/Electron";
 			}
 			else {}
 		);
