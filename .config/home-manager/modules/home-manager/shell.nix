@@ -3,6 +3,7 @@
 	home = {
 		sessionVariables = {
 			EDITOR = "nvim";
+			PASSWORD_STORE_DIR = "~/dotfiles/.password-store";
 		};
 
 		shellAliases = {

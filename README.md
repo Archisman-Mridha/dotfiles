@@ -62,6 +62,8 @@ On MacOS, run the following to install nix-darwin :
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
 
+The packages specified in [packages.nix](./.config/home-manager/modules/home-manager/packages.nix) and [homebrew.nix](./.config/home-manager/modules/nix-darwin/homebrew.nix) will be installed in your system.
+
 Execute this command, if you want to cleanup Nix cache :
 ```sh
 nix-collect-garbage -d
@@ -90,6 +92,42 @@ nix-collect-garbage -d
 	```sh
 	sudo systemctl enable sshd
 	```
+
+## Password management using gopass
+
+### Bootstrap
+
+Since, the company I currently work for uses [Password Store](https://www.passwordstore.org), I will be settling with [gopass](https://github.com/gopasspw/gopass) for now. But, if someday I discontinue working with them, I'll might give [sops-nix](https://youtu.be/G5f6GC7SnhU?si=baQEJPWG1dWgIqZQ) a try.
+
+First, generate a GPG key-pair (which never expires), using this command :
+```sh
+gpg --gen-key
+gpg --edit-key <gpg-key-id>
+```
+Make sure you backup this GPG key-pair somewhere safe. You can view the actual public and private keys using :
+```sh
+gpg --export --armor <gpg-key-id>
+gpg --export-secret-keys --armor <gpg-key-id>
+```
+
+Next, initialize the password store using :
+```sh
+pass init <gpg-key-id>
+```
+
+You can follow this tutorial, to learn further more about gopass : https://youtu.be/FhwsfH2TpFA?si=ZIo4NmrTHEcgxS_u.
+
+### Concurrent setups
+
+Import the GPG key using `gpg --import <path to GPG key file>`. Then, as usual, initialize the password store using `pass init <gpg-key-id>`.
+
+The SSH key-pair I use to sign commits and authenticate against Github, is stored at `personal/github/ssh`. So, I use these commands to complete my Github setup :
+```sh
+pass show personal/github/ssh/private-key > github
+pass show personal/github/ssh/public-key > github.pub
+```
+
+> A small script can be made for a better UX.
 
 ## Updating packages
 
@@ -167,13 +205,25 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [SSH Port Forwarding](https://www.geeksforgeeks.org/ssh-port-forwarding/)
 
+- [This is perhaps my favorite password manager for the terminal](https://youtu.be/FhwsfH2TpFA?si=ZIo4NmrTHEcgxS_u)
+
+- [PASS: a Password Manager & Two Factor Authentication (OTP) with no Cell Phone](https://youtu.be/sVkURNfxPd4?si=CD71pMNqsEzQhaDN)
+
+- [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
 ## TODOS
 
 - [ ] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
 
-- [ ] Setup gopass.
+- [x] Setup gopass.
 
 - [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
+
+	> I tried to do so, but was getting this error while doing `home-manager switch --flake ~/.config/nix#"archismanmridha" :
+	>
+	> 		access to absolute path '/nix/dotfiles' is forbidden in pure evaluation mode (use '--impure' to override)
+	>
+	> Using the --impure flag didn't solve the issue.
 
 - [ ] Enable image support in Neovim
 

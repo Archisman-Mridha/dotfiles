@@ -10,17 +10,21 @@
 		go richgo golangci-lint mockgen sqlc
 		rustup llvm
 		zig zls
+		gleam erlang
+		bun nodejs_22
 		luaformatter luajit luarocks
 		terraform
 		protobuf buf
 		ruff pyright
+		wabt wasmedge
+		qemu nasm
 		hyprls
 
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
     jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud wireguard-tools
 
 		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck tldr git
-    stow neovim unzip pass
+    stow neovim unzip pass assh
 		curl wget tshark netcat-gnu oha
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
@@ -61,11 +65,6 @@
 				};
 			in [
         cmake ccache
-        gleam erlang
-				bun nodejs_22
-
-				wabt wasmedge
-				qemu nasm
 
 				mkalias terminal-notifier protonvpn
 				better-display yabai
