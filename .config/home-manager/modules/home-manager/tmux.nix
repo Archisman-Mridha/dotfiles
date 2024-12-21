@@ -21,6 +21,8 @@ in {
 		extraConfig = ''
 			set-option -g mouse on
       set -g default-terminal "tmux-256color"
+
+			set -g allow-passthrough on
 		'';
 
 		plugins = with pkgs.tmuxPlugins; [
