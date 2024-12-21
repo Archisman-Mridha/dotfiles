@@ -57,7 +57,13 @@ stow --no-folding .
 home-manager switch
 ```
 
-If you're on MacOS, then also run the following to setup nix-darwin :
+While executing `stow --no-folding .`, in Arch Linux, if you get an error as such :
+```log
+* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+```
+In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
+
+If you're on MacOS, then run the following to setup nix-darwin :
 ```sh
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
@@ -93,6 +99,12 @@ home-manager switch
 - Wallpaper
   ![CyberPunk](./.config/wallpapers/cyberpunk.jpg)
 
+## Working in my Arch Linux machine from my Macbook
+
+In your Macbook, open Neovim and run `:DistantInstall`. This will install the distant binary in your machine. Then, run `:DistantLaunch ssh://<username>@<ip or hostname>` to connect to the Arch Linux machine.
+
+> distant.nvim currently doesn't support NeoTree and Telescope integration. But work on them is ongoing. So, as of now, I just SSH into my Arch Linux machine and run Neovim within that SSH session.
+
 ## REFERENCES
 
 - [MyNixOS](https://mynixos.com)
@@ -117,6 +129,10 @@ home-manager switch
 - [Installing Arch Linux using the Arch Linux installer](https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s)
 
 - [Arch Linux Experience - Hyprland](https://www.youtube.com/watch?v=uZDPXFQYz0Q)
+
+- [Distant.nvim's Neovim editor guide](https://distant.dev/editors/neovim/)
+
+- [Editing files and running LSP servers on a remote machine](https://youtu.be/BuW2b1Ii0RI?si=vClcQbM75BbJYR73)
 
 ## TODOS
 

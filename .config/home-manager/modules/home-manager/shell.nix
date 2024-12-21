@@ -14,7 +14,7 @@
 			curl = "xh";
 			htop = "btop";
 		} // (
-			if pkgs.stdenv.isDarwin then {
+			if system == "aarch64-darwin" then {
 				code = "~/Applications/Home\ Manager\ Apps/Visual\ Studio\ Code.app/Contents/MacOS/Electron";
 			}
 			else {}
