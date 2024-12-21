@@ -13,9 +13,11 @@
 			url = "github:LnL7/nix-darwin";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin }:
+  outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser }:
     let
 			config = import ./macos.config.nix;
 			inherit (config) system user device git;
@@ -34,7 +36,7 @@
 
 				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
 				extraSpecialArgs = {
-					inherit user git system;
+					inherit user git system zen-browser;
 				};
 
 				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */

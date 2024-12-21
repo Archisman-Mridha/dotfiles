@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, system, zen-browser, ... }:
 {
 	/*
 		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
@@ -8,6 +8,8 @@
 
 	home.packages= with pkgs; [
 		go richgo golangci-lint mockgen sqlc
+		rustup llvm
+		zig zls
 		luaformatter luajit luarocks
 		terraform
 		protobuf buf
@@ -61,8 +63,6 @@
         cmake ccache
         gleam erlang
 				bun nodejs_22
-				rustup llvm
-				zig zls
 
 				wabt wasmedge
 				qemu nasm
@@ -73,7 +73,9 @@
 		else [
 			xdg-desktop-portal-hyprland hyprland waybar rofi hyprpaper hyprcursor hyprlock hypridle
 			waypipe
+
 			protonvpn-cli mattermost-desktop
+			zen-browser.packages."${system}".specific
 
 			podman podman-compose
 		]
@@ -96,7 +98,7 @@
 
 		eza = {
 			enable = true;
-			icons = true;
+			icons = "auto";
 			git = true;
 			extraOptions = [ "--group-directories-first" ];
 		};
