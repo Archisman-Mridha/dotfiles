@@ -1,14 +1,14 @@
 # GUIDE
 
 <p>
-	<img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
-	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
-	<img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=for-the-badge" />
-	<img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
 	<img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
 	<img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
 	<img alt="Neovim" src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" />
-	<img alt="Editorconfig" src="https://img.shields.io/badge/EditorConfig-FEFEFE?logo=editorconfig&logoColor=000&style=for-the-badge" />
+	<img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
+	<img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
+	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
+	<img alt="Arch Linux" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge" />
+	<img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge" />
 </p>
 
 I assume that you've a fresh MacOS (with M series CPU architecture) installed.
@@ -105,6 +105,8 @@ home-manager switch
 - [Nix darwin activation script by elliott minns](https://gist.github.com/elliottminns/211ef645ebd484eb9a5228570bb60ec3)
 
 - [Installing Arch Linux using the Arch Linux installer](https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s)
+
+- [Arch Linux Experience - Hyprland](https://www.youtube.com/watch?v=uZDPXFQYz0Q)
 
 ## TODOS
 
