@@ -142,5 +142,8 @@
 		"editor.defaultFormatter": "golang.go"
 	},
 	"editor.accessibilitySupport": "off",
-	"workbench.activityBar.location": "hidden"
+	"workbench.activityBar.location": "hidden",
+	"[shellscript]": {
+		"editor.defaultFormatter": "shakram02.bash-beautify"
+	}
 }

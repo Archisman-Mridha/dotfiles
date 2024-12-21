@@ -146,8 +146,12 @@ In your Macbook, open Neovim and run `:DistantInstall`. This will install the di
 
 ## TODOS
 
+- [ ] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
+
+- [ ] Setup gopass.
+
+- [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
+
 - [ ] Enable image support in Neovim
 
 - [ ] Setup distant.nvim - lualine integration
-
-- [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
