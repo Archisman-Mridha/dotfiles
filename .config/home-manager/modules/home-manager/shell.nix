@@ -53,7 +53,7 @@
 				precmd() { echo; }
 
 				eval $(thefuck --alias)
-			'';
+			'' + (if system == "x86_64-linux" then "source '/opt/kube-ps1/kube-ps1.sh'" else "");
 		};
 	};
 }

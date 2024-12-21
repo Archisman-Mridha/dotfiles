@@ -81,6 +81,11 @@ nix-collect-garbage -d
 		chsh -s $(which zsh)
 	```
 
+- zsh plugin manager isn't automatically installing `kube-ps1`. So you need to do it yourself :
+	```sh
+	yay -S kube-ps1
+	```
+
 ## Updating packages
 
 Go to [./.config/home-manager/](./.config/home-manager/) and run :
