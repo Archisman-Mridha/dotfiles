@@ -71,7 +71,8 @@
 				better-display yabai
 			]
 		else [
-			hyprland hyprlock waybar hyprpaper hypridle xdg-desktop-portal-hyprland hyprcursor waypipe
+			xdg-desktop-portal-hyprland hyprland waybar rofi hyprpaper hyprcursor hyprlock hypridle
+			waypipe
 			protonvpn-cli mattermost-desktop
 
 			podman podman-compose

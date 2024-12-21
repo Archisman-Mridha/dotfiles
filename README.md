@@ -82,7 +82,6 @@ home-manager switch
 
 - Wallpaper
   ![CyberPunk](./.config/wallpapers/cyberpunk.jpg)
-	![Romantic](./.config/wallpapers/romantic.jpg)
 
 ## REFERENCES
 
