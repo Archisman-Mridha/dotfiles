@@ -44,8 +44,8 @@
 				# 	/nix/store/0pn1878v285l3nrfcagbb93bkkkbm811-oh-my-zsh-2024-10-01/share/oh-my-zsh/plugins/kube-ps1/kube-ps1.plugin.zsh:27: character not in range
 				#
 				# REFER : https://github.com/jonmosco/kube-ps1/issues/80#issuecomment-471517669.
-				LC_ALL = "en_US.UTF-8";
-				LANG = "en_US.UTF-8";
+				export LC_ALL="en_US.UTF-8";
+				export LANG="en_US.UTF-8";
 
 				plugins+=("kube-ps1")
 
