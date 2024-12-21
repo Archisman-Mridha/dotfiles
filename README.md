@@ -81,7 +81,8 @@ home-manager switch
   ![VSCode](./previews/vscode.png)
 
 - Wallpaper
-  ![Wallpaper](./previews/wallpaper.jpg)
+  ![CyberPunk](./.config/wallpapers/cyberpunk.jpg)
+	![Romantic](./.config/wallpapers/romantic.jpg)
 
 ## REFERENCES
 
