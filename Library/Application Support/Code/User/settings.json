@@ -51,7 +51,7 @@
 				"scope": [
 					"comment",
 					"keyword.control",
-					"keyword.other"
+					"keyword.other",
 					// "string.quoted.double"
 				],
 				"settings": {

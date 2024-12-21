@@ -57,13 +57,7 @@ stow --no-folding .
 home-manager switch
 ```
 
-While executing `stow --no-folding .`, in Arch Linux, if you get an error as such :
-```log
-* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
-```
-In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
-
-If you're on MacOS, then run the following to setup nix-darwin :
+On MacOS, run the following to install nix-darwin :
 ```sh
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
@@ -72,6 +66,20 @@ Execute this command, if you want to cleanup Nix cache :
 ```sh
 nix-collect-garbage -d
 ```
+
+## Arch Linux specific gotchas
+
+- While executing `stow --no-folding .`, in Arch Linux, if you get an error as such :
+	```log
+		* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+	```
+	In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
+
+- If you're in Arch Linux, your default shell will be Bash. And as far as I know, we cannot change the default shell using HomeManager (since that requires root privileges). So, manually execute the following commands, to make zsh your default shell :
+	```sh
+		grep -qxF $(which zsh) /etc/shells || echo $(which zsh) | sudo tee -a /etc/shells
+		chsh -s $(which zsh)
+	```
 
 ## Updating packages
 
@@ -109,6 +117,8 @@ In your Macbook, open Neovim and run `:DistantInstall`. This will install the di
 
 - [MyNixOS](https://mynixos.com)
 
+- [Appendix A. Home Manager Configuration Options](https://nix-community.github.io/home-manager/options.xhtml)
+
 - [Nix home-manager tutorial: Declare your entire home directory](https://youtu.be/FcC2dzecovw)
 
 - [How I Use Tmux With Neovim For An Awesome Dev Workflow On My Mac](https://www.youtube.com/watch?v=U-omALWIBos)
@@ -137,3 +147,7 @@ In your Macbook, open Neovim and run `:DistantInstall`. This will install the di
 ## TODOS
 
 - [ ] Enable image support in Neovim
+
+- [ ] Setup distant.nvim - lualine integration
+
+- [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.

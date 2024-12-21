@@ -42,13 +42,15 @@ in
     hkp-cacert /etc/sks-keyservers.netCA.pem
   '';
 
-	programs.gpg-agent = {
-    enable = true;
-    enableSshSupport = true;
-    extraConfig = ''
-      extra-socket /run/user/${uid}/gnupg/S.gpg-agent-extra
-      default-cache-ttl 600
-      max-cache-ttl 7200
-    '';
-  };
+	services = {
+		gpg-agent = {
+			enable = true;
+			enableZshIntegration = true;
+			enableSshSupport = true;
+			enableExtraSocket = true
+
+			maxCacheTtl = 7200;
+			defaultCacheTtl = 600;
+		};
+	};
 }
