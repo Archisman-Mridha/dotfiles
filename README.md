@@ -86,6 +86,11 @@ nix-collect-garbage -d
 	yay -S kube-ps1
 	```
 
+- Run this, so SSHD starts up automatically on boot :
+	```sh
+	sudo systemctl enable sshd
+	```
+
 ## Updating packages
 
 Go to [./.config/home-manager/](./.config/home-manager/) and run :
@@ -159,6 +164,8 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 - [Distant.nvim's Neovim editor guide](https://distant.dev/editors/neovim/)
 
 - [Editing files and running LSP servers on a remote machine](https://youtu.be/BuW2b1Ii0RI?si=vClcQbM75BbJYR73)
+
+- [SSH Port Forwarding](https://www.geeksforgeeks.org/ssh-port-forwarding/)
 
 ## TODOS
 
