@@ -47,21 +47,22 @@ local tablineConfig = {
 	},
 
 	sections = {
-		tabline_a = {{ "workspace", icon = wezterm.nerdfonts.oct_device_desktop }},
-		tabline_b = {{
-			"mode",
+		tabline_a = {{
+			"workspace",
+			icon = wezterm.nerdfonts.oct_device_desktop,
 			-- REFER : https://github.com/michaelbrusegard/tabline.wez/issues/43#issuecomment-2462027573.
-			fmt = function(mode, window)
+			fmt = function(workspace, window)
 				if window:leader_is_active() then
-					return wezterm.nerdfonts.cod_circle_large
+					return workspace .. " " .. wezterm.nerdfonts.cod_circle_large
 				else
-					return mode
+					return workspace
 				end
 			end,
 		}},
+		tabline_b = {},
 		tabline_c = {},
 
-		tab_active 	 = { { Attribute = { Italic = true } }, "index", { "tab", { max_length = 30 } } },
+		tab_active 	 = { "index", { "tab", { max_length = 30 } } },
 		tab_inactive = { "index" },
 
 		tabline_x = {},
