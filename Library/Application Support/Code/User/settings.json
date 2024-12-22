@@ -49,9 +49,9 @@
 		"textMateRules": [
 			{
 				"scope": [
-					"comment",
-					"keyword.control",
-					"keyword.other",
+					// "comment",
+					// "keyword.control",
+					// "keyword.other"
 					// "string.quoted.double"
 				],
 				"settings": {

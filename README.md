@@ -93,6 +93,15 @@ nix-collect-garbage -d
 	sudo systemctl enable sshd
 	```
 
+## Updating packages
+
+Go to [./.config/home-manager/](./.config/home-manager/) and run :
+
+```sh
+nix flake update
+home-manager switch --impure
+```
+
 ## Password management using gopass
 
 ### Bootstrap
@@ -129,24 +138,20 @@ pass show personal/github/ssh/public-key > github.pub
 
 > A small script can be made for a better UX.
 
-## Updating packages
+## Wezterm (and tmux)
 
-Go to [./.config/home-manager/](./.config/home-manager/) and run :
-
-```sh
-nix flake update
-home-manager switch --impure
-```
+- [Copy Mode](https://wezfurlong.org/wezterm/copymode.html)
+- [Quick Select Mode](https://wezfurlong.org/wezterm/quickselect.html)
 
 ## Working in my Arch Linux machine from my Macbook
 
 Everytime, I connect to the wifi from my Arch Linux machine, I want it to get assigned with the same private IPv4 address : `192.168.29.146/24`. I can pull it off, using this command :
 ```sh
 sudo nmcli connection modify "Bandwidth 5" \
-	ipv4.method manual \
-	ipv4.addresses "192.168.29.146/24" \
-	ipv4.gateway "192.168.1.1" \
-	ipv4.dns "192.168.1.1"
+  ipv4.method manual \
+  ipv4.addresses "192.168.29.146/24" \
+  ipv4.gateway "192.168.29.1" \
+  ipv4.dns "8.8.8.8 8.8.4.4"
 
 sudo nmcli connection up "Bandwidth 5"
 ```
@@ -211,11 +216,15 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
+- [My Wezterm Config](https://www.youtube.com/watch?v=V1X4WQTaxrc)
+
 ## TODOs
 
 - [x] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
 
 - [x] Setup gopass.
+
+- [ ] Configure Hyprland.
 
 - [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
 

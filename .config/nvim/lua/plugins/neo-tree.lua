@@ -1,3 +1,5 @@
+vim.keymap.set("n", "<leader>fr", ":Neotree reveal<CR>", {})
+
 -- To manage the file system and other tree like structures.
 return {
 	"nvim-neo-tree/neo-tree.nvim",

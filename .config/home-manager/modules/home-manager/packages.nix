@@ -23,9 +23,9 @@
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
     jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud wireguard-tools
 
-		tmux bat btop atuin stern neofetch jq xh fd ripgrep yazi eza lazygit delta thefuck tldr git
-    stow neovim unzip pass openssh assh
-		curl wget tshark netcat-gnu oha
+		tmux bat btop atuin stern neofetch jq fd ripgrep yazi eza lazygit delta thefuck tldr git stow
+		neovim unzip pass
+		curl wget tshark netcat-gnu oha dig openssh assh xh
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
@@ -70,15 +70,15 @@
 				better-display yabai
 			]
 		else [
-			xdg-desktop-portal-hyprland hyprland waybar rofi hyprpaper hyprcursor hyprlock hypridle
-			waypipe
+				xdg-desktop-portal-hyprland hyprland waybar rofi hyprpaper hyprcursor hyprlock hypridle
+				waypipe
 
-			protonvpn-cli mattermost-desktop
-			zen-browser.packages."${system}".specific
+				protonvpn-cli mattermost-desktop
+				zen-browser.packages."${system}".specific
 
-			podman podman-compose
-		]
-	);
+				podman podman-compose
+			]
+		);
 
 	programs = {
 		k9s = {
