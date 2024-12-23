@@ -3,17 +3,18 @@
 	home = {
 		sessionVariables = {
 			EDITOR = "nvim";
-			PASSWORD_STORE_DIR = "~/dotfiles/.password-store";
+			PASSWORD_STORE_DIR = "$HOME/dotfiles/.password-store";
 		};
 
 		shellAliases = {
-			k = "kubectl";
-			cd = "z";
-			ls = "eza";
-			cat = "bat";
-			vi = "nvim";
+			k		 = "kubectl";
+			cd	 = "z";
+			ls	 = "eza";
+			cat	 = "bat";
+			vi	 = "nvim";
 			curl = "xh";
 			htop = "btop";
+			y		 = "yazi";
 		} // (
 			if system == "aarch64-darwin" then {
 				code = "~/Applications/Home\\ Manager\\ Apps/Visual\\ Studio\\ Code.app/Contents/MacOS/Electron";

@@ -128,13 +128,27 @@ You can follow this tutorial, to learn further more about gopass : https://youtu
 
 ### Concurrent setups
 
-Import the GPG key using `gpg --import <path to GPG key file>`. Then, as usual, initialize the password store using `pass init <gpg-key-id>`.
+First, import and trust the GPG keypair :
+```sh
+gpg --import password-store.private-key.gpg
+gpg --import password-store.public-key.gpg
+
+gpg --edit-key <GPG key-pair id> (and then type trust and hit Enter)
+```
+
+Then, as usual, initialize the password store using `pass init <GPG key-id>`.
 
 The SSH key-pair I use to sign commits and authenticate against Github, is stored at `personal/github/ssh`. So, I use these commands to complete my Github setup :
 ```sh
-pass show personal/github/ssh/private-key > github
-pass show personal/github/ssh/public-key > github.pub
+pass show personal/github/ssh/private-key > ~/.ssh/github
+pass show personal/github/ssh/public-key  > ~/.ssh/github.pub
 ```
+
+Don't forget to set correct file permission for the private key file :
+```sh
+chmod 600 ~/.ssh/github.pub
+```
+otherwise you'll get `file permissions too open` error.
 
 > A small script can be made for a better UX.
 
