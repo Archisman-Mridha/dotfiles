@@ -168,8 +168,11 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 ## Previews
 
-- Neovim and Tmux
-  ![Neovim and Tmux](./previews/neovim-and-tmux.png)
+- Neovim
+  ![Neovim](./previews/neovim.png)
+
+- Wezterm
+  ![Wezterm](./previews/wezterm.png)
 
 - VSCode
   ![VSCode](./previews/vscode.png)
