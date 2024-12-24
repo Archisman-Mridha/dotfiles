@@ -1,9 +1,10 @@
-{ pkgs, system, ... }:
+{ system, ... }:
 {
 	home = {
 		sessionVariables = {
 			EDITOR = "nvim";
 			PASSWORD_STORE_DIR = "$HOME/dotfiles/.password-store";
+			GI_TYPELIB_PATH = "/usr/lib/girepository-1.0/";
 		};
 
 		shellAliases = {
@@ -51,7 +52,7 @@
 
 				plugins+=("kube-ps1")
 
-				PROMPT='$(kube_ps1) '$PROMPT
+				PROMPT='ラーメン 🍜 $(kube_ps1) '$PROMPT
 				precmd() { echo; }
 
 				eval $(thefuck --alias)

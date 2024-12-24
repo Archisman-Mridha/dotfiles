@@ -1,14 +1,14 @@
 { pkgs, git, system, ... }:
 let
 	/*
-		I use an SSH key to both : sign my commits and authenticate against Github.
+		Personally, I use an SSH key to both : sign my commits and authenticate against Github.
 
-		If git.signingKey is an absolute path that exists, then I assume that an SSH key will be used
-		to sign commits and authenticate against Github.
-
-		Otherwise, I assume that git.signingKey is a GPG key id.	
+		If git.signingKey is an 8 or 16 character hexadecimal string, then I assume that git.signingKey
+		is a GPG key id. Otherwise, I assume that it's a valid absolute path to the SSH key being used
+		for commit signing and authentication against Github.
 	*/
-	usingSSHSigningAndAuthenticationKey = builtins.pathExists git.signingKey;
+	isGPGKey = str: 
+		builtins.match "[0-9A-Fa-f]{8,16}$" str != null;
 in {
 	programs.git = {
 		enable = true;
@@ -22,7 +22,7 @@ in {
 			user = { signingKey = git.signingKey; };
 
 			gpg =
-				if builtins.pathExists git.signingKey then { format = "ssh"; }
+				if isGPGKey git.signingKey then { format = "ssh"; }
 				else {};
 
 			push = { autoSetupRemote = true; };
@@ -42,7 +42,7 @@ in {
 		package = pkgs.openssh;
 
 		matchBlocks = {
-			"github.com" = if usingSSHSigningAndAuthenticationKey then {
+			"github.com" = if isGPGKey git.signingKey then {
 				hostname = "github.com";
 				identityFile = git.signingKey;
 			} else {};

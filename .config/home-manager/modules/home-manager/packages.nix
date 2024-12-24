@@ -20,12 +20,12 @@
 		qemu nasm
 		hyprls
 
-		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport
-    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud wireguard-tools
+		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport docker-compose
+    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud
 
 		tmux bat btop atuin stern neofetch jq fd ripgrep yazi eza lazygit delta thefuck tldr git stow
 		neovim unzip pass
-		curl wget tshark netcat-gnu oha dig openssh assh xh
+		curl wget tshark netcat-gnu oha dig openssh assh xh wireguard-tools
 		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
 		vscode slack wezterm drawio
@@ -76,7 +76,7 @@
 				protonvpn-cli mattermost-desktop
 				zen-browser.packages."${system}".specific
 
-				podman podman-compose
+				docker
 			]
 		);
 

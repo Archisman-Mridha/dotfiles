@@ -42,15 +42,23 @@ in
     hkp-cacert /etc/sks-keyservers.netCA.pem
   '';
 
-	services = {
+	/* GPG agent configuration */
+	home.file.".gnupg/gpg-agent.conf".text = ''
+		pinentry-program /opt/homebrew/bin/pinentry-mac
+		enable-ssh-support
+		default-cache-ttl 600
+		max-cache-ttl 7200
+	'';
+
+	/* services = {
 		gpg-agent = {
 			enable = true;
 			enableZshIntegration = true;
 			enableSshSupport = true;
-			enableExtraSocket = true
+			enableExtraSocket = true;
 
 			maxCacheTtl = 7200;
 			defaultCacheTtl = 600;
 		};
-	};
+	}; */
 }
