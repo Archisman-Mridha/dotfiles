@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*.yaml*",
 	callback = function()
 		vim.opt_local.expandtab = true -- Use spaces instead of tabs
-		vim.opt_local.softtabstop = 2  -- Backspace removes 2 spaces
+		vim.opt_local.softtabstop = 2 -- Backspace removes 2 spaces
 	end,
 })
 
@@ -30,7 +30,7 @@ vim.lsp.inlay_hint.enable(false)
 require("neogit").setup({})
 
 require("which-key").setup({
-	preset = "modern",
+	preset = "classic",
 })
 
 -- Configure lualine to evil mode.
@@ -42,20 +42,25 @@ require("config.lualine")
 vim.o.clipboard = "unnamedplus"
 
 local function paste()
-  return {
-    vim.fn.split(vim.fn.getreg(""), "\n"),
-    vim.fn.getregtype(""),
-  }
+	return {
+		vim.fn.split(vim.fn.getreg(""), "\n"),
+		vim.fn.getregtype(""),
+	}
 end
 
 vim.g.clipboard = {
-  name = "OSC 52",
-  copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-  },
-  paste = {
-    ["+"] = paste,
-    ["*"] = paste,
-  },
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = paste,
+		["*"] = paste,
+	},
 }
+
+-- Show italic comments.
+-- vim.cmd([[
+--         highlight Comment cterm=italic gui=italic
+--       ]])

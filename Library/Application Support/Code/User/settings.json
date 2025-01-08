@@ -43,14 +43,13 @@
 	"editor.stickyScroll.enabled": false,
 	"editor.inlineSuggest.suppressSuggestions": true,
 	"editor.wordWrapColumn": 100,
-	"editor.codeLens": false,
 	"editor.stickyScroll.scrollWithEditor": false,
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
 				"scope": [
-					"comment",
-					// "keyword.control",
+					// "comment",
+					"keyword.control"
 					// "keyword.other"
 					// "string.quoted.double"
 				],
@@ -142,8 +141,5 @@
 		"editor.defaultFormatter": "golang.go"
 	},
 	"editor.accessibilitySupport": "off",
-	"workbench.activityBar.location": "hidden",
-	"[shellscript]": {
-		"editor.defaultFormatter": "shakram02.bash-beautify"
-	},
+	"editor.codeLens": false
 }

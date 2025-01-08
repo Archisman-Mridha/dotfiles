@@ -52,8 +52,7 @@
 
 				plugins+=("kube-ps1")
 
-				PROMPT='ラーメン 🍜 $(kube_ps1) '$PROMPT
-				precmd() { echo; }
+				eval "$(starship init zsh)"
 
 				eval $(thefuck --alias)
 
@@ -61,6 +60,10 @@
 				if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 					eval "$(ssh-agent -s)"
 				fi
+
+				export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+				export PATH="$PATH:$HOME/go/bin"
 			''
 			/* Install kube-ps1. */
 			+ (if system == "x86_64-linux" then

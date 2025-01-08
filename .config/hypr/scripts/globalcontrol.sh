@@ -60,7 +60,7 @@ get_themes()
     unset thmList
     unset thmWall
 
-    while read thmDir ; do
+    while read -r thmDir ; do
         if [ ! -e "$(readlink "${thmDir}/wall.set")" ] ; then
             get_hashmap "${thmDir}" --skipstrays || continue
             echo "fixig link :: ${thmDir}/wall.set"

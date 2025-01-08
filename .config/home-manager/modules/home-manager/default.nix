@@ -20,6 +20,8 @@
 	imports = [
 		./editorconfig.nix
 		./git.nix
+		./gpg.nix
+		./ssh.nix
 		./packages.nix
 		./shell.nix
 		./tmux.nix

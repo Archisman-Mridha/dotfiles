@@ -1,4 +1,4 @@
-{ pkgs, system, zen-browser, ... }:
+{ pkgs, system, zen-browser, ghostty, ... }:
 {
 	/*
 		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
@@ -7,6 +7,7 @@
 	nixpkgs.config.allowUnfree = true;
 
 	home.packages= with pkgs; [
+		/* Programming Languages related. */
 		go richgo golangci-lint mockgen sqlc
 		rustup llvm
 		zig zls
@@ -17,18 +18,39 @@
 		protobuf buf
 		ruff pyright
 		wabt wasmedge
-		qemu nasm
+		nasm
 		hyprls
+		cmake ccache
 
+		/* Kubernetes and CloudNative related. */
 		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport docker-compose
-    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud
+    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud cue
 
-		tmux bat btop atuin stern neofetch jq fd ripgrep yazi eza lazygit delta thefuck tldr git stow
-		neovim unzip pass
+		/* For managing terminal prompt. */
+		starship
+
+		/* Networking related. */
 		curl wget tshark netcat-gnu oha dig openssh assh xh wireguard-tools
-		fzf-zsh zsh-fzf-history-search zsh-fzf-tab
 
-		vscode slack wezterm drawio
+		/* For fuzzy finding. */
+		fzf fzf-zsh zsh-fzf-history-search zsh-fzf-tab
+
+		neovim /* Editor					 */
+		yazi	 /* File manager		 */
+		tmux	 /* Multiplexer			 */
+		pass	 /* Password manager */
+
+		/* Git related. */
+		lazygit git delta
+
+		/* GPG related. */
+		gnupg
+
+		/* Miscalleneous CLI tools. */
+		bat btop atuin stern neofetch jq fd ripgrep eza thefuck tldr stow unzip mkalias
+
+		/* Desktop Apps */
+		vscode slack drawio qemu
 	] ++ (
 		if system == "aarch64-darwin" then
 			let
@@ -64,19 +86,26 @@
 					'';
 				};
 			in [
-        cmake ccache
+				/* GPG related. */
+				yubikey-personalization pinentry_mac
 
-				mkalias terminal-notifier protonvpn
-				better-display yabai
+				yabai /* Window Manager */
+
+				/* Desktop Apps */
+				wezterm terminal-notifier protonvpn better-display
 			]
 		else [
+				/* protonvpn-cli */ /* TODO : This isn't working. Shift to WireGuard. */
+				docker
+
+			  /* Wayland Compositor */
 				xdg-desktop-portal-hyprland hyprland waybar rofi hyprpaper hyprcursor hyprlock hypridle
 				waypipe
 
-				protonvpn-cli mattermost-desktop
+				/* Desktop Apps */
 				zen-browser.packages."${system}".specific
-
-				docker
+				ghostty.packages.x86_64-linux.default
+				mattermost-desktop 
 			]
 		);
 

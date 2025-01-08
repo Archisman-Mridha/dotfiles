@@ -6,6 +6,8 @@ return {
 		"3rd/image.nvim",
 	},
 	opts = function()
+		vim.keymap.set("n", "<leader>fr", ":Neotree reveal<CR>", {})
+
 		-- If you want icons for diagnostic errors, you'll need to define them somewhere:
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
 		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })

@@ -15,11 +15,14 @@
 		};
 
 		zen-browser.url = "github:MarceColl/zen-browser-flake";
+
+		ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser }:
+  outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser, ghostty }:
     let
 			system = builtins.currentSystem;
+			/* system = "aarch64-darwin"; */
 
 			macosConfig = import ./macos.config.nix;
 			archLinuxConfig = import ./archlinux.config.nix;
@@ -42,7 +45,7 @@
 
 				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
 				extraSpecialArgs = {
-					inherit user git system zen-browser;
+					inherit user git system zen-browser ghostty;
 				};
 
 				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
