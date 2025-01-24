@@ -52,10 +52,6 @@
 
 				plugins+=("kube-ps1")
 
-				eval "$(starship init zsh)"
-
-				eval $(thefuck --alias)
-
 				# Start SSH Agent, if it isn't running already.
 				if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 					eval "$(ssh-agent -s)"
@@ -64,6 +60,10 @@
 				export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 				export PATH="$PATH:$HOME/go/bin"
+
+				eval "$(direnv hook zsh)"
+				eval "$(starship init zsh)"
+				eval "$(thefuck --alias)"
 			''
 			/* Install kube-ps1. */
 			+ (if system == "x86_64-linux" then

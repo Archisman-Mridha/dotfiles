@@ -1,49 +1,56 @@
 # Dotfiles
 
 <p>
-	<img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
-	<img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
-	<img alt="Neovim" src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" />
-	<img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
-	<img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
-	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
-	<img alt="Arch Linux" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge" />
-	<img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge" />
+ <img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
+ <img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
+ <img alt="Neovim" src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" />
+ <img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
+ <img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
+ <img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
+ <img alt="Arch Linux" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge" />
+ <img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge" />
 </p>
 
 ## Installing Arch Linux
 
-You can follow this tutorial : https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s, to install Arch Linux using the Arch Linux Installer. Just make sure you choose `Hyprland` as the desktop environment and `NetworkManager` as the network management tool.
+You can follow this tutorial : <https://www.youtube.com/watch?v=FxeriGuJKTM&t=354s>, to install Arch Linux using the Arch Linux Installer. Just make sure you choose `Hyprland` as the desktop environment and `NetworkManager` as the network management tool.
 
 You can list available wifi networks using this command :
+
 ```sh
 nmcli dev wifi list
 ```
 
 and connect with one, using this command :
+
 ```sh
 nmcli dev wifi connect <SSID> password <password>
 ```
 
 To verify that you're successfully connected to your wifi, run this command :
+
 ```sh
 ip addr show
 ```
+
 the `wlan0` network interface must have an IPv4 address assigned.
 
 ## Setup
 
 First install Nix :
+
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
+
 ```sh
 nix-shell -p git stow home-manager vim
 ```
 
 Clone this repository :
+
 ```sh
 git clone https://github.com/Archisman-Mridha/dotfiles ~/dotfiles
 cd ~/dotfiles
@@ -51,6 +58,7 @@ cd ~/dotfiles
 
 You can customize [.config/home-manager/config.nix](.config/home-manager/config.nix) based on your
 underlying system. Then execute the following commands :
+
 ```sh
 stow --no-folding .
 
@@ -58,6 +66,7 @@ home-manager switch --impure
 ```
 
 On MacOS, run the following to install nix-darwin :
+
 ```sh
 nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 ```
@@ -65,6 +74,7 @@ nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
 The packages specified in [packages.nix](./.config/home-manager/modules/home-manager/packages.nix) and [homebrew.nix](./.config/home-manager/modules/nix-darwin/homebrew.nix) will be installed in your system.
 
 Execute this command, if you want to cleanup Nix cache :
+
 ```sh
 nix-collect-garbage -d
 ```
@@ -72,26 +82,31 @@ nix-collect-garbage -d
 ## Arch Linux specific gotchas
 
 - While executing `stow --no-folding .`, in Arch Linux, if you get an error as such :
-	```log
-	* cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
-	```
-	In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
+
+  ```log
+  * cannot stow dotfiles/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+  ```
+
+  In that case, first execute `stow --no-folding . --adopt`. Then, navigate to `~/.config/hypr/hyprland.conf` and replace the content with whatever is present [here](./.config/hypr/hyprland.conf).
 
 - If you're in Arch Linux, your default shell will be Bash. And as far as I know, we cannot change the default shell using HomeManager (since that requires root privileges). So, manually execute the following commands, to make zsh your default shell :
-	```sh
-	grep -qxF $(which zsh) /etc/shells || echo $(which zsh) | sudo tee -a /etc/shells
-	chsh -s $(which zsh)
-	```
+
+  ```sh
+  grep -qxF $(which zsh) /etc/shells || echo $(which zsh) | sudo tee -a /etc/shells
+  chsh -s $(which zsh)
+  ```
 
 - zsh plugin manager isn't automatically installing `kube-ps1`. So you need to do it yourself :
-	```sh
-	yay -S kube-ps1
-	```
+
+  ```sh
+  yay -S kube-ps1
+  ```
 
 - Run this, so SSHD starts up automatically on boot :
-	```sh
-	sudo systemctl enable sshd
-	```
+
+  ```sh
+  sudo systemctl enable sshd
+  ```
 
 ## Updating packages
 
@@ -109,26 +124,31 @@ home-manager switch --impure
 Since, the company I currently work for uses [Password Store](https://www.passwordstore.org), I will be settling with [gopass](https://github.com/gopasspw/gopass) for now. But, if someday I discontinue working with them, I'll might give [sops-nix](https://youtu.be/G5f6GC7SnhU?si=baQEJPWG1dWgIqZQ) a try.
 
 First, generate a GPG key-pair (which never expires), using this command :
+
 ```sh
 gpg --gen-key
 gpg --edit-key <gpg-key-id>
 ```
+
 Make sure you backup this GPG key-pair somewhere safe. You can view the actual public and private keys using :
+
 ```sh
 gpg --export --armor <gpg-key-id>
 gpg --export-secret-keys --armor <gpg-key-id>
 ```
 
 Next, initialize the password store using :
+
 ```sh
 pass init <gpg-key-id>
 ```
 
-You can follow this tutorial, to learn further more about gopass : https://youtu.be/FhwsfH2TpFA?si=ZIo4NmrTHEcgxS_u.
+You can follow this tutorial, to learn further more about gopass : <https://youtu.be/FhwsfH2TpFA?si=ZIo4NmrTHEcgxS_u>.
 
 ### Concurrent setups
 
 First, import and trust the GPG keypair :
+
 ```sh
 gpg --import password-store.private-key.gpg
 gpg --import password-store.public-key.gpg
@@ -139,15 +159,18 @@ gpg --edit-key <GPG key-pair id> (and then type trust and hit Enter)
 Then, as usual, initialize the password store using `pass init <GPG key-id>`.
 
 The SSH key-pair I use to sign commits and authenticate against Github, is stored at `personal/github/ssh`. So, I use these commands to complete my Github setup :
+
 ```sh
 pass show personal/github/ssh/private-key > ~/.ssh/github
 pass show personal/github/ssh/public-key  > ~/.ssh/github.pub
 ```
 
 Don't forget to set correct file permission for the private key file :
+
 ```sh
 chmod 600 ~/.ssh/github.pub
 ```
+
 otherwise you'll get `file permissions too open` error.
 
 > A small script can be made for a better UX.
@@ -160,6 +183,7 @@ otherwise you'll get `file permissions too open` error.
 ## Working in my Arch Linux machine from my Macbook
 
 Everytime, I connect to the wifi from my Arch Linux machine, I want it to get assigned with the same private IPv4 address : `192.168.29.146/24`. I can pull it off, using this command :
+
 ```sh
 sudo nmcli connection modify "Bandwidth 5" \
   ipv4.method manual \
@@ -235,6 +259,8 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [My Wezterm Config](https://www.youtube.com/watch?v=V1X4WQTaxrc)
 
+- [Is it possible to disable lsp formatting temporarily?](https://www.reddit.com/r/neovim/comments/oo8jcu/is_it_possible_to_disable_lsp_formatting/)
+
 ## TODOs
 
 - [x] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
@@ -245,11 +271,11 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
 
-	> I tried to do so, but was getting this error while doing `home-manager switch --flake ~/.config/nix#"archismanmridha" :
-	>
-	> 		access to absolute path '/nix/dotfiles' is forbidden in pure evaluation mode (use '--impure' to override)
-	>
-	> Using the --impure flag didn't solve the issue.
+  > I tried to do so, but was getting this error while doing `home-manager switch --flake ~/.config/nix#"archismanmridha" :
+  >
+  >      access to absolute path '/nix/dotfiles' is forbidden in pure evaluation mode (use '--impure' to override)
+  >
+  > Using the --impure flag didn't solve the issue.
 
 - [ ] Enable image support in Neovim
 

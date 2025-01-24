@@ -56,9 +56,6 @@ require("lazy").setup({
 		-- Incremental LSP renaming based on Neovim's command-preview feature.
 		{ import = "lazyvim.plugins.extras.editor.inc-renam" },
 
-		-- Formatting
-		{ import = "lazyvim.plugins.extras.formatting.prettier" },
-
 		-- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
 		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
 

@@ -3,7 +3,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin-mocha",
+			-- colorscheme = "catppuccin-mocha",
 		},
 	},
 	{
@@ -11,7 +11,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 
-		enabled = true,
+		enabled = false,
 		config = function()
 			require("catppuccin").setup({
 				styles = {
@@ -24,7 +24,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		opts = {
 			--- You can override specific color groups to use other groups or a hex color
 			--- function will be called with a ColorScheme table
@@ -38,9 +38,7 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 
-				comments = {
-					italic = true,
-				},
+				comments = { italic = true },
 			},
 		},
 	},

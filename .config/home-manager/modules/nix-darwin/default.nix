@@ -76,7 +76,6 @@
 		./finder.nix
 		./trackpad.nix
 		./homebrew.nix
-		./spotlight.nix
 		./window-manager.nix
 	];
 

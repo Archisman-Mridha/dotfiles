@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,45 +21,47 @@
 		ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser, ghostty }:
-    let
-			system = builtins.currentSystem;
-			/* system = "aarch64-darwin"; */
+  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, zen-browser, ghostty }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        macosConfig = import ./macos.config.nix;
+        archLinuxConfig = import ./archlinux.config.nix;
 
-			macosConfig = import ./macos.config.nix;
-			archLinuxConfig = import ./archlinux.config.nix;
-			config =
-				if system == "aarch64-darwin" then macosConfig else archLinuxConfig;
+        config =
+          if system == "aarch64-darwin" then macosConfig else archLinuxConfig;
 
-			inherit (config) user device git;
+        inherit (config) user device git;
 
-			pkgs = import nixpkgs {
-				inherit system;
+        pkgs = import nixpkgs {
+          inherit system;
 
-				config = {
-					/* Try compiling packages which are marked as unsupported for the given system. */
-					allowUnsupportedSystem = true;
-				};
-			};
-    in {
-			homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
-				inherit pkgs;
-
-				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
-				extraSpecialArgs = {
-					inherit user git system zen-browser ghostty;
-				};
-
-				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
-				modules = [ ./modules/home-manager ];
-			};
-
-			darwinConfigurations = if system == "x86_64-darwin" || system == "aarch64-darwin" then {
-        "${device}" = nix-darwin.lib.darwinSystem {
-          inherit pkgs system;
-
-          modules = [ ./modules/nix-darwin ];
+          config = {
+            /* Try compiling packages which are marked as unsupported for the given system. */
+            allowUnsupportedSystem = true;
+          };
         };
-      } else {};
-		};
+      in {
+        package = {
+          homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+
+            /* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
+            extraSpecialArgs = {
+              inherit user git system zen-browser ghostty;
+            };
+
+            /* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
+            modules = [ ./modules/home-manager ];
+          };
+
+          darwinConfigurations = if system == "x86_64-darwin" || system == "aarch64-darwin" then {
+            "${device}" = nix-darwin.lib.darwinSystem {
+              inherit pkgs system;
+
+              modules = [ ./modules/nix-darwin ];
+            };
+          } else {};
+        };
+      }
+  );
 }

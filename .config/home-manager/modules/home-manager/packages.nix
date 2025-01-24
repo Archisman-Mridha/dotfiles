@@ -12,7 +12,7 @@
 		rustup llvm
 		zig zls
 		gleam erlang
-		bun nodejs_22
+		bun nodejs_22 biome
 		luaformatter luajit luarocks
 		terraform
 		protobuf buf
@@ -21,16 +21,18 @@
 		nasm
 		hyprls
 		cmake ccache
+    nixfmt-rfc-style
 
 		/* Kubernetes and CloudNative related. */
-		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal teleport docker-compose
-    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 hcloud cue
+		k3d kubectl kubectx kustomize kubernetes-helm operator-sdk kubeseal docker-compose
+    jsonnet-bundler jsonnet tanka lazydocker kops awscli2 saml2aws aws-nuke hcloud cue dive
+    ansible
 
 		/* For managing terminal prompt. */
 		starship
 
 		/* Networking related. */
-		curl wget tshark netcat-gnu oha dig openssh assh xh wireguard-tools
+		curl wget tshark netcat-gnu oha dig openssh assh xh wireguard-tools teleport
 
 		/* For fuzzy finding. */
 		fzf fzf-zsh zsh-fzf-history-search zsh-fzf-tab
@@ -47,7 +49,7 @@
 		gnupg
 
 		/* Miscalleneous CLI tools. */
-		bat btop atuin stern neofetch jq fd ripgrep eza thefuck tldr stow unzip mkalias
+		bat btop atuin stern neofetch jq fd ripgrep eza thefuck tldr stow unzip mkalias direnv
 
 		/* Desktop Apps */
 		vscode slack drawio qemu
@@ -92,7 +94,7 @@
 				yabai /* Window Manager */
 
 				/* Desktop Apps */
-				wezterm terminal-notifier protonvpn better-display
+				wezterm terminal-notifier protonvpn better-display /* raycast */
 			]
 		else [
 				/* protonvpn-cli */ /* TODO : This isn't working. Shift to WireGuard. */

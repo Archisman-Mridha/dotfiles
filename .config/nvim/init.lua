@@ -5,20 +5,6 @@ vim.o.cursorline = false
 
 vim.opt.colorcolumn = "100"
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.bo.softtabstop = 2
-
--- Use spaces for indenting in YAML files.
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*.yaml*",
-	callback = function()
-		vim.opt_local.expandtab = true -- Use spaces instead of tabs
-		vim.opt_local.softtabstop = 2 -- Backspace removes 2 spaces
-	end,
-})
-
 vim.opt.list = false
 
 -- Enable format on save.
@@ -60,7 +46,12 @@ vim.g.clipboard = {
 	},
 }
 
--- Show italic comments.
--- vim.cmd([[
---         highlight Comment cterm=italic gui=italic
---       ]])
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.expandtab = true
+		vim.opt_local.tabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.softtabstop = 2
+	end,
+})

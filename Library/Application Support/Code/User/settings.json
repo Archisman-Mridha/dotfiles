@@ -48,7 +48,7 @@
 		"textMateRules": [
 			{
 				"scope": [
-					// "comment",
+					"comment",
 					"keyword.control"
 					// "keyword.other"
 					// "string.quoted.double"
@@ -141,5 +141,6 @@
 		"editor.defaultFormatter": "golang.go"
 	},
 	"editor.accessibilitySupport": "off",
-	"editor.codeLens": false
+	"editor.codeLens": false,
+	"workbench.activityBar.location": "hidden",
 }
