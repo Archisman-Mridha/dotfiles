@@ -64,8 +64,10 @@ local tablineConfig = {
 		tabline_b = {},
 		tabline_c = {},
 
-		tab_active = { "index", { "cwd", { max_length = 50 } } },
-		tab_inactive = { "index", { "cwd", { max_length = 50 } } },
+		tab_active = { "index", {} },
+		tab_inactive = { "index", {} },
+		-- tab_active = { "index", { "cwd", { max_length = 50 } } },
+		-- tab_inactive = { "index", { "cwd", { max_length = 50 } } },
 
 		tabline_x = {},
 		tabline_y = {},

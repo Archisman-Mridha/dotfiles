@@ -11,8 +11,8 @@
     # Personal
     /*
       userName = "Archisman-Mridha";
-      userEmail = "archismanmridha12345@gmail.com";
-      signingKey = "/Users/archismanmridha/.ssh/github";
+      		userEmail = "archismanmridha12345@gmail.com";
+      		signingKey = "/Users/archismanmridha/.ssh/github";
     */
   };
 }

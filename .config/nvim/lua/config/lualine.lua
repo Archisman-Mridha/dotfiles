@@ -84,7 +84,7 @@ ins_left({
 	"filename",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.bg, bg = colors.blue },
-	padding = { left = 1 }
+	padding = { left = 1 },
 })
 
 ins_left({

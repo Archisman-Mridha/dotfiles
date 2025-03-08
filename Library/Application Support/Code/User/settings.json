@@ -29,7 +29,7 @@
 	},
 	"workbench.colorTheme": "GitHub Dark",
 
-	// "editor.formatOnSave": true,
+	"editor.formatOnSave": true,
 	"editor.semanticHighlighting.enabled": true,
 	"editor.cursorBlinking": "expand",
 	"editor.cursorSmoothCaretAnimation": "on",
@@ -48,8 +48,8 @@
 		"textMateRules": [
 			{
 				"scope": [
-					"comment",
-					"keyword.control"
+					"comment"
+					// "keyword.control"
 					// "keyword.other"
 					// "string.quoted.double"
 				],
@@ -58,6 +58,14 @@
 				}
 			}
 		]
+	},
+	"editor.semanticTokenColorCustomizations": {
+		"enabled": true,
+		"rules": {
+			"*.mutable": {
+				"underline": false
+			}
+		}
 	},
 	"editor.rulers": [100, 125],
 	"editor.minimap.enabled": false,
@@ -142,5 +150,14 @@
 	},
 	"editor.accessibilitySupport": "off",
 	"editor.codeLens": false,
-	"workbench.activityBar.location": "hidden",
+	"[terraform]": {
+		"editor.defaultFormatter": "hashicorp.terraform"
+	},
+	"[nginx]": {
+		"editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+	},
+	"workbench.activityBar.location": "hidden"
+	// "[xml]": {
+	// 	"editor.defaultFormatter": "redhat.vscode-xml"
+	// }
 }

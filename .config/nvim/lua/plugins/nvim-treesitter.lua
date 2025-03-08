@@ -20,6 +20,9 @@ return {
 						},
 					},
 				},
+				highlight = {
+					enable = false,
+				},
 			})
 		end,
 		opts = {

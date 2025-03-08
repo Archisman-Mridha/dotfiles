@@ -1,11 +1,8 @@
 { ... }:
 {
 	/* Auto upgrade nix packages and the the daemon service */
-	services.nix-daemon = {
-		enable = true;
-		enableSocketListener = true;
-	};
 	nix = {
+    enable = true;
 		optimise = {
 			automatic = true;
 		};
@@ -13,7 +10,6 @@
 			/* Automatically run the garbage collector at a specific time. */
 			automatic = true;
 			interval = { Hour = 23; };
-			user = "archismanmridha";
 		};
 	};
 

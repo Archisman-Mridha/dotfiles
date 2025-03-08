@@ -25,7 +25,7 @@ return {
 	window_decorations = "RESIZE",
 	window_padding = { top = 0, bottom = 0, left = 0, right = 0 },
 	window_background_opacity = 0.8,
-	macos_window_background_blur = 25,
+	macos_window_background_blur = 50,
 
 	window_close_confirmation = "NeverPrompt",
 }

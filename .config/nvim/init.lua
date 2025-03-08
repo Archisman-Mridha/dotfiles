@@ -55,3 +55,32 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.opt_local.softtabstop = 2
 	end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*.zig",
+	callback = function()
+		vim.opt_local.expandtab = true
+		vim.opt_local.tabstop = 4
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.softtabstop = 4
+	end,
+})
+
+-- Save folds across sessions.
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local save_fold = augroup("Persistent Folds", { clear = true })
+autocmd("BufWinLeave", {
+	pattern = "*.*",
+	callback = function()
+		vim.cmd.mkview()
+	end,
+	group = save_fold,
+})
+autocmd("BufWinEnter", {
+	pattern = "*.*",
+	callback = function()
+		vim.cmd.loadview({ mods = { emsg_silent = true } })
+	end,
+	group = save_fold,
+})
