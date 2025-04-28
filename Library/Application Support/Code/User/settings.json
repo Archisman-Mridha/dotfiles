@@ -27,7 +27,6 @@
 		"panel.background": "#000000",
 		"editor.selectionBackground": "#303b4d"
 	},
-	"workbench.colorTheme": "GitHub Dark",
 
 	"editor.formatOnSave": true,
 	"editor.semanticHighlighting.enabled": true,
@@ -48,8 +47,9 @@
 		"textMateRules": [
 			{
 				"scope": [
-					"comment"
-					// "keyword.control"
+					"comment",
+					"keyword.control"
+					// "storage.type"
 					// "keyword.other"
 					// "string.quoted.double"
 				],
@@ -156,8 +156,7 @@
 	"[nginx]": {
 		"editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
 	},
-	"workbench.activityBar.location": "hidden"
-	// "[xml]": {
-	// 	"editor.defaultFormatter": "redhat.vscode-xml"
-	// }
+	"workbench.colorTheme": "GitHub Dark",
+	"zenMode.showTabs": "none",
+	"workbench.editor.showTabs": "none"
 }

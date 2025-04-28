@@ -26,7 +26,7 @@ return {
 			})
 		end,
 		opts = {
-			ensure_installed = { "http", "graphql" },
+			ensure_installed = { "odin", "cue", "http", "graphql", "hcl" },
 		},
 	},
 }

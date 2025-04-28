@@ -84,3 +84,11 @@ autocmd("BufWinEnter", {
 	end,
 	group = save_fold,
 })
+
+-- Use clangd binary specified using the CLANGD_PATH environment variable.
+-- Otherwise, use the one added by default to PATH.
+local lspconfig = require("lspconfig")
+local clangd_path = os.getenv("CLANGD_PATH")
+lspconfig.clangd.setup({
+	cmd = clangd_path and { clangd_path, "--background-index" } or { "clangd", "--background-index" },
+})

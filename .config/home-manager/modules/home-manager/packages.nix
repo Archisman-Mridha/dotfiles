@@ -2,13 +2,12 @@
   pkgs,
   system,
   zen-browser,
-  ghostty,
   ...
 }:
 {
   /*
-    		The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
-    		It allows you to set package configuration options.
+    The configuration of the Nix Packages collection. (For details, see the Nixpkgs documentation.)
+    It allows you to set package configuration options.
   */
   nixpkgs.config.allowUnfree = true;
 
@@ -16,32 +15,19 @@
     with pkgs;
     [
       # Programming Languages related.
-      go
-      richgo
-      golangci-lint
-      mockgen
-      sqlc
-      rustup
+      go_1_24
       llvm
+      rustup
       zig
       zls
-      gleam
-      erlang
       bun
       nodejs_22
-      pnpm
       biome
       luaformatter
       luajit
       luarocks
-      terraform
-      protobuf
-      buf
       ruff
       pyright
-      wabt
-      wasm-tools
-      nasm
       hyprls
       cmake
       ccache
@@ -53,12 +39,8 @@
       kubectx
       kustomize
       kubernetes-helm
-      operator-sdk
       kubeseal
       docker-compose
-      jsonnet-bundler
-      jsonnet
-      tanka
       lazydocker
       kops
       awscli2
@@ -68,7 +50,6 @@
       cue
       dive
       ansible
-      argocd
 
       # For managing terminal prompt.
       starship
@@ -123,6 +104,7 @@
       direnv
 
       # Desktop Apps
+      wezterm
       vscode
       slack
       drawio
@@ -170,10 +152,10 @@
           pinentry_mac
 
           # Desktop Apps
-          wezterm
           terminal-notifier
           protonvpn
-          better-display # raycast
+          better-display
+          raycast
         ]
       else
         [
@@ -195,7 +177,6 @@
 
           # Desktop Apps
           zen-browser.packages."${system}".specific
-          ghostty.packages.x86_64-linux.default
           mattermost-desktop
         ]
     );

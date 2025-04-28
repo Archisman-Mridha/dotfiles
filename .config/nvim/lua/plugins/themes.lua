@@ -50,7 +50,7 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 
-				comments = { italic = false },
+				comments = { italic = true },
 				keywords = { italic = false },
 			},
 			on_highlights = function(hl, c)

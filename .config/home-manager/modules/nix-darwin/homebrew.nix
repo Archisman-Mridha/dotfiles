@@ -8,7 +8,7 @@
       "vlc"
       "discord"
       "aviatrix-vpn-client"
-      "sourcetrail"
+      "ghostty"
     ];
     taps = [ ];
     brews = [
