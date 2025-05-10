@@ -1,0 +1,7 @@
+[gpg]
+    format = "ssh"
+
+[user]
+    email = "archismanmridha12345@gmail.com"
+    name = "Archisman-Mridha"
+    signingKey = "~/.ssh/github"

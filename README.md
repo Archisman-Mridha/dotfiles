@@ -46,7 +46,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 Then get into a temporary Nix shell, where you'll have access to git, stow and home-manager.
 
 ```sh
-nix-shell -p git stow home-manager vim
+nix-shell -p git git-crypt stow home-manager vim
 ```
 
 Clone this repository :
@@ -56,19 +56,24 @@ git clone https://github.com/Archisman-Mridha/dotfiles ~/dotfiles
 cd ~/dotfiles
 ```
 
-You can customize [.config/home-manager/config.nix](.config/home-manager/config.nix) based on your
-underlying system. Then execute the following commands :
+> [!NOTE]
+> Wireguard and Aviatrix config files are encrypted using `git-crypt`.
+> Import your GPG key and execute `git-crypt unlock` to decrypt the files.
+
+Then execute :
 
 ```sh
 stow --no-folding .
 
-home-manager switch --impure
+home-manager switch \
+  --flake $HOME/dotfiles/.config/home-manager#archismanmridha@Archismans-MacBook-Air
 ```
 
 On MacOS, run the following to install nix-darwin :
 
 ```sh
-nix run nix-darwin -- switch --flake $(pwd)/.config/home-manager
+nix run nix-darwin -- switch \
+  --flake $(pwd)/.config/nix-darwin
 ```
 
 The packages specified in [packages.nix](./.config/home-manager/modules/home-manager/packages.nix) and [homebrew.nix](./.config/home-manager/modules/nix-darwin/homebrew.nix) will be installed in your system.
@@ -140,7 +145,7 @@ gpg --export-secret-keys --armor <gpg-key-id>
 Next, initialize the password store using :
 
 ```sh
-pass init <gpg-key-id>
+gopass init <gpg-key-id>
 ```
 
 You can follow this tutorial, to learn further more about gopass : <https://youtu.be/FhwsfH2TpFA?si=ZIo4NmrTHEcgxS_u>.
@@ -161,8 +166,8 @@ Then, as usual, initialize the password store using `pass init <GPG key-id>`.
 The SSH key-pair I use to sign commits and authenticate against Github, is stored at `personal/github/ssh`. So, I use these commands to complete my Github setup :
 
 ```sh
-pass show personal/github/ssh/private-key > ~/.ssh/github
-pass show personal/github/ssh/public-key  > ~/.ssh/github.pub
+gopass show personal/github/ssh/private-key > ~/.ssh/github
+gopass show personal/github/ssh/public-key  > ~/.ssh/github.pub
 ```
 
 Don't forget to set correct file permission for the private key file :
@@ -206,8 +211,8 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 ## Previews
 
-- Neovim
-  ![Neovim](./previews/neovim.png)
+- Neovim and Tmux
+  ![Neovim](./previews/neovim-and-tmux.png)
 
 - Wezterm
   ![Wezterm](./previews/wezterm.png)
@@ -216,7 +221,7 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
   ![VSCode](./previews/vscode.png)
 
 - Wallpaper
-  ![CyberPunk](./.config/wallpapers/cyberpunk.jpg)
+  ![Glassy](./.config/wallpapers/glassy.jpg)
 
 ## References
 
@@ -261,6 +266,10 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [Is it possible to disable lsp formatting temporarily?](https://www.reddit.com/r/neovim/comments/oo8jcu/is_it_possible_to_disable_lsp_formatting/)
 
+- [How to Use Multiple Git Configs on One Computer](https://www.freecodecamp.org/news/how-to-handle-multiple-git-configurations-in-one-machine/)
+
+- [Seamless copy-paste between tmux, vim and clipboard over ssh](https://gronskiy.com/posts/2023-03-26-copy-via-vim-tmux-ssh/)
+
 ## TODOs
 
 - [x] Detect the underlying OS and CPU architecture, based on which the [macos.config.nix](./.config/home-manager/macos.config.nix) or the [archlinux.config.nix](./.config/home-manager/archlinux.config.nix) will be imported in [flake.nix](./.config/home-manager/flake.nix).
@@ -269,14 +278,4 @@ In my Macbook, I open Neovim and run `:DistantInstall`. This will install the di
 
 - [ ] Configure Hyprland.
 
-- [ ] Shift the files inside [.config/home-manager](./.config/home-manager) to [.config/nix](./.config/nix). The [.config/home-manager](./.config/home-manager) name is a bit confusing, since it contains files related to both HomeManager and nix-darwin.
-
-  > I tried to do so, but was getting this error while doing `home-manager switch --flake ~/.config/nix#"archismanmridha" :
-  >
-  >      access to absolute path '/nix/dotfiles' is forbidden in pure evaluation mode (use '--impure' to override)
-  >
-  > Using the --impure flag didn't solve the issue.
-
-- [ ] Enable image support in Neovim
-
-- [ ] Setup distant.nvim - lualine integration
+- [x] Enable image support in Neovim

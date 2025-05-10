@@ -45,6 +45,6 @@ return {
 		end,
 	},
 
-	-- Disable bufferline (shows VSCode like tabs)
+	-- Disable bufferline (which shows VSCode like tabs)
 	{ "akinsho/bufferline.nvim", enabled = false },
 }

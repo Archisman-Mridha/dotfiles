@@ -4,6 +4,9 @@ local weztermConfig = require("config")
 
 weztermConfig.leader = { key = "a", mods = "ALT", timeout_milliseconds = 2000 }
 weztermConfig.keys = {
+	-- Show tab navigator.
+	{ key = "t", mods = "LEADER", action = wezterm.action.ShowTabNavigator },
+
 	-- Rename currently active tab
 	{
 		key = "e",
@@ -28,9 +31,15 @@ weztermConfig.keys = {
 	{ key = "%", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = '"', mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
-	-- Resize pane
+	-- Resize pane.
 	{ key = "LeftArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
 	{ key = "RightArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
 	{ key = "UpArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
 	{ key = "DownArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+
+	-- Rotate panes.
+	{ key = "r", mods = "LEADER", action = wezterm.action.RotatePanes("Clockwise") },
+
+	-- Switching panes.
+	{ key = "0", mods = "LEADER", action = wezterm.action.PaneSelect },
 }

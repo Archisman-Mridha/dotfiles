@@ -1,5 +1,5 @@
 {
-  description = "Archi's Nix configuration";
+  description = "Archi's Home Manager configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -9,55 +9,62 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		nix-darwin = {
-			url = "github:LnL7/nix-darwin";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		zen-browser.url = "github:MarceColl/zen-browser-flake";
-
-		ghostty.url = "github:ghostty-org/ghostty";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, zen-browser, ghostty }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      zen-browser,
+    }:
     let
-			/* system = builtins.currentSystem; */
-			system = "aarch64-darwin";
+      devices = [
+        {
+          name = "Archismans-MacBook-Air";
+          system = "aarch64-darwin";
+          user = "archismanmridha";
+        }
+        {
+          name = "archlinux";
+          system = "x86_64-linux";
+          user = "archi";
+        }
+      ];
+    in
+    {
+      homeConfigurations = builtins.listToAttrs (
+        builtins.map (
+          device:
+          let
+            system = device.system;
+            user = device.user;
+            pkgs = import nixpkgs { inherit system; };
+          in
+          {
+            name = "${user}@${device.name}";
+            value = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
 
-			macosConfig = import ./macos.config.nix;
-			archLinuxConfig = import ./archlinux.config.nix;
-			config =
-				if system == "aarch64-darwin" then macosConfig else archLinuxConfig;
+              extraSpecialArgs = {
+                inherit user zen-browser;
+              };
 
-			inherit (config) user device git;
-
-			pkgs = import nixpkgs {
-				inherit system;
-
-				config = {
-					/* Try compiling packages which are marked as unsupported for the given system. */
-					allowUnsupportedSystem = true;
-				};
-			};
-    in {
-			homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
-				inherit pkgs;
-
-				/* (optional) You can use extraSpecialArgs to pass through arguments to home.nix. */
-				extraSpecialArgs = {
-					inherit user git system zen-browser ghostty;
-				};
-
-				/* Specify your home configuration modules here (for e.g. : the path to your home.nix). */
-				modules = [ ./modules/home-manager ];
-			};
-
-			darwinConfigurations = if system == "x86_64-darwin" || system == "aarch64-darwin" then {
-        "${device}" = nix-darwin.lib.darwinSystem {
-          inherit pkgs system;
-
-          modules = [ ./modules/nix-darwin ];
-        };
-      } else {};
-		};
+              modules = [
+                ./modules/common/home.nix
+                ./modules/common/editorconfig.nix
+                ./modules/common/fonts.nix
+                ./modules/common/git.nix
+                ./modules/common/gpg.nix
+                ./modules/common/packages.nix
+                ./modules/common/shell.nix
+                ./modules/common/ssh.nix
+                ./modules/common/tmux.nix
+              ] ++ (if system == "aarch64-darwin" then [ ./modules/macos.nix ] else [ ./modules/archlinux.nix ]);
+            };
+          }
+        ) devices
+      );
+    };
 }

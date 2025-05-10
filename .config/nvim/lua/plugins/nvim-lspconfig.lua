@@ -9,5 +9,8 @@ return {
 			virtual_text = false,
 			signs = false,
 		},
+		servers = {
+			gleam = {},
+		},
 	},
 }

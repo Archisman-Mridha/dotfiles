@@ -1,11 +1,5 @@
 return {
 	{
-		"nvim-treesitter/nvim-treesitter-context",
-		opts = {
-			enable = false,
-		},
-	},
-	{
 		"nvim-treesitter/nvim-treesitter-refactor",
 	},
 	{
@@ -20,13 +14,22 @@ return {
 						},
 					},
 				},
+
+				ensure_installed = {
+					"gleam",
+					"haskell",
+					"odin",
+					"nix",
+					"cue",
+					"http",
+					"graphql",
+					"hcl",
+				},
+
 				highlight = {
-					enable = false,
+					enable = {},
 				},
 			})
 		end,
-		opts = {
-			ensure_installed = { "odin", "cue", "http", "graphql", "hcl" },
-		},
 	},
 }

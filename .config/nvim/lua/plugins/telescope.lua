@@ -17,6 +17,7 @@ return {
 
 		return {
 			defaults = {
+				-- Maximize Telescope UI size.
 				layout_config = {
 					width = function(_, cols, _)
 						return math.floor(cols * 1)
@@ -29,7 +30,9 @@ return {
 					},
 				},
 			},
+
 			pickers = {
+				-- Folders to be ignored.
 				find_files = {
 					hidden = true,
 					file_ignore_patterns = { "node_modules", ".git", ".venv", "target" },
