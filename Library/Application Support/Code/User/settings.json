@@ -2,9 +2,6 @@
   // Window.
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
-
-  // Workbench (refers to the overall VSCode UI).
-  "workbench.iconTheme": "vscode-great-icons",
   "workbench.fontAliasing": "antialiased",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
@@ -31,7 +28,6 @@
     "editor.selectionBackground": "#303b4d"
   },
   "workbench.colorTheme": "GitHub Dark",
-  "workbench.editor.showTabs": "none",
 
   // File explorer.
   "explorer.compactFolders": false,

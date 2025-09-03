@@ -1,6 +1,8 @@
 -- Bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
+vim.opt.cole = 0
+
 vim.o.cursorline = false
 
 vim.opt.colorcolumn = "100"
@@ -91,3 +93,18 @@ vim.g.clipboard = {
     ["*"] = paste,
   },
 }
+
+-- Disable (semantic maybe) syntax highlighting
+-- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+--   vim.api.nvim_set_hl(0, group, {})
+-- end
+
+-- Disable Neovim from appending a new file at the end of version.txt file.
+-- Otherwise, standard-version errors out.
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "version.txt",
+  callback = function()
+    vim.opt_local.eol = false
+    vim.opt_local.fixeol = false
+  end,
+})

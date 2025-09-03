@@ -5,8 +5,11 @@
   home.packages = with pkgs; [
     # Programming Languages related.
     go
-    cargo
+    rustup
     cmake
+    nodejs_23
+    bun
+    biome
     nixfmt-rfc-style
     luaformatter
     luajit
@@ -14,11 +17,10 @@
     hyprls
 
     # Kubernetes and CloudNative related.
-    podman
-    podman-compose
-    podman-tui
+    # podman
+    # podman-compose
+    # podman-tui
     k3d
-    kops
     kubectx
     kubectl
     kubernetes-helm
@@ -86,17 +88,30 @@
     tldr
     stow
     unzip
-    direnv
+    carapace
+    cachix
 
     # Desktop Apps
     wezterm
     vscode
     drawio
     qemu
+    slack
+
+    # To install radio-active.
+    ffmpeg
+    pipx
   ];
 
   programs = {
     home-manager.enable = true;
+
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
 
     eza = {
       enable = true;

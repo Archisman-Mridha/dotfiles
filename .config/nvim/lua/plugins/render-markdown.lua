@@ -1,8 +1,9 @@
 return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	opts = {
-		heading = {
-			enabled = true,
-		},
-	},
+  "MeanderingProgrammer/render-markdown.nvim",
+  enabled = false,
+  opts = {
+    heading = {
+      enabled = true,
+    },
+  },
 }

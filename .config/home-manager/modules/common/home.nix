@@ -1,4 +1,4 @@
-{ user, ... }:
+{ nixpkgs, user, ... }:
 {
   home = {
     username = user;
@@ -11,4 +11,6 @@
     */
     stateVersion = "24.05";
   };
+
+  nix.registry.nixpkgs.flake = nixpkgs;
 }

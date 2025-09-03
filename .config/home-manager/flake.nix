@@ -48,7 +48,7 @@
               inherit pkgs;
 
               extraSpecialArgs = {
-                inherit user zen-browser;
+                inherit nixpkgs user zen-browser;
               };
 
               modules = [

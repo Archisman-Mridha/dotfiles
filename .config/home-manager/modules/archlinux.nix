@@ -30,6 +30,8 @@
       # Desktop Apps
       zen-browser.packages.x86_64-linux.specific
       mattermost-desktop
+
+      dysk
     ];
   };
 

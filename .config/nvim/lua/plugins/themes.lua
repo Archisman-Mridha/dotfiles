@@ -4,11 +4,6 @@ return {
     "folke/tokyonight.nvim",
     enabled = true,
     opts = {
-      ---@param colors ColorScheme
-      on_colors = function(colors)
-        colors.bg = "#000000"
-      end,
-
       transparent = true,
       styles = {
         sidebars = "transparent",
@@ -20,6 +15,10 @@ return {
       on_highlights = function(hl, c)
         -- Customize comment color.
         hl.Comment = { fg = "#928374", italic = false }
+      end,
+      ---@param colors ColorScheme
+      on_colors = function(colors)
+        colors.bg = "#000000"
       end,
     },
   },

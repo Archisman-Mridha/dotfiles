@@ -1,6 +1,7 @@
 {
   home = {
     sessionVariables = {
+      NIX_DIRENV_STRICT = "0";
       PASSWORD_STORE_DIR = "$HOME/dotfiles/.password-store";
       EDITOR = "nvim";
       LS_COLORS = "tokyonight";
