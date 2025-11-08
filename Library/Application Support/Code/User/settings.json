@@ -64,7 +64,7 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": ["comment", "keyword.control"],
+        "scope": ["comment"],
         "settings": {
           "fontStyle": "italic"
         }
@@ -156,5 +156,20 @@
     "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
   },
   "makefile.configureOnOpen": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "vscodeGoogleTranslate.preferredLanguage": "English"
 }

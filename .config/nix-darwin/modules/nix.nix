@@ -1,24 +1,6 @@
 {
-  # Auto upgrade nix packages and the daemon service
-  nix = {
-    enable = true;
-
-    # Automatically run the nix store optimiser at a specific time.
-    optimise = {
-      automatic = true;
-      interval = {
-        Hour = 23;
-      };
-    };
-
-    # Automatically run the garbage collector at a specific time.
-    gc = {
-      automatic = true;
-      interval = {
-        Hour = 23;
-      };
-    };
-  };
+  # Let Determinate Nix handle Nix configuration.
+  nix.enable = false;
 
   services = {
     nix-daemon = {

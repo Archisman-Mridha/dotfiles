@@ -2,7 +2,7 @@
   description = "Archi's Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
 
     home-manager = {
       url = "github:nix-community/home-manager";

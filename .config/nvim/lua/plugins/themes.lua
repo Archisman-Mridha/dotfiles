@@ -1,30 +1,24 @@
 return {
   -- Color scheme.
   {
-    "folke/tokyonight.nvim",
+    "projekt0n/github-nvim-theme",
     enabled = true,
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("github-theme").setup({
+        options = {
+          -- transparent = true,
+        },
+      })
 
-        comments = { italic = false },
-        keywords = { italic = false },
-      },
-      on_highlights = function(hl, c)
-        -- Customize comment color.
-        hl.Comment = { fg = "#928374", italic = false }
-      end,
-      ---@param colors ColorScheme
-      on_colors = function(colors)
-        colors.bg = "#000000"
-      end,
-    },
+      vim.cmd("colorscheme github_dark_default")
+    end,
   },
+  { "RRethy/vim-illuminate", enabled = false },
 
   -- File icon theme
-  { "echasnovski/mini.icons", enabled = false }, -- Disable default file icon theme.
+  { "nvim-mini/mini.icons", enabled = false }, -- Disable default file icon theme.
   {
     "nvim-tree/nvim-web-devicons",
     enabled = true,
@@ -36,6 +30,9 @@ return {
           },
           cue = {
             icon = "🐚",
+          },
+          py = {
+            icon = "🐸",
           },
         },
       }

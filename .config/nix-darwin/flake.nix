@@ -2,7 +2,7 @@
   description = "Archi's nix-darwin configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";

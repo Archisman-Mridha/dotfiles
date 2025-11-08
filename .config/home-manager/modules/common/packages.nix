@@ -7,7 +7,7 @@
     go
     rustup
     cmake
-    nodejs_23
+    nodejs
     bun
     biome
     nixfmt-rfc-style
@@ -58,7 +58,6 @@
     tmux
     # Editor
     neovim
-    imagemagick
     # File manager
     yazi
     # Password manager
@@ -84,17 +83,18 @@
     fd
     ripgrep
     eza
-    thefuck
     tldr
     stow
     unzip
     carapace
+
+    # Nix related.
     cachix
+    nh
 
     # Desktop Apps
     wezterm
     vscode
-    drawio
     qemu
     slack
 

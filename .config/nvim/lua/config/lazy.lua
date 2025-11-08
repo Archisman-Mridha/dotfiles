@@ -31,7 +31,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.markdown", enabled = false },
     { import = "lazyvim.plugins.extras.lang.nix" },
     { import = "lazyvim.plugins.extras.lang.prisma" },
-    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.python", enabled = false },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.toml" },
     { import = "lazyvim.plugins.extras.lang.sql" },
@@ -54,7 +54,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.illuminate" },
 
     -- Incremental LSP renaming based on Neovim's command-preview feature.
-    { import = "lazyvim.plugins.extras.editor.inc-renam" },
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
 
     -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
