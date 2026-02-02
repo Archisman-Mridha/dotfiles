@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.gpg = {
     enable = true;
@@ -30,7 +30,6 @@
     };
   };
 
-  # Dirmngr configuration
   home.file.".gnupg/dirmngr.conf".text = ''
     keyserver hkp://jirk5u4osbsr34t5.onion
     keyserver hkp://keys.gnupg.net

@@ -3,7 +3,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # Programming Languages related.
+    # Programming languages related.
     go
     rustup
     cmake
@@ -17,50 +17,41 @@
     hyprls
 
     # Kubernetes and CloudNative related.
-    # podman
-    # podman-compose
-    # podman-tui
     k3d
     kubectx
-    kubectl
+    kubeswitch
     kubernetes-helm
     kubeseal
     teleport
+    velero
+    cilium-cli
+    argocd
     saml2aws
     awscli2
     aws-nuke
     hcloud
-    velero
-    cilium-cli
-    argocd
 
     # Networking related.
     curl
     wget
     tshark
     netcat-gnu
-    oha
     dig
     openssh
     assh
-    xh
     wireguard-tools
 
-    # For fuzzy finding.
+    # Fuzzy searching related.
     fzf
     fzf-zsh
     zsh-fzf-history-search
     zsh-fzf-tab
 
-    # Terminal prompt manager.
+    # Terminal management related.
     starship
-    # Terminal Multiplexer
     tmux
-    # Editor
     neovim
-    # File manager
     yazi
-    # Password manager
     gopass
 
     # Git related.
@@ -74,33 +65,30 @@
     # GPG related.
     gnupg
 
-    # Miscalleneous CLI tools.
-    bat
-    btop
-    stern
-    neofetch
-    jq
-    fd
-    ripgrep
-    eza
-    tldr
-    stow
-    unzip
-    carapace
-
     # Nix related.
     cachix
     nh
 
-    # Desktop Apps
+    # Miscellaneous CLI tools.
+    bat
+    btop
+    carapace
+    eza
+    fd
+    jq
+    mkalias
+    neofetch
+    qemu
+    ripgrep
+    stern
+    stow
+    tldr
+    unzip
+
+    # Desktop apps.
     wezterm
     vscode
-    qemu
     slack
-
-    # To install radio-active.
-    ffmpeg
-    pipx
   ];
 
   programs = {

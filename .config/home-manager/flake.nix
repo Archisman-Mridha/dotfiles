@@ -53,15 +53,16 @@
 
               modules = [
                 ./modules/common/home.nix
-                ./modules/common/editorconfig.nix
-                ./modules/common/fonts.nix
-                ./modules/common/git.nix
-                ./modules/common/gpg.nix
                 ./modules/common/packages.nix
+                ./modules/common/fonts.nix
                 ./modules/common/shell.nix
+                ./modules/common/gpg.nix
                 ./modules/common/ssh.nix
+                ./modules/common/git.nix
+                ./modules/common/editorconfig.nix
                 ./modules/common/tmux.nix
-              ] ++ (if system == "aarch64-darwin" then [ ./modules/macos.nix ] else [ ./modules/archlinux.nix ]);
+              ]
+              ++ (if system == "aarch64-darwin" then [ ./modules/macos.nix ] else [ ./modules/archlinux.nix ]);
             };
           }
         ) devices

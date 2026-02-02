@@ -8,15 +8,14 @@
   home = {
     homeDirectory = "/home/${user}";
 
-    sessionVariables = {
-      GI_TYPELIB_PATH = "/usr/lib/girepository-1.0/";
-    };
-
     packages = with pkgs; [
-      # TODO : This isn't working. Shift to WireGuard.
-      # protonvpn-cli
+      # Kubernetes and CloudNative related.
+      kubectl
+      podman
+      podman-compose
+      podman-tui
 
-      # Wayland Compositor
+      # Wayland Compositor related.
       xdg-desktop-portal-hyprland
       hyprland
       waybar
@@ -27,12 +26,18 @@
       hypridle
       waypipe
 
-      # Desktop Apps
+      # Desktop apps.
       zen-browser.packages.x86_64-linux.specific
       mattermost-desktop
 
       dysk
     ];
+
+    shellAliases = {
+      docker = "podman";
+      docker-compose = "podman-compose";
+      compose = "podman-compose";
+    };
   };
 
   services.gpg-agent.pinentry.package = pkgs.pinentry-tty;

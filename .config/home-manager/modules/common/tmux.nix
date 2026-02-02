@@ -44,7 +44,7 @@ in
 
       catppuccin
       sensible
-      vim-tmux-navigator # For easy navigation between Tmux and Neovim panes.
+      vim-tmux-navigator
       yank
       tmux-fzf
       better-mouse-mode

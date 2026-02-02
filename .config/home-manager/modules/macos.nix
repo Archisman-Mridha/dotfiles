@@ -8,7 +8,8 @@
     };
 
     packages = with pkgs; [
-      mkalias
+      # Desktop apps.
+      orbstack
     ];
   };
 
