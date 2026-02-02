@@ -28,6 +28,7 @@
     "editor.selectionBackground": "#303b4d"
   },
   "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "vscode-great-icons",
 
   // File explorer.
   "explorer.compactFolders": false,
@@ -42,11 +43,13 @@
     "**/dist": true,
     "**/target": true,
     "**/package-lock.json": true,
-    "**/Cargo.lock": true
+    "**/Cargo.lock": true,
+    "**/.direnv": true,
+    "**/.devenv": true
   },
 
   // Code Editor.
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.semanticHighlighting.enabled": true,
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -64,7 +67,7 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": ["comment"],
+        "scope": [ "comment.line" ],
         "settings": {
           "fontStyle": "italic"
         }
@@ -156,7 +159,6 @@
     "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
   },
   "makefile.configureOnOpen": true,
-  "workbench.activityBar.location": "hidden",
   "[dockercompose]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -171,5 +173,5 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "vscodeGoogleTranslate.preferredLanguage": "English"
+  "docker.extension.enableComposeLanguageServer": false
 }

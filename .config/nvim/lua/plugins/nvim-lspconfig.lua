@@ -10,13 +10,12 @@ return {
       signs = false,
     },
     servers = {
-      gleam = {},
-      prismals = {},
-
-      sourcekit = {
-        cmd = { "xcrun", "sourcekit-lsp" },
-        filetypes = { "swift", "objective-c", "objective-cpp" },
-        root_dir = require("lspconfig.util").root_pattern("Package.swift", "buildServer.json", ".git"),
+      gopls = {
+        settings = {
+          gopls = {
+            staticcheck = false,
+          },
+        },
       },
     },
   },

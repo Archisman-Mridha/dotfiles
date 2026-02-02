@@ -57,7 +57,6 @@
     # Git related.
     git
     lazygit
-    delta
     jujutsu
     lazyjj
     git-crypt

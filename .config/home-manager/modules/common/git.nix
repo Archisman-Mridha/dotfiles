@@ -1,21 +1,22 @@
 {
-  programs.git = {
-    enable = true;
+  programs = {
+    git = {
+      enable = true;
+      settings = {
+        commit.gpgsign = true;
 
-    extraConfig = {
-      commit.gpgsign = true;
+        includeIf = {
+          "gitdir:~/Documents/obmondo/" = {
+            path = "~/Documents/obmondo/obmondo.gitconfig";
+          };
 
-      includeIf = {
-        "gitdir:~/Documents/obmondo/" = {
-          path = "~/Documents/obmondo/obmondo.gitconfig";
+          "gitdir:~/" = {
+            path = "~/personal.gitconfig";
+          };
         };
 
-        "gitdir:~/" = {
-          path = "~/personal.gitconfig";
-        };
+        push.autoSetupRemote = true;
       };
-
-      push.autoSetupRemote = true;
     };
 
     delta = {

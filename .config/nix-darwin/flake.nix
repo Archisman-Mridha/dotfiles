@@ -2,10 +2,11 @@
   description = "Archi's nix-darwin configuration";
 
   inputs = {
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
     nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "https://flakehub.com/f/nix-darwin/nix-darwin/0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,6 +16,7 @@
       self,
       nixpkgs,
       nix-darwin,
+      inputs,
     }:
     let
       system = "aarch64-darwin";
@@ -26,12 +28,13 @@
         inherit pkgs system;
 
         modules = [
+          inputs.determinate.darwinModules.default
+
           ./modules/nix.nix
           ./modules/system.nix
           ./modules/trackpad.nix
           ./modules/finder.nix
           ./modules/dock.nix
-          ./modules/window-manager.nix
           ./modules/homebrew.nix
         ];
 
