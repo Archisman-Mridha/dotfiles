@@ -23,7 +23,6 @@
       ls = "eza";
       cat = "bat";
       vi = "nvim";
-      curl = "xh";
       htop = "btop";
       y = "yazi";
       pass = "gopass";

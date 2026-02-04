@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    kue.url = "github:Archisman-Mridha/kue";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
@@ -17,6 +18,7 @@
       self,
       nixpkgs,
       home-manager,
+      kue,
       zen-browser,
     }:
     let
@@ -48,7 +50,13 @@
               inherit pkgs;
 
               extraSpecialArgs = {
-                inherit nixpkgs user zen-browser;
+                inherit
+                  nixpkgs
+                  user
+                  system
+                  kue
+                  zen-browser
+                  ;
               };
 
               modules = [

@@ -13,7 +13,11 @@
     ];
   };
 
-  services.gpg-agent.pinentry.package = pkgs.pinentry_mac;
+  services = {
+    gpg-agent.pinentry.package = pkgs.pinentry_mac;
+
+    # ollama.enable = true;
+  };
 
   programs.ssh.matchBlocks = {
     "github.com" = {

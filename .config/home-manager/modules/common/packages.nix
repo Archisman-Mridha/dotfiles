@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  system,
+  kue,
+  ...
+}:
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -22,10 +27,12 @@
     kubeswitch
     kubernetes-helm
     kubeseal
+    kue.packages.${system}.default
     teleport
-    velero
     cilium-cli
+    harbor-cli
     argocd
+    velero
     saml2aws
     awscli2
     aws-nuke
@@ -77,6 +84,7 @@
     jq
     mkalias
     neofetch
+    # opencode
     qemu
     ripgrep
     stern

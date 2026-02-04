@@ -5,17 +5,18 @@
     package = pkgs.openssh;
 
     enableDefaultConfig = false;
-    matchBlocks = {
-      "github.com" = {
-        hostname = "github.com";
-      };
 
-      "gitea.obmondo.com" = {
-        hostname = "gitea.obmondo.com";
-        port = 2223;
-      };
-    };
-
-    # includes = [ "assh.config" ];
+    includes = [ "assh.config" ];
   };
+
+  home.file.".ssh/assh.d/personal.yaml".text = ''
+    hosts:
+      gitea.obmondo.com:
+        HostName: gitea.obmondo.com
+        Port: 2223
+
+      github.com:
+        HostName: github.com
+        IdentityFile: /Users/archismanmridha/.ssh/github
+  '';
 }
