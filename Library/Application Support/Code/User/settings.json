@@ -27,7 +27,7 @@
     "panel.background": "#000000",
     "editor.selectionBackground": "#303b4d"
   },
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.iconTheme": "vscode-great-icons",
 
   // File explorer.
@@ -67,7 +67,7 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": [ "comment.line" ],
+        "scope": [ "keyword.control" ],
         "settings": {
           "fontStyle": "italic"
         }

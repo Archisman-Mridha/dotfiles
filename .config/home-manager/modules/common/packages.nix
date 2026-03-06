@@ -28,6 +28,9 @@
     kubernetes-helm
     kubeseal
     kue.packages.${system}.default
+    jsonnet
+    jsonnet-bundler
+    gojsontoyaml
     teleport
     cilium-cli
     harbor-cli
@@ -37,6 +40,7 @@
     awscli2
     aws-nuke
     hcloud
+    netbird
 
     # Networking related.
     curl
@@ -50,7 +54,7 @@
 
     # Fuzzy searching related.
     fzf
-    fzf-zsh
+    fzf-zsh-plugin
     zsh-fzf-history-search
     zsh-fzf-tab
 
@@ -74,6 +78,7 @@
     # Nix related.
     cachix
     nh
+    zsh-nix-shell
 
     # Miscellaneous CLI tools.
     bat
