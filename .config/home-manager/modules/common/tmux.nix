@@ -11,6 +11,17 @@ let
       hash = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
     };
   };
+  tmux-palette = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tmux-palette";
+    rtpFilePath = "tmux-palette.tmux";
+    version = "0.3.0";
+    src = pkgs.fetchFromGitHub {
+      owner = "eduwass";
+      repo = "tmux-palette";
+      rev = "6c254f5280570034e24630960777a4782c56be0e";
+      hash = "sha256-HrMIADMNolTlBLilS/kPFTXYMCkpsS4CE5agw1jSWFA=";
+    };
+  };
 in
 {
   programs.tmux = {
@@ -51,6 +62,7 @@ in
       tokyo-night-tmux
       weather
       net-speed
+      tmux-palette
 
       # For saving Tmux sessions across system restarts.
       {

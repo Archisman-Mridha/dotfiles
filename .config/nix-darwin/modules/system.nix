@@ -1,10 +1,12 @@
 {
   system = {
+    primaryUser = "archismanmridha";
+
     /*
       To avoid a logout/login cycle.
       NOTE : Doesn't reflect all the changes.
     */
-    activationScripts.postUserActivation.text = "/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u";
+    # activationScripts.postUserActivation.text = "/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u";
 
     defaults.NSGlobalDomain = {
       # Enable dark mode.

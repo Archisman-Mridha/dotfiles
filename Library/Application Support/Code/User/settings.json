@@ -25,10 +25,8 @@
     "sideBar.border": "#303030",
     "terminal.background": "#000000",
     "panel.background": "#000000",
-    "editor.selectionBackground": "#303b4d"
+    "editor.selectionBackground": "#303b4d",
   },
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.iconTheme": "vscode-great-icons",
 
   // File explorer.
   "explorer.compactFolders": false,
@@ -45,7 +43,7 @@
     "**/package-lock.json": true,
     "**/Cargo.lock": true,
     "**/.direnv": true,
-    "**/.devenv": true
+    "**/.devenv": true,
   },
 
   // Code Editor.
@@ -67,20 +65,20 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": [ "keyword.control" ],
+        "scope": [ "comment", "keyword" ],
         "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
+          "fontStyle": "italic",
+        },
+      },
+    ],
   },
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
       "*.mutable": {
-        "underline": false
-      }
-    }
+        "underline": false,
+      },
+    },
   },
   "editor.rulers": [100, 125],
   "editor.minimap.enabled": false,
@@ -107,56 +105,56 @@
 
   // Programming language specifics.
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
   "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
   "go.formatTool": "gofmt",
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
     "editor.defaultFormatter": "golang.go",
-    "editor.semanticHighlighting.enabled": true
+    "editor.semanticHighlighting.enabled": true,
   },
   "gopls": {
-    "ui.semanticTokens": true
+    "ui.semanticTokens": true,
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "solidity.telemetry": false,
   "json.schemaDownload.enable": true,
   "redhat.telemetry.enabled": true,
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker",
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter",
   },
   "zig.path": "zig",
   "zig.zls.path": "zls",
   "[cpp]": {
     "editor.wordBasedSuggestions": "off",
     "editor.suggest.insertMode": "replace",
-    "editor.semanticHighlighting.enabled": true
+    "editor.semanticHighlighting.enabled": true,
   },
   "[proto3]": {
-    "editor.defaultFormatter": "zxh404.vscode-proto3"
+    "editor.defaultFormatter": "zxh404.vscode-proto3",
   },
   "[postgres]": {
-    "editor.defaultFormatter": "bradymholt.pgformatter"
+    "editor.defaultFormatter": "bradymholt.pgformatter",
   },
   "[jsonnet]": {
-    "editor.defaultFormatter": "Grafana.vscode-jsonnet"
+    "editor.defaultFormatter": "Grafana.vscode-jsonnet",
   },
   "opa.dependency_paths.opa": "/Users/archismanmridha/opa",
   "[gleam]": {
-    "editor.defaultFormatter": "gleam.gleam"
+    "editor.defaultFormatter": "gleam.gleam",
   },
   "[gotmpl]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
   },
   "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform"
+    "editor.defaultFormatter": "hashicorp.terraform",
   },
   "[nginx]": {
-    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf",
   },
   "makefile.configureOnOpen": true,
   "[dockercompose]": {
@@ -166,12 +164,24 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
-  "docker.extension.enableComposeLanguageServer": false
+  "vscodeGoogleTranslate.preferredLanguage": "English",
+  "docker.extension.enableComposeLanguageServer": false,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "workbench.activityBar.location": "hidden",
+  "workbench.iconTheme": "Monokai Classic Icons",
+  "[proto]": {
+    "editor.defaultFormatter": "DrBlury.protobuf-vsc"
+  },
+  "protobuf.autoDetection.prompted": true,
+  "workbench.colorTheme": "Dark Modern"
 }

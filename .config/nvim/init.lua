@@ -99,18 +99,13 @@ vim.g.clipboard = {
 --   vim.api.nvim_set_hl(0, group, {})
 -- end
 
--- Disable Neovim from appending a new file at the end of version.txt file.
--- Otherwise, standard-version errors out.
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "version.txt",
-  callback = function()
-    vim.opt_local.eol = false
-    vim.opt_local.fixeol = false
-  end,
-})
-
 vim.filetype.add({
   filename = {
     ["Tiltfile"] = "tiltfile",
   },
 })
+
+-- Clear treesitter heading highlights for markdown
+vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", {})
+vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", {})
+vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", {})

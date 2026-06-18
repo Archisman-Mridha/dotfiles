@@ -4,4 +4,4 @@
 [user]
     email = "archismanmridha12345@gmail.com"
     name = "Archisman-Mridha"
-    signingKey = "~/.ssh/github"
+    signingKey = "/Users/archismanmridha/.ssh/github"

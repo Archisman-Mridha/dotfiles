@@ -18,7 +18,7 @@
       "raycast"
       "vlc"
       "discord"
-      "protonvpn"
+      # "protonvpn"
       "aviatrix-vpn-client"
     ];
 
@@ -46,7 +46,7 @@
       # When set to "zap", nix-darwin invokes brew bundle [install] with the --cleanup --zap flags.
       # This uninstalls all formulae not listed in the generated Brewfile, and if the formula is a
       # cask, removes all files associated with that cask.
-      cleanup = "zap";
+      # cleanup = "zap";
     };
   };
 }

@@ -56,8 +56,8 @@ return {
         },
         icon = {
           folder_closed = "󰉋 ",
-          folder_open = "○",
-          folder_empty = "○",
+          folder_open = "󰉖",
+          folder_empty = "󰉖",
 
           -- The next two settings are only a fallback, if you use nvim-web-devicons and configure
           -- default icons there, then these will never be used.
@@ -112,7 +112,7 @@ return {
       commands = {},
       window = {
         position = "left",
-        width = 40,
+        width = 35,
         mapping_options = {
           noremap = true,
           nowait = true,

@@ -10,6 +10,9 @@ return {
       signs = false,
     },
     servers = {
+      clangd = {
+        mason = false,
+      },
       gopls = {
         settings = {
           gopls = {

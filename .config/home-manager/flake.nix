@@ -9,6 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mac-app-util.url = "github:hraban/mac-app-util";
+
+    lfk.url = "github:janosmiko/lfk";
     kue.url = "github:Archisman-Mridha/kue";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
@@ -18,6 +21,8 @@
       self,
       nixpkgs,
       home-manager,
+      mac-app-util,
+      lfk,
       kue,
       zen-browser,
     }:
@@ -54,12 +59,15 @@
                   nixpkgs
                   user
                   system
+                  lfk
                   kue
                   zen-browser
                   ;
               };
 
               modules = [
+                mac-app-util.homeManagerModules.default
+
                 ./modules/common/home.nix
                 ./modules/common/packages.nix
                 ./modules/common/fonts.nix

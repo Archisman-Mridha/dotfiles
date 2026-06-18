@@ -1,6 +1,7 @@
 {
   pkgs,
   system,
+  lfk,
   kue,
   ...
 }:
@@ -9,13 +10,12 @@
 
   home.packages = with pkgs; [
     # Programming languages related.
+    nodejs-slim
     go
     rustup
     cmake
-    nodejs
     bun
-    biome
-    nixfmt-rfc-style
+    nixfmt
     luaformatter
     luajit
     luarocks
@@ -27,6 +27,8 @@
     kubeswitch
     kubernetes-helm
     kubeseal
+    kubecolor
+    # lfk.packages.${system}.default
     kue.packages.${system}.default
     jsonnet
     jsonnet-bundler
@@ -40,7 +42,6 @@
     awscli2
     aws-nuke
     hcloud
-    netbird
 
     # Networking related.
     curl
@@ -51,6 +52,7 @@
     openssh
     assh
     wireguard-tools
+    # netbird
 
     # Fuzzy searching related.
     fzf
@@ -88,8 +90,7 @@
     fd
     jq
     mkalias
-    neofetch
-    # opencode
+    fastfetch
     qemu
     ripgrep
     stern
@@ -101,6 +102,7 @@
     wezterm
     vscode
     slack
+    drawio
   ];
 
   programs = {

@@ -2,33 +2,37 @@
   description = "Archi's nix-darwin configuration";
 
   inputs = {
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
-    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+    determinate.url = "github:DeterminateSystems/determinate";
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
-      url = "https://flakehub.com/f/nix-darwin/nix-darwin/0";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       nix-darwin,
-      inputs,
+      determinate,
+      ...
     }:
     let
       system = "aarch64-darwin";
       device = "Archismans-MacBook-Air";
-      pkgs = import nixpkgs { inherit system; };
+
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in
     {
       darwinConfigurations."${device}" = nix-darwin.lib.darwinSystem {
-        inherit pkgs system;
+        inherit system pkgs;
 
         modules = [
-          inputs.determinate.darwinModules.default
+          determinate.darwinModules.default
 
           ./modules/nix.nix
           ./modules/system.nix
@@ -36,15 +40,15 @@
           ./modules/finder.nix
           ./modules/dock.nix
           ./modules/homebrew.nix
+
+          /*
+            I didn't find any option to configure :
+
+              1. Display scale.
+              2. Keyboard backlight brightness.
+              3. Window tiling (introduced in MacOS Sequoia).
+          */
         ];
-
-        /*
-          I didn't find any option to configure :
-
-            1. Display scale.
-            2. Keyboard backlight brightness.
-            3. Window tiling (introduced in MacOS Sequoia).
-        */
       };
     };
 }
