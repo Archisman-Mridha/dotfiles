@@ -1,26 +1,29 @@
 { pkgs, ... }:
 let
-  tokyo-night-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tokyo-night-tmux";
-    rtpFilePath = "tokyo-night.tmux";
-    version = "1.5.3";
-    src = pkgs.fetchFromGitHub {
-      owner = "janoamaral";
-      repo = "tokyo-night-tmux";
-      rev = "d34f1487b4a644b13d8b2e9a2ee854ae62cc8d0e";
-      hash = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
-    };
-  };
   tmux-palette = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-palette";
-    rtpFilePath = "tmux-palette.tmux";
-    version = "0.3.0";
+    version = "unstable-2024-01-01";
     src = pkgs.fetchFromGitHub {
       owner = "eduwass";
       repo = "tmux-palette";
-      rev = "6c254f5280570034e24630960777a4782c56be0e";
-      hash = "sha256-HrMIADMNolTlBLilS/kPFTXYMCkpsS4CE5agw1jSWFA=";
+      rev = "main";
+      sha256 = "sha256-HrMIADMNolTlBLilS/kPFTXYMCkpsS4CE5agw1jSWFA=";
     };
+    nativeBuildInputs = [ pkgs.bun ];
+
+    # home-manager sources plugins via run-shell using underscores in the filename
+    # (tmux_palette.tmux), but the plugin ships with a hyphen (tmux-palette.tmux).
+    # The symlink bridges that mismatch. bun is also not in tmux's PATH at runtime,
+    # so all bun invocations in plugin scripts are rewritten to the absolute Nix store
+    # path. node_modules are pre-installed here so the plugin doesn't attempt a
+    # writable install from the read-only Nix store at runtime.
+    postInstall = ''
+      cd $target
+      HOME=$TMPDIR bun install
+      find $target \( -name "*.tmux" -o -name "*.sh" \) \
+        -exec sed -i 's|bun |${pkgs.bun}/bin/bun |g' {} +
+      ln -s tmux-palette.tmux $target/tmux_palette.tmux
+    '';
   };
 in
 {
@@ -36,22 +39,35 @@ in
 
       set -g allow-passthrough on
 
-      set -g status-style "bg=#000000"
-
       bind b set -g status
+
+      # M-f (\033f) is what Ghostty sends for option+right (forward-word). Keep it
+      # unbound in tmux so it passes through to the shell for word navigation.
+      unbind-key -n M-f
     '';
 
     plugins = with pkgs.tmuxPlugins; [
       {
+        plugin = tmux-palette;
+        extraConfig = ''
+          set -g @palette-key 'off'
+          set -g @palette-find-pane-key 'M-t'
+          set -g @palette-move-pane-key 'M-m'
+        '';
+      }
+      {
         plugin = tokyo-night-tmux;
         extraConfig = ''
-          set -g @tokyo-night-tmux_window_id_style none
-          set -g @tokyo-night-tmux_pane_id_style none
-          set -g @tokyo-night-tmux_zoom_id_style sub
+          set -g @tokyo-night-tmux_window_id_style super
+          set -g @tokyo-night-tmux_pane_id_style super
+          set -g @tokyo-night-tmux_zoom_id_style super
 
+          set -g @tokyo-night-tmux_show_git 0
           set -g @tokyo-night-tmux_show_datetime 0
           set -g @tokyo-night-tmux_date_format MYD
           set -g @tokyo-night-tmux_time_format 12H
+
+          set -g @tokyo-night-tmux_transparent 1
 
           set-option -g status-position top
         '';
@@ -61,9 +77,6 @@ in
       yank
       tmux-fzf
       better-mouse-mode
-      weather
-      net-speed
-      tmux-palette
 
       # For saving Tmux sessions across system restarts.
       {

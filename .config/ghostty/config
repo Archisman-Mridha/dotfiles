@@ -12,3 +12,5 @@ scrollbar = never
 fullscreen = true
 
 macos-titlebar-style = hidden
+
+macos-option-as-alt = true
