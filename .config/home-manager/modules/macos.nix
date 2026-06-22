@@ -9,6 +9,7 @@
 
     packages = with pkgs; [
       # Desktop apps.
+      ghostty-bin
       orbstack
     ];
   };

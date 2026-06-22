@@ -4,3 +4,9 @@
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 --
 -- Add any additional options here :
+
+vim.opt.cursorline = false
+
+vim.opt.list = false
+
+vim.opt.expandtab = true

@@ -2,6 +2,13 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    -- Beautiful declarative dashboards.
+    dashboard = {
+      sections = {
+        { section = "startup" },
+      },
+    },
+
     -- Picker for selecting items.
     picker = {
       sources = {
@@ -32,5 +39,8 @@ return {
         },
       },
     },
+
+    -- Auto-show LSP references and quickly navigate between them.
+    words = { enabled = false },
   },
 }

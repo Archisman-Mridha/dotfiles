@@ -9,8 +9,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    bash
-
     # Programming languages related.
     nodejs-slim
     go
@@ -99,12 +97,6 @@
     stow
     tldr
     unzip
-
-    # Desktop apps.
-    wezterm
-    vscode
-    slack
-    drawio
   ];
 
   programs = {

@@ -1,0 +1,15 @@
+font-family = Custom LiterationMono Nerd Font
+font-size = 18
+
+theme = Ultra Dark
+
+cursor-style = block_hollow
+
+background-opacity = 0.5
+background-blur = macos-glass-regular
+
+scrollbar = never
+
+fullscreen = true
+
+macos-titlebar-style = hidden
