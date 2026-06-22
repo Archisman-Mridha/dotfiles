@@ -35,6 +35,10 @@ in
       set -g default-terminal "tmux-256color"
 
       set -g allow-passthrough on
+
+      set -g status-style "bg=#000000"
+
+      bind b set -g status
     '';
 
     plugins = with pkgs.tmuxPlugins; [
@@ -52,14 +56,11 @@ in
           set-option -g status-position top
         '';
       }
-
-      catppuccin
       sensible
       vim-tmux-navigator
       yank
       tmux-fzf
       better-mouse-mode
-      tokyo-night-tmux
       weather
       net-speed
       tmux-palette

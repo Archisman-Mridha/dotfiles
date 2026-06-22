@@ -1,10 +1,9 @@
 font-family = Custom LiterationMono Nerd Font
 font-size = 18
 
-theme = Ultra Dark
+theme = TokyoNight Night
 
-cursor-style = block_hollow
-
+background = #000000
 background-opacity = 0.5
 background-blur = macos-glass-regular
 

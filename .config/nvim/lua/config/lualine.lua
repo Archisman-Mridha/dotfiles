@@ -67,7 +67,7 @@ ins_left({
   function()
     return "▊"
   end,
-  color = { fg = colors.blue },
+  color = { fg = colors.bg },
   padding = { left = 0, right = 1 },
 })
 
@@ -190,7 +190,7 @@ ins_right({
   function()
     return "▊"
   end,
-  color = { fg = colors.blue },
+  color = { fg = colors.bg },
   padding = { left = 1 },
 })
 
