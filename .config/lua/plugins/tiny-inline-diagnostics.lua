@@ -1,0 +1,1 @@
+../../nvim/lua/plugins/tiny-inline-diagnostics.lua

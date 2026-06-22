@@ -1,82 +1,43 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazy_nvim_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
-	-- Bootstrap lazy.nvim.
-	-- stylua: ignore
-	vim.fn.system({
-		"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath
-	})
+-- Ensure that lazy.nvim is bootstrapped.
+if not vim.loop.fs_stat(lazy_nvim_path) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazy_nvim_path,
+  })
 end
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.rtp:prepend(vim.env.LAZY or lazy_nvim_path)
 
 require("lazy").setup({
   spec = {
     -- Add LazyVim and import its plugins.
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    -- Telescope.
-    { import = "lazyvim.plugins.extras.editor.telescope" },
+    -- Disable some plugins which come bundled with Lazy.nvim.
+    { "catppuccin/nvim", enabled = false },
+    { "folke/todo-comments.nvim", enabled = false },
+    { "akinsho/bufferline.nvim", enabled = false },
+    { "nvim-mini/mini.icons", enabled = false },
 
-    -- Symbols outline.
-    { import = "lazyvim.plugins.extras.editor.outline" },
-
-    -- Better navigation.
-    { import = "lazyvim.plugins.extras.editor.leap" },
-
-    -- Programming Languages.
-    { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.lang.yaml" },
-    { import = "lazyvim.plugins.extras.lang.docker" },
-    { import = "lazyvim.plugins.extras.lang.helm" },
-    { import = "lazyvim.plugins.extras.lang.markdown", enabled = false },
-    { import = "lazyvim.plugins.extras.lang.nix" },
-    { import = "lazyvim.plugins.extras.lang.python", enabled = false },
-    { import = "lazyvim.plugins.extras.lang.rust" },
-    { import = "lazyvim.plugins.extras.lang.toml" },
-    { import = "lazyvim.plugins.extras.lang.sql", enabled = false },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
-    { import = "lazyvim.plugins.extras.lang.terraform" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.clangd" },
-    { import = "lazyvim.plugins.extras.util.dot" },
-    { import = "lazyvim.plugins.extras.lang.gleam" },
-
-    -- Cycle through yank history.
-    { import = "lazyvim.plugins.extras.coding.yanky" },
-
-    -- Better annotation generator.
-    { import = "lazyvim.plugins.extras.coding.neogen" },
-
-    -- For automatically highlighting other uses of the word under the cursor using either LSP,
-    -- Tree-sitter, or regex matching.
-    { import = "lazyvim.plugins.extras.editor.illuminate" },
-
-    -- Incremental LSP renaming based on Neovim's command-preview feature.
-    { import = "lazyvim.plugins.extras.editor.inc-rename" },
-
-    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-    { import = "lazyvim.plugins.extras.lsp.none-ls" },
-
-    -- Visualize and operate on indent scope.
-    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-
-    -- Highlight patterns in text.
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-
-    -- import/override with your plugins
+    -- import / override with your plugins.
     { import = "plugins" },
   },
 
   defaults = {
-    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during
-    -- startup.
-    -- If you know what you're doing, you can set this to true to have all your custom plugins
-    -- lazy-loaded by default.
+    -- By default, only LazyVim plugins will be lazy-loaded. Your custom
+    -- plugins will load during startup.
+    -- When you know what you're doing, you can set this to true to have all
+    -- your custom plugins lazy-loaded by default.
     lazy = false,
 
-    -- It's recommended to leave version=false for now, since a lot the plugin that support
-    -- versioning, have outdated releases, which may break your Neovim install.
+    -- It's recommended to leave version=false for now, since a lot the plugin
+    -- that support versioning, have outdated releases, which may break your
+    -- Neovim install.
     version = false, -- always use the latest git commit.
   },
 

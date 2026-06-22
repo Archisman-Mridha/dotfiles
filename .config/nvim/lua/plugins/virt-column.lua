@@ -1,1 +1,7 @@
-return { "lukas-reineke/virt-column.nvim", opts = {} }
+-- Display a character as the colorcolumn.
+return {
+  "lukas-reineke/virt-column.nvim",
+  opts = {
+    virtcolumn = "100",
+  },
+}

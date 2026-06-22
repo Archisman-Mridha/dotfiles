@@ -1,0 +1,1 @@
+../../nvim/lua/plugins/rainbow-delimiters.lua
