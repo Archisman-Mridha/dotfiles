@@ -1,2 +1,1 @@
 .config/wireguard/* filter=git-crypt diff=git-crypt
-.config/aviatrix/* filter=git-crypt diff=git-crypt
