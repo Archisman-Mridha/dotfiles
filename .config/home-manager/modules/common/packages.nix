@@ -69,9 +69,6 @@
 
     # Git related.
     git
-    lazygit
-    jujutsu
-    lazyjj
     git-crypt
 
     # GPG related.
