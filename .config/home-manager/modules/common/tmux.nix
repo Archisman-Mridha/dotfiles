@@ -14,29 +14,10 @@
 
       bind b set -g status
 
-      # M-f (\033f) is what Ghostty sends for option+right (forward-word). Keep it
-      # unbound in tmux so it passes through to the shell for word navigation.
-      unbind-key -n M-f
+      set-option -g status-position top
     '';
 
     plugins = with pkgs.tmuxPlugins; [
-      {
-        plugin = tokyo-night-tmux;
-        extraConfig = ''
-          set -g @tokyo-night-tmux_window_id_style super
-          set -g @tokyo-night-tmux_pane_id_style super
-          set -g @tokyo-night-tmux_zoom_id_style super
-
-          set -g @tokyo-night-tmux_show_git 0
-          set -g @tokyo-night-tmux_show_datetime 0
-          set -g @tokyo-night-tmux_date_format MYD
-          set -g @tokyo-night-tmux_time_format 12H
-
-          set -g @tokyo-night-tmux_transparent 1
-
-          set-option -g status-position top
-        '';
-      }
       sensible
       vim-tmux-navigator
       yank

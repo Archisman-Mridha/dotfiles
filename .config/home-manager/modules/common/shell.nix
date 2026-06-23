@@ -27,7 +27,6 @@
       htop = "btop";
       y = "yazi";
       pass = "gopass";
-      git = "but";
     };
   };
 

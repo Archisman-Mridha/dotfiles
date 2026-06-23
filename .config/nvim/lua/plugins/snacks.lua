@@ -11,6 +11,10 @@ return {
 
     -- Picker for selecting items.
     picker = {
+      layout = {
+        hidden = { "preview" },
+      },
+
       sources = {
         -- A file explorer (picker in disguise).
         explorer = {
