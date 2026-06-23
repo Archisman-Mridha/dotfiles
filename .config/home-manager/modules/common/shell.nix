@@ -20,7 +20,6 @@
     };
 
     shellAliases = {
-      k = "kubectl";
       cd = "z";
       ls = "eza";
       cat = "bat";
@@ -28,6 +27,7 @@
       htop = "btop";
       y = "yazi";
       pass = "gopass";
+      git = "but";
     };
   };
 
@@ -63,6 +63,9 @@
       };
 
       initContent = ''
+        export PATH="$HOME/.local/bin:$PATH"
+
+        eval "$(but completions zsh)"
         eval "$(direnv hook zsh)"
         eval "$(starship init zsh)"
 
