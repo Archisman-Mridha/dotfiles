@@ -15,12 +15,25 @@ C_RESET=$'\033[38;5;73m'   # teal
 
 model=$(printf '%s' "$input" | jq -r '.model.display_name // .model.id // "?"')
 used=$(printf '%s' "$input" | jq -r '.context_window.used_percentage // empty')
-[ -n "$used" ] && ctx_label="$(printf "%.0f%%" "$used")" || ctx_label="-"
+[ -n "$used" ] && ctx_label="$(printf "%.0f%%" "$used")" || ctx_label="0%"
 
 cost=$(printf '%s' "$input" | jq -r '.cost.total_cost_usd // empty')
+
+# rate_limits only arrive in the payload after the first API response of a session.
+# Cache live values so a fresh session can show them before its first response.
+CACHE="/Users/archismanmridha/.claude/rate-limits-cache.json"
+live=$(printf '%s' "$input" | jq -c '.rate_limits.five_hour | select(.used_percentage != null)' 2>/dev/null)
+[ -n "$live" ] && printf '%s' "$live" > "$CACHE"
+
 quota_pct=$(printf '%s' "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 quota_reset_ts=$(printf '%s' "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+if { [ -z "$quota_pct" ] || [ -z "$quota_reset_ts" ]; } && [ -f "$CACHE" ]; then
+  [ -z "$quota_pct" ] && quota_pct=$(jq -r '.used_percentage // empty' "$CACHE")
+  [ -z "$quota_reset_ts" ] && quota_reset_ts=$(jq -r '.resets_at // empty' "$CACHE")
+fi
+[ -z "$quota_pct" ] && quota_pct="0"
 cwd=$(printf '%s' "$input" | jq -r '.workspace.current_dir // empty')
+[ -z "$cwd" ] && cwd="$PWD"
 
 folder=$(basename "$cwd" 2>/dev/null)
 branch=$(git -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
