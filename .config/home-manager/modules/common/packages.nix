@@ -1,8 +1,6 @@
 {
   pkgs,
   system,
-  lfk,
-  kue,
   ...
 }:
 {
@@ -28,8 +26,6 @@
     kubernetes-helm
     kubeseal
     kubecolor
-    # lfk.packages.${system}.default
-    kue.packages.${system}.default
     jsonnet
     jsonnet-bundler
     gojsontoyaml
@@ -78,6 +74,8 @@
     cachix
     nh
     zsh-nix-shell
+
+    fabric-ai
 
     # Miscellaneous CLI tools.
     bat

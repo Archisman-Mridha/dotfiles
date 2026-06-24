@@ -6,7 +6,7 @@ return {
     style = "night",
     transparent = true,
     styles = {
-      comments = { italic = false },
+      comments = { italic = true },
       keywords = { italic = false },
 
       sidebars = "transparent",
@@ -14,7 +14,7 @@ return {
     },
     on_colors = function(_) end,
     on_highlights = function(highlights, _)
-      highlights.Comment = { fg = "#928374", italic = false }
+      highlights.Comment = { fg = "#928374", italic = true }
       highlights.WinSeparator = { link = "VirtColumn" }
     end,
   },

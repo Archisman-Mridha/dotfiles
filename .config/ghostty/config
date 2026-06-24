@@ -5,7 +5,7 @@ theme = TokyoNight Night
 
 background = #000000
 background-opacity = 0.5
-background-blur = macos-glass-regular
+background-blur = 30
 
 scrollbar = never
 
