@@ -19,16 +19,15 @@
       "vlc"
       "discord"
       # "protonvpn"
-      "aviatrix-vpn-client"
     ];
 
-    taps = [ ];
+    taps = [ "can1357/tap" ];
 
     brews = [
       "pinentry-mac"
       "yubikey-personalization"
       "terminal-notifier"
-      "riscv64-elf-gdb"
+      "can1357/tap/omp"
     ];
 
     onActivation = {

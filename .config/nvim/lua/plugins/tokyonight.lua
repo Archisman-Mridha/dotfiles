@@ -6,15 +6,17 @@ return {
     style = "night",
     transparent = true,
     styles = {
-      comments = { italic = true },
-      keywords = { italic = false },
+      keywords = { italic = true },
 
       sidebars = "transparent",
       floats = "transparent",
     },
     on_colors = function(_) end,
-    on_highlights = function(highlights, _)
-      highlights.Comment = { fg = "#928374", italic = true }
+    on_highlights = function(highlights, colors)
+      highlights.Comment = { fg = "#928374", italic = false }
+      highlights["@lsp.typemod.comment.documentation.rust"] = { fg = colors.blue, italic = false }
+      highlights["@comment.documentation"] = { fg = colors.blue, italic = false } -- if a TS parser is ever installed
+
       highlights.WinSeparator = { link = "VirtColumn" }
     end,
   },

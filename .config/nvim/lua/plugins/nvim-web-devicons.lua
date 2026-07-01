@@ -7,7 +7,7 @@ return {
         icon = "🦀",
       },
       py = {
-        icon = "🐸",
+        icon = "🐸 ",
       },
       ts = {
         icon = "",

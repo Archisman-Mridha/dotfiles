@@ -11,6 +11,8 @@ return {
 
     -- Picker for selecting items.
     picker = {
+      ignored = true,
+
       layout = {
         hidden = { "preview" },
       },

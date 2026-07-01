@@ -10,27 +10,13 @@
 
     packages = with pkgs; [
       # Kubernetes and CloudNative related.
-      kubectl
       podman
       podman-compose
       podman-tui
 
-      # Wayland Compositor related.
-      xdg-desktop-portal-hyprland
-      hyprland
-      waybar
-      rofi
-      hyprpaper
-      hyprcursor
-      hyprlock
-      hypridle
-      waypipe
-
       # Desktop apps.
+      ghostty
       zen-browser.packages.x86_64-linux.specific
-      mattermost-desktop
-
-      dysk
     ];
 
     shellAliases = {

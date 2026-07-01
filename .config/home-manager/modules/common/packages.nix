@@ -17,7 +17,6 @@
     luaformatter
     luajit
     luarocks
-    hyprls
 
     # Kubernetes and CloudNative related.
     k3d
@@ -34,7 +33,6 @@
     harbor-cli
     argocd
     velero
-    saml2aws
     awscli2
     aws-nuke
     hcloud
@@ -92,6 +90,9 @@
     stow
     tldr
     unzip
+
+    # Desktop apps.
+    # mattermost-desktop
   ];
 
   programs = {

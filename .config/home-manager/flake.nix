@@ -11,8 +11,6 @@
 
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    lfk.url = "github:janosmiko/lfk";
-    kue.url = "github:Archisman-Mridha/kue";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
@@ -22,8 +20,6 @@
       nixpkgs,
       home-manager,
       mac-app-util,
-      lfk,
-      kue,
       zen-browser,
     }:
     let
@@ -59,8 +55,6 @@
                   nixpkgs
                   user
                   system
-                  lfk
-                  kue
                   zen-browser
                   ;
               };
