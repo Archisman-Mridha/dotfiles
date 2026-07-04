@@ -1,5 +1,5 @@
 font-family = Custom LiterationMono Nerd Font
-font-size = 17
+font-size = 17.25
 
 theme = TokyoNight Night
 
@@ -13,7 +13,7 @@ macos-titlebar-style = hidden
 
 macos-option-as-alt = true
 
-keybind = global:cmd+backquote=toggle_quick_terminal
+keybind = global:cmd+escape=toggle_quick_terminal
 
 # Related to Oh My Pi.
 keybind = alt+backspace=text:\x1b\x7f

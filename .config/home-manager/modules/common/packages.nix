@@ -8,11 +8,12 @@
 
   home.packages = with pkgs; [
     # Programming languages related.
-    nodejs-slim
+    nodejs_26
+    bun
     go
+    gopls
     rustup
     cmake
-    bun
     nixfmt
     luaformatter
     luajit

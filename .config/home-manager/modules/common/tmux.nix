@@ -12,9 +12,9 @@
 
       set -g allow-passthrough on
 
-      bind b set -g status
-
       set-option -g status-position top
+
+      bind b set -g status
     '';
 
     plugins = with pkgs.tmuxPlugins; [
