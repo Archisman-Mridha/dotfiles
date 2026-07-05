@@ -7,7 +7,7 @@
       "sourceUri": "DietrichGebert/ponytail",
       "catalogPath": "~/.omp/plugins/cache/marketplaces/ponytail/marketplace.json",
       "addedAt": "2026-07-01T08:24:01.314Z",
-      "updatedAt": "2026-07-01T08:24:01.314Z"
+      "updatedAt": "2026-07-04T12:25:49.850Z"
     },
     {
       "name": "claude-plugins-official",
@@ -15,7 +15,7 @@
       "sourceUri": "anthropics/claude-plugins-official",
       "catalogPath": "~/.omp/plugins/cache/marketplaces/claude-plugins-official/marketplace.json",
       "addedAt": "2026-07-01T08:24:02.670Z",
-      "updatedAt": "2026-07-01T08:24:02.670Z"
+      "updatedAt": "2026-07-04T12:25:51.480Z"
     }
   ]
 }

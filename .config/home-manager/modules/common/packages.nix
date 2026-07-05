@@ -18,6 +18,7 @@
     luaformatter
     luajit
     luarocks
+    python3
 
     # Kubernetes and CloudNative related.
     k3d

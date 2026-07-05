@@ -9,6 +9,7 @@ return {
     },
     servers = {
       clangd = { mason = false },
+      cmake = {},
     },
   },
 }
