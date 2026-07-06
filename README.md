@@ -1,14 +1,15 @@
 # Dotfiles
 
 <p>
- <img alt="Zsh" src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" />
- <img alt="Tmux" src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" />
- <img alt="Neovim" src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" />
- <img alt="MacOS" src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" />
- <img alt="Wezterm" src="https://img.shields.io/badge/WezTerm-4E49EE?logo=wezterm&logoColor=fff&style=for-the-badge" />
- <img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&style=for-the-badge" />
- <img alt="Arch Linux" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge" />
- <img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=for-the-badge" alt="macOS Badge">
+  <img src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff&style=for-the-badge" alt="NixOS Badge">
+  <img src="https://img.shields.io/badge/Ghostty-3551F3?logo=ghostty&logoColor=fff&style=for-the-badge" alt="Ghostty Badge">
+  <img src="https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=for-the-badge" alt="Zsh Badge">
+  <img src="https://img.shields.io/badge/Starship-DD0B78?logo=starship&logoColor=fff&style=for-the-badge" alt="Starship Badge">
+  <img src="https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=for-the-badge" alt="tmux Badge">
+  <img src="https://img.shields.io/badge/Pi-000?logo=pi&logoColor=fff&style=for-the-badge" alt="Pi Badge">
+  <img src="https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge" alt="Neovim Badge">
+  <img src="https://img.shields.io/badge/LazyVim-2E7DE9?logo=lazyvim&logoColor=fff&style=for-the-badge" alt="LazyVim Badge">
 </p>
 
 ## Installing Arch Linux
