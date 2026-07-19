@@ -3,10 +3,6 @@
   home = {
     homeDirectory = "/Users/${user}";
 
-    shellAliases = {
-      code = "~/Applications/Home\\ Manager\\ Apps/Visual\\ Studio\\ Code.app/Contents/MacOS/Electron";
-    };
-
     packages = with pkgs; [
       # Desktop apps.
       ghostty-bin
@@ -16,8 +12,6 @@
 
   services = {
     gpg-agent.pinentry.package = pkgs.pinentry_mac;
-
-    # ollama.enable = true;
   };
 
   programs.ssh.matchBlocks = {

@@ -21,13 +21,12 @@
       # "protonvpn"
     ];
 
-    taps = [ "can1357/tap" ];
+    taps = [ ];
 
     brews = [
       "pinentry-mac"
       "yubikey-personalization"
       "terminal-notifier"
-      "can1357/tap/omp"
     ];
 
     onActivation = {

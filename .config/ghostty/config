@@ -4,7 +4,7 @@ font-size = 17.25
 theme = TokyoNight Night
 
 background = #000000
-background-opacity = 0.8
+background-opacity = 1
 background-blur = 30
 
 scrollbar = never

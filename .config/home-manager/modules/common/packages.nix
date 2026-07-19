@@ -1,6 +1,5 @@
 {
   pkgs,
-  system,
   ...
 }:
 {
@@ -27,6 +26,7 @@
     kubernetes-helm
     kubeseal
     kubecolor
+    krew
     jsonnet
     jsonnet-bundler
     gojsontoyaml
@@ -74,8 +74,6 @@
     cachix
     nh
     zsh-nix-shell
-
-    fabric-ai
 
     # Miscellaneous CLI tools.
     bat

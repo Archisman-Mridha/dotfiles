@@ -23,7 +23,6 @@
     };
 
     shellAliases = {
-      k = "kubecolor";
       cd = "z";
       ls = "eza";
       cat = "bat";

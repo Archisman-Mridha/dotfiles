@@ -6,7 +6,7 @@ return {
     style = "night",
     transparent = true,
     styles = {
-      keywords = { italic = true },
+      keywords = { italic = false },
 
       sidebars = "transparent",
       floats = "transparent",
