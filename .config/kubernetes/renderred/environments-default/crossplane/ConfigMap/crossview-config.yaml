@@ -1,0 +1,49 @@
+apiVersion: v1
+data:
+  AUTH_CREATE_USERS: "true"
+  AUTH_DEFAULT_ROLE: viewer
+  AUTH_MODE: none
+  AUTH_TRUSTED_HEADER: X-Auth-User
+  CORS_ORIGIN: http://localhost:5173
+  DB_ENABLED: "false"
+  DB_HOST: crossview-postgres
+  DB_NAME: crossview
+  DB_PORT: "5432"
+  DB_SSL_CERT: ""
+  DB_SSL_KEY: ""
+  DB_SSL_MODE: disable
+  DB_SSL_ROOT_CERT: ""
+  DB_USER: postgres
+  LOG_LEVEL: info
+  OIDC_AUTHORIZATION_URL: ""
+  OIDC_CALLBACK_URL: http://localhost:3001/api/auth/oidc/callback
+  OIDC_CLIENT_ID: crossview-client
+  OIDC_EMAIL_ATTRIBUTE: email
+  OIDC_ENABLED: "false"
+  OIDC_FIRSTNAME_ATTRIBUTE: given_name
+  OIDC_ISSUER: http://localhost:8080/realms/crossview
+  OIDC_LASTNAME_ATTRIBUTE: family_name
+  OIDC_SCOPE: openid profile email
+  OIDC_TOKEN_URL: ""
+  OIDC_USERINFO_URL: ""
+  OIDC_USERNAME_ATTRIBUTE: preferred_username
+  PORT: "3001"
+  SAML_CALLBACK_URL: http://localhost:3001/api/auth/saml/callback
+  SAML_EMAIL_ATTRIBUTE: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
+  SAML_ENABLED: "false"
+  SAML_ENTRY_POINT: http://localhost:8080/realms/crossview/protocol/saml
+  SAML_FIRSTNAME_ATTRIBUTE: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
+  SAML_ISSUER: crossview
+  SAML_LASTNAME_ATTRIBUTE: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname
+  SAML_USERNAME_ATTRIBUTE: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/instance: crossview
+    app.kubernetes.io/managed-by: Helmraiser
+    app.kubernetes.io/name: crossview
+    app.kubernetes.io/version: v3.9.0-rc.4
+    app.tanka.grafana.com: crossplane
+    helm.sh/chart: crossview-3.9.0-rc.4
+  name: crossview-config
+  namespace: crossplane

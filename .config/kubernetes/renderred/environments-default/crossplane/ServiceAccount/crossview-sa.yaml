@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: crossview
+    app.kubernetes.io/managed-by: Helmraiser
+    app.kubernetes.io/name: crossview
+    app.kubernetes.io/version: v3.9.0-rc.4
+    app.tanka.grafana.com: crossplane
+    helm.sh/chart: crossview-3.9.0-rc.4
+  name: crossview-sa
+  namespace: crossplane

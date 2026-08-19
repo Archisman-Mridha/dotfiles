@@ -174,7 +174,7 @@ gopass show personal/github/ssh/public-key  > ~/.ssh/github.pub
 Don't forget to set correct file permission for the private key file :
 
 ```sh
-chmod 600 ~/.ssh/github.pub
+chmod 600 ~/.ssh/github
 ```
 
 otherwise you'll get `file permissions too open` error.

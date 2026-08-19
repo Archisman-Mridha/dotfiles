@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
 
+    # Helm 4 broke Tanka's handling of OCI Helm repository URLs, so Helm is pinned to the 26.05
+    # release, which still ships Helm 3.
+    nixpkgs-26_05.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,13 +15,14 @@
 
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      nixpkgs-26_05,
       home-manager,
       mac-app-util,
       zen-browser,
@@ -30,9 +35,9 @@
           user = "archismanmridha";
         }
         {
-          name = "archlinux";
+          name = "Archismans-ThinkPad";
           system = "x86_64-linux";
-          user = "archi";
+          user = "archismanmridha";
         }
       ];
     in
@@ -44,6 +49,7 @@
             system = device.system;
             user = device.user;
             pkgs = import nixpkgs { inherit system; };
+            pkgs-26_05 = import nixpkgs-26_05 { inherit system; };
           in
           {
             name = "${user}@${device.name}";
@@ -53,14 +59,16 @@
               extraSpecialArgs = {
                 inherit
                   nixpkgs
+                  pkgs-26_05
                   user
                   system
-                  zen-browser
                   ;
               };
 
               modules = [
                 mac-app-util.homeManagerModules.default
+
+                zen-browser.homeModules.beta
 
                 ./modules/common/home.nix
                 ./modules/common/packages.nix
@@ -72,7 +80,7 @@
                 ./modules/common/editorconfig.nix
                 ./modules/common/tmux.nix
               ]
-              ++ (if system == "aarch64-darwin" then [ ./modules/macos.nix ] else [ ./modules/archlinux.nix ]);
+              ++ (if system == "aarch64-darwin" then [ ./modules/macos.nix ] else [ ./modules/linux.nix ]);
             };
           }
         ) devices

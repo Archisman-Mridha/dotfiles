@@ -1,0 +1,287 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: crossview
+    app.kubernetes.io/managed-by: Helmraiser
+    app.kubernetes.io/name: crossview
+    app.kubernetes.io/version: v3.9.0-rc.4
+    app.tanka.grafana.com: crossplane
+    helm.sh/chart: crossview-3.9.0-rc.4
+  name: crossview
+  namespace: crossplane
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: app
+      app.kubernetes.io/instance: crossview
+      app.kubernetes.io/name: crossview
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations: null
+      labels:
+        app.kubernetes.io/component: app
+        app.kubernetes.io/instance: crossview
+        app.kubernetes.io/name: crossview
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - crossview
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      containers:
+      - env:
+        - name: DB_ENABLED
+          valueFrom:
+            configMapKeyRef:
+              key: DB_ENABLED
+              name: crossview-config
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: DB_HOST
+              name: crossview-config
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: DB_PORT
+              name: crossview-config
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: DB_NAME
+              name: crossview-config
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              key: DB_USER
+              name: crossview-config
+        - name: DB_SSL_MODE
+          valueFrom:
+            configMapKeyRef:
+              key: DB_SSL_MODE
+              name: crossview-config
+        - name: DB_SSL_ROOT_CERT
+          valueFrom:
+            configMapKeyRef:
+              key: DB_SSL_ROOT_CERT
+              name: crossview-config
+        - name: DB_SSL_CERT
+          valueFrom:
+            configMapKeyRef:
+              key: DB_SSL_CERT
+              name: crossview-config
+        - name: DB_SSL_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: DB_SSL_KEY
+              name: crossview-config
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              key: PORT
+              name: crossview-config
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              key: LOG_LEVEL
+              name: crossview-config
+        - name: CORS_ORIGIN
+          valueFrom:
+            configMapKeyRef:
+              key: CORS_ORIGIN
+              name: crossview-config
+        - name: AUTH_MODE
+          valueFrom:
+            configMapKeyRef:
+              key: AUTH_MODE
+              name: crossview-config
+        - name: AUTH_TRUSTED_HEADER
+          valueFrom:
+            configMapKeyRef:
+              key: AUTH_TRUSTED_HEADER
+              name: crossview-config
+        - name: AUTH_CREATE_USERS
+          valueFrom:
+            configMapKeyRef:
+              key: AUTH_CREATE_USERS
+              name: crossview-config
+        - name: AUTH_DEFAULT_ROLE
+          valueFrom:
+            configMapKeyRef:
+              key: AUTH_DEFAULT_ROLE
+              name: crossview-config
+        - name: OIDC_ENABLED
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_ENABLED
+              name: crossview-config
+        - name: OIDC_ISSUER
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_ISSUER
+              name: crossview-config
+        - name: OIDC_CLIENT_ID
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_CLIENT_ID
+              name: crossview-config
+        - name: OIDC_AUTHORIZATION_URL
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_AUTHORIZATION_URL
+              name: crossview-config
+        - name: OIDC_TOKEN_URL
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_TOKEN_URL
+              name: crossview-config
+        - name: OIDC_USERINFO_URL
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_USERINFO_URL
+              name: crossview-config
+        - name: OIDC_CALLBACK_URL
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_CALLBACK_URL
+              name: crossview-config
+        - name: OIDC_SCOPE
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_SCOPE
+              name: crossview-config
+        - name: OIDC_USERNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_USERNAME_ATTRIBUTE
+              name: crossview-config
+        - name: OIDC_EMAIL_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_EMAIL_ATTRIBUTE
+              name: crossview-config
+        - name: OIDC_FIRSTNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_FIRSTNAME_ATTRIBUTE
+              name: crossview-config
+        - name: OIDC_LASTNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: OIDC_LASTNAME_ATTRIBUTE
+              name: crossview-config
+        - name: SAML_ENABLED
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_ENABLED
+              name: crossview-config
+        - name: SAML_ENTRY_POINT
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_ENTRY_POINT
+              name: crossview-config
+        - name: SAML_ISSUER
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_ISSUER
+              name: crossview-config
+        - name: SAML_CALLBACK_URL
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_CALLBACK_URL
+              name: crossview-config
+        - name: SAML_USERNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_USERNAME_ATTRIBUTE
+              name: crossview-config
+        - name: SAML_EMAIL_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_EMAIL_ATTRIBUTE
+              name: crossview-config
+        - name: SAML_FIRSTNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_FIRSTNAME_ATTRIBUTE
+              name: crossview-config
+        - name: SAML_LASTNAME_ATTRIBUTE
+          valueFrom:
+            configMapKeyRef:
+              key: SAML_LASTNAME_ATTRIBUTE
+              name: crossview-config
+        - name: ADMIN_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: adminusername
+              name: crossview-secrets
+        - name: ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: adminpassword
+              name: crossview-secrets
+        image: ghcr.io/crossplane-contrib/crossview:v3.9.0-rc.4
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/health
+            port: 3001
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        name: crossview
+        ports:
+        - containerPort: 3001
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/health
+            port: 3001
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: false
+          runAsNonRoot: true
+          runAsUser: 1000
+        volumeMounts:
+        - mountPath: /app/logs
+          name: logs
+      securityContext:
+        fsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: crossview-sa
+      volumes:
+      - emptyDir: {}
+        name: logs

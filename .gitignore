@@ -1,9 +1,4 @@
 .DS_Store
 
-.direnv/
-
-target/
-
-build/
-
-node_modules/
+.config/kubernetes/vendor/
+.config/kubernetes/charts/

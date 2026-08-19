@@ -1,0 +1,31 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: Helmraiser
+    app.kubernetes.io/name: cilium-agent
+    app.kubernetes.io/part-of: cilium
+    app.tanka.grafana.com: cilium
+    helm.sh/chart: cilium-1.20.0
+  name: cilium-agent
+  namespace: cilium
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 10s
+    path: /metrics
+    port: metrics
+    relabelings:
+    - action: replace
+      replacement: ${1}
+      sourceLabels:
+      - __meta_kubernetes_pod_node_name
+      targetLabel: node
+  namespaceSelector:
+    matchNames:
+    - cilium
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cilium-agent
+  targetLabels:
+  - k8s-app

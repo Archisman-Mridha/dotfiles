@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-26_05,
   ...
 }:
 {
@@ -7,7 +8,6 @@
 
   home.packages = with pkgs; [
     # Programming languages related.
-    nodejs_26
     bun
     go
     gopls
@@ -22,17 +22,17 @@
     # Kubernetes and CloudNative related.
     k3d
     kubectx
-    kubeswitch
-    kubernetes-helm
+    # Tanka cannot resolve OCI Helm repository URLs when driving Helm 4, so this stays on the
+    # Helm 3 build from nixpkgs 26.05.
+    pkgs-26_05.kubernetes-helm
     kubeseal
     kubecolor
-    krew
     jsonnet
     jsonnet-bundler
     gojsontoyaml
+    tanka
     teleport
     cilium-cli
-    harbor-cli
     argocd
     velero
     awscli2
@@ -48,7 +48,7 @@
     openssh
     assh
     wireguard-tools
-    # netbird
+    netbird
 
     # Fuzzy searching related.
     fzf
@@ -70,29 +70,29 @@
     # GPG related.
     gnupg
 
+    # YubiKey related.
+    yubikey-personalization
+
     # Nix related.
-    cachix
     nh
     zsh-nix-shell
 
     # Miscellaneous CLI tools.
     bat
     btop
-    carapace
     eza
     fd
     jq
+    yq
     mkalias
     fastfetch
-    qemu
     ripgrep
-    stern
     stow
     tldr
     unzip
+    gh
 
     # Desktop apps.
-    # mattermost-desktop
   ];
 
   programs = {
@@ -125,6 +125,34 @@
             skin = "transparent";
           };
         };
+      };
+    };
+
+    zen-browser = {
+      enable = true;
+      setAsDefaultBrowser = true;
+
+      darwin.packageMode = "signed";
+
+      profiles.default = {
+        id = 0;
+
+        settings = {
+          "zen.welcome-screen.seen" = true;
+
+          "zen.view.compact" = true;
+          "zen.view.compact.hide-both" = true;
+          "zen.urlbar.behavior" = "float";
+
+          "font.name.serif.x-western" = "SF Pro";
+          "font.name.sans-serif.x-western" = "SF Pro";
+          "font.name.monospace.x-western" = "Custom LiterationMono Nerd Font";
+          "browser.display.use_document_fonts" = 0;
+
+          "zen.workspaces.continue-where-left-off" = true;
+        };
+
+        presets.betterfox.enable = true;
       };
     };
   };

@@ -30,6 +30,7 @@
       htop = "btop";
       y = "yazi";
       pass = "gopass";
+      netbird = "netbird --daemon-addr unix:///var/run/netbird.sock";
     };
   };
 

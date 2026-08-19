@@ -6,7 +6,7 @@ return {
     style = "night",
     transparent = true,
     styles = {
-      keywords = { italic = false },
+      keywords = { italic = true },
 
       sidebars = "transparent",
       floats = "transparent",
@@ -16,6 +16,8 @@ return {
       highlights.Comment = { fg = "#928374", italic = false }
       highlights["@lsp.typemod.comment.documentation.rust"] = { fg = colors.blue, italic = false }
       highlights["@comment.documentation"] = { fg = colors.blue, italic = false } -- if a TS parser is ever installed
+
+      highlights["@keyword.conditional"] = { fg = colors.magenta, italic = true }
 
       highlights.WinSeparator = { link = "VirtColumn" }
     end,

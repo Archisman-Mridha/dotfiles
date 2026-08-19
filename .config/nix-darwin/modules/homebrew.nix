@@ -14,20 +14,14 @@
 
     caskArgs.no_quarantine = true;
     casks = [
-      "betterdisplay"
-      "raycast"
+      # Nix CI builds for Darwin based systems are failing for the following.
+      "mattermost"
       "vlc"
-      "discord"
-      # "protonvpn"
     ];
 
     taps = [ ];
 
-    brews = [
-      "pinentry-mac"
-      "yubikey-personalization"
-      "terminal-notifier"
-    ];
+    brews = [ ];
 
     onActivation = {
       # Whether to enable Homebrew to auto-update itself and all formulae during nix-darwin system

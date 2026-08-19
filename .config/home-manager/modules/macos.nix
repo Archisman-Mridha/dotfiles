@@ -4,7 +4,13 @@
     homeDirectory = "/Users/${user}";
 
     packages = with pkgs; [
+      pinentry_mac
+
+      terminal-notifier
+
       # Desktop apps.
+      betterdisplay
+      raycast-beta
       ghostty-bin
       orbstack
     ];
