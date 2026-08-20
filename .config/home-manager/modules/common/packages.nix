@@ -84,7 +84,6 @@
     fd
     jq
     yq
-    mkalias
     fastfetch
     ripgrep
     stow
