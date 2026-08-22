@@ -4,5 +4,5 @@
 [user]
     email = "archisman@obmondo.com"
     name = "Archisman"
-    signingKey = "/Users/archismanmridha/.ssh/github"
+    signingKey = "~/.ssh/github"
     # OpenPGP key (secret key not present in this keyring): 0x6F865B15ABD6B5FF

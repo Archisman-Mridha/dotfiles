@@ -1,7 +1,7 @@
 apiVersion: k3d.io/v1alpha5
 kind: Simple
 metadata:
-  name: development.openmedia
+  name: homelab
 
 # By default, K3D creates its own container registry (inside one of those containers spun up by
 # K3D).
@@ -13,7 +13,7 @@ metadata:
 # we delete the K3D cluster. And get reused when we re-spinup the K3D cluster.
 registries:
   create:
-    name: development.openmedia
+    name: homelab
     image: ligfx/k3d-registry-dockerd:v0.8
     proxy:
       remoteURL: "*"
