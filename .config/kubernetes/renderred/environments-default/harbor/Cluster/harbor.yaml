@@ -1,0 +1,18 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  labels:
+    app.tanka.grafana.com: harbor
+  name: harbor
+  namespace: harbor
+spec:
+  bootstrap:
+    initdb:
+      database: registry
+      owner: harbor
+  instances: 3
+  replicationSlots:
+    highAvailability:
+      synchronizeLogicalDecoding: true
+  storage:
+    size: 10Gi

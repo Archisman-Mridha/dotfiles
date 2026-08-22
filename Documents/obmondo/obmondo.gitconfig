@@ -1,7 +1,8 @@
 [gpg]
-    format = "openpgp"
+    format = "ssh"
 
 [user]
     email = "archisman@obmondo.com"
     name = "Archisman"
-    # signingKey = "0x6F865B15ABD6B5FF"
+    signingKey = "/Users/archismanmridha/.ssh/github"
+    # OpenPGP key (secret key not present in this keyring): 0x6F865B15ABD6B5FF

@@ -25,6 +25,10 @@ repositories:
   url: oci://ghcr.io/deliveryhero/helm-charts
 - name: deliveryhero
   url: oci://ghcr.io/deliveryhero/helm-charts
+- name: dragonfly-operator
+  url: oci://ghcr.io/dragonflydb/dragonfly-operator/helm
+- name: harbor
+  url: https://helm.goharbor.io
 requires:
 - chart: cilium/cilium
   version: 1.20.0
@@ -46,4 +50,8 @@ requires:
   version: 2.3.4
 - chart: deliveryhero/node-problem-detector
   version: 2.4.1
+- chart: dragonfly-operator/dragonfly-operator
+  version: v1.5.0
+- chart: harbor/harbor
+  version: 1.19.1
 version: 1

@@ -16,7 +16,12 @@
     casks = [
       # Nix CI builds for Darwin based systems are failing for the following.
       "mattermost"
+      "super-productivity"
       "vlc"
+
+      # The instances installed from Nix aren't functioning properly.
+      "microsoft-teams"
+      "claude"
     ];
 
     taps = [ ];

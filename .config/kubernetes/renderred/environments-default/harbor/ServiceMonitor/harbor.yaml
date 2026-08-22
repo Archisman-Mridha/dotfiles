@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: harbor
+    app.tanka.grafana.com: harbor
+  name: harbor
+  namespace: harbor
+spec:
+  endpoints:
+  - port: metrics
+  selector:
+    matchLabels:
+      app: harbor

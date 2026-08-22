@@ -3,23 +3,24 @@ local clusterName = 'staging.openmedia',
 
       argoCDSourceRepo = 'https://github.com/archisman-mridha/dotfiles';
 
+(import 'cloudnative-pg.libsonnet') +
+(import 'dragonfly.libsonnet') +
+
 // Networking and Ingress related.
 (import 'cilium.libsonnet')(k8sServiceHost) +
 
-// For monitoring.
+// Monitoring related.
 (import 'node-problem-detector.libsonnet') +
 (import 'kube-prometheus-stack.libsonnet') +
 
-// For security.
+// Security related.
 (import 'kubearmor.libsonnet') +
 (import 'kyverno.libsonnet') +
 
-// For GitOps.
+// GitOps related.
 (import 'argo-cd.libsonnet')(argoCDSourceRepo) +
 (import 'sealed-secrets.libsonnet') +
-
-// Miscellaneous.
-
 (import 'crossplane.libsonnet') +
 
-(import 'cloudnative-pg.libsonnet')
+// Self hosted alternatives to paid applications.
+(import 'harbor.libsonnet')
