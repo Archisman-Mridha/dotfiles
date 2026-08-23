@@ -20,12 +20,15 @@
     python3
 
     # Kubernetes and CloudNative related.
+    docker-compose
+    docker-buildx
     k3d
     kubectx
     # Tanka cannot resolve OCI Helm repository URLs when driving Helm 4, so this stays on the
     # Helm 3 build from nixpkgs 26.05.
     pkgs-26_05.kubernetes-helm
     kubeseal
+    kubectl
     kubecolor
     jsonnet
     jsonnet-bundler
