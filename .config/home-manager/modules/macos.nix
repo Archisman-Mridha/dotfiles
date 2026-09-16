@@ -10,7 +10,7 @@
 
       # Desktop apps.
       betterdisplay
-      raycast-beta
+      raycast
       ghostty-bin
       orbstack
     ];

@@ -13,7 +13,7 @@ return {
     },
     on_colors = function(_) end,
     on_highlights = function(highlights, colors)
-      highlights.Comment = { fg = "#928374", italic = false }
+      highlights.Comment = { fg = "#928374", italic = true }
       highlights["@lsp.typemod.comment.documentation.rust"] = { fg = colors.blue, italic = false }
       highlights["@comment.documentation"] = { fg = colors.blue, italic = false } -- if a TS parser is ever installed
 

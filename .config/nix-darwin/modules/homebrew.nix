@@ -15,6 +15,7 @@
     caskArgs.no_quarantine = true;
     casks = [
       # Nix CI builds for Darwin based systems are failing for the following.
+      "kubectl"
       "mattermost"
       "super-productivity"
       "vlc"
