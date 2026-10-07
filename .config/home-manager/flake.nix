@@ -32,7 +32,7 @@
         {
           name = "Archismans-MacBook-Air";
           system = "aarch64-darwin";
-          user = "archismanmridha";
+          user = "archi";
         }
         {
           name = "Archismans-ThinkPad";

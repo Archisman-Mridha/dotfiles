@@ -1,6 +1,6 @@
 {
   system = {
-    primaryUser = "archismanmridha";
+    primaryUser = "archi";
 
     /*
       To avoid a logout/login cycle.
